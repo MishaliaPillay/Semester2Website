@@ -3,7 +3,7 @@ const articles = [
     id: 1,
     headingOne: "the WET Codbase",
     paraOne: "the WETt Codbase",
-    headingTwo: "",
+    headingTwo:"",
     paraTwo: "", 
     headingThree: "what are the react team principles",
     paraThree: "the WETt Codbase",
