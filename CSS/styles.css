@@ -1,0 +1,164 @@
+html { scroll-behavior: smooth ; }
+body{
+  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+nav {
+    background-color:#0F172A;
+    backdrop-filter: blur(10px);
+    height: 80px;
+    width: 100%;
+   
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+ }
+ nav ul li{
+     display: inline-block;
+     margin-right: 20px;
+ }
+ nav ul li a{
+     font-size: 20px;
+ color:#59DFD0;
+ text-decoration: none;
+ 
+ 
+ }
+ nav ul li a :hover{
+  
+
+ background-color:  rgba(59, 131, 246, 0.359);
+}
+ 
+ .burgerbutton{
+    font-size: 30px;
+    color: white;
+    float: right;
+    margin-right: 40px;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+
+
+}
+ #check{
+    display: none;
+
+}
+ @media(max-width: 800px)
+{.burgerbutton{
+    display: block;
+}
+nav ul{
+    position: fixed;
+    width: 100%;
+    background-color: rgba(137, 136, 136, 0.692);
+    height: 100vh;
+    text-align: center;
+    top: 60px;
+    left: -120%;
+    transition: all 1s;
+}
+nav ul li {
+    display: block;
+    padding: 30px 0;
+}
+nav ul li {
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+#para{
+  background-color: #0f172a61;
+}
+#check:checked ~ul{
+    left: 0;
+}
+
+}
+.active  {
+   
+   text-decoration: underline 2px solid teal;
+ 
+  }
+  .active,#header {
+   
+    text-decoration: underline 2px solid rgb(128, 0, 0);
+  
+   }
+ 
+  /*testout */
+  @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Asap", sans-serif;
+  }
+  body{
+    background-color: rgba(11, 63, 81, 0.3);
+   /* background:  linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);;*/
+  }
+  section{    
+ 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  section .container{
+    margin: 100px;
+  }
+  section h1{
+    font-size: 3rem;
+    margin: 20px;
+  }
+  section h2{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  section .textContainer{
+     display: flex;
+  }
+  section .textContainer .textBox{
+    margin: 20px;
+    padding: 20px;
+    background: #00c2cb;
+  }
+  section .textContainer .textBox h3{
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 900px){
+    section h1{
+      font-size: 2rem;
+      text-align: center;
+    }
+    section .textContainer{
+      flex-direction: column;
+    }
+  }
+  
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.activePara{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+
+  
