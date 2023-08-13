@@ -24,8 +24,8 @@ cheese
   <li>
     <a href="blogs.html" class="opened"> <b>Blogs</b></a>
   </li>
-  <li>a
-    <a href="design.html" class="opened"> <b>Design</b></a>
+  <li>
+    <a href="design.html"class="opened"><b>Design</b></a>
   </li>
   <li>
     <a href="data.html" class="opened"> <b>Data-Visualisation</b></a>
