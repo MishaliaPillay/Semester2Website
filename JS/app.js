@@ -19,19 +19,19 @@ cheese
 <ul>
 
   <li>
-    <a href="index.html" class="opened"> <b>Home</b></a>
+    <a href="index.html" class="opened">Home</a>
   </li>
   <li>
-    <a href="blogs.html" class="opened"> <b>Blogs</b></a>
+    <a href="blogs.html" class="opened"> Blogs</a>
   </li>
   <li>
-    <a href="design.html"class="opened"><b>Design</b></a>
+    <a href="design.html"class="opened">Design</a>
   </li>
   <li>
-    <a href="data.html" class="opened"> <b>Data-Visualisation</b></a>
+    <a href="data.html" class="opened"> Data-Visualisation</a>
   </li>
   <li>
-    <a href="art.html" class="opened"> <b>Data-Art</b></a>
+    <a href="art.html" class="opened"> Data-Art</a>
   </li>
 </ul>`;
 //active header
