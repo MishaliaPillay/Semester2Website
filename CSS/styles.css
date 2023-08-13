@@ -108,7 +108,7 @@ nav ul li {
     background:  linear-gradient(141deg, #0F172A 0%, #16213d 51%, #1d2b50 75%);;*//*
   }*/
   
-  section{    
+  .displaySection{    
  
     min-height: 100vh;
     display: flex;
@@ -116,29 +116,30 @@ nav ul li {
     align-items: center;
   }
  
-  section .container{
+  .container{
     margin: 100px;
   }
-  section h1{
+  .textOne{
+    color:aliceblue;
     font-size: 3rem;
     margin: 20px;
   }
-  section h2{
+ .textTwo{
     font-size: 40px;
     text-align: center;
     text-transform: uppercase;
   }
-  section .textContainer{
+  .textContainer{
      display: flex;
   }
-  section .textContainer .textBox{
+  .textContainer .textBox{
     color: aliceblue;
     margin: 20px;
     padding: 20px;
-    background: #00c1cb67;
+    background: #00a0a949;
     border-radius: 5px;
   }
-  section .textContainer .textBox h3{
+   .textContainer .textBox h3{
     font-size: 30px;
     text-align: center;
     text-transform: uppercase;
@@ -168,7 +169,4 @@ nav ul li {
   }
 
 
-  .textOne{
-    color: aliceblue;
-  }
   
