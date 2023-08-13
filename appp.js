@@ -7,10 +7,10 @@ articlesSection.innerHTML = articles.map((articles)=> {
     const { headingOne, paraOne ,headingTwo, paraTwo, headingThree, paraThree} = articles;
     return `
 
-</section>
+
 <section class="displaySection">
   <article class="container reveal">
-    <h2 class="textTwo">Caption</h2>
+    <h2 class="textTwo">${headingOne}</h2>
     <article class="textContainer">
       <article class="textBox">
         <h3> ${headingOne}</h3>
@@ -19,12 +19,12 @@ articlesSection.innerHTML = articles.map((articles)=> {
         </p>
       </article>
       
-      <article class="textBox">
-      <h3> ${headingTwo}</h3>
-      <p >
+      
+      ${headingTwo}
+    
       ${paraTwo}
-      </p>
-      </article>
+      
+     
       <article class="textBox">
       <h3> ${headingThree}</h3>
       <p >
@@ -57,7 +57,7 @@ let k
 
 for(k=0; k<block.length;k++)
 {
-    console.log(block[k].firstChild)
+    console.log(block[k].innerHTML)
     if(block[k].firstChild.innerText==="")
     {
         console.log("cheese")
@@ -65,4 +65,5 @@ for(k=0; k<block.length;k++)
     }
     else {console.log("nothing")}
 }
-};ClearEmptyParagraphs();
+};
+ClearEmptyParagraphs();

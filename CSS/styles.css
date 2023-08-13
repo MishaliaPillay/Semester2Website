@@ -100,7 +100,13 @@ nav ul li {
     text-decoration: underline 2px solid aliceblue;
   
    }
- 
+ .heading{
+  font-size: 150px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    padding-top: 100px;
+    margin-left: 50px;
+ }
   /*testout 
   
   body{
@@ -108,6 +114,13 @@ nav ul li {
     background:  linear-gradient(141deg, #0F172A 0%, #16213d 51%, #1d2b50 75%);;*//*
   }*/
   
+  .top{ text-decoration: none;
+    float: right;
+    color: aliceblue;
+    font-size: 100px;
+    padding: 20px;
+    margin: 10px;
+  }
   .displaySection{    
  
     min-height: 100vh;
