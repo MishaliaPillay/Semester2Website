@@ -21,18 +21,18 @@ header.innerHTML=`<input type="checkbox" name="" id="check" />
 <a href="/index.html" class="opened"> <b>Home</b></a>
 </li>
   <li>
-    <a href="/HTML/blogs.html" class="opened"> <b>Blogs</b></a>
+    <a href="../HTML/blogs.html" class="opened"> <b>Blogs</b></a>
   </li>
   <li>
-    <a href="/HTML/design.html" class="opened"> <b>Design</b></a>
+    <a href="../HTML/design.html" class="opened"> <b>Design</b></a>
   </li>
   <li>
-    <a href="/HTML/data.html" class="opened">
+    <a href="../HTML/data.html" class="opened">
       <b>Data-Visualisation</b></a
     >
   </li>
   <li>
-    <a href="/HTML/art.html" class="opened"> <b>Data-Art</b></a>
+    <a href="../HTML/art.html" class="opened"> <b>Data-Art</b></a>
   </li>
 </ul>`;
 //active header
