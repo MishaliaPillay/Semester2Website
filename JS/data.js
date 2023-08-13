@@ -3,8 +3,10 @@ const articles = [
     id: 1,
     title: "the WET Codbase",
     titlee: "the WETt Codbase",
-    date: "January 24th, 2023",
-    length: 11,
+    titlee: "the WETt Codbase",
+
+    date: "January 224th, 2023",
+    length: "",
     snippet: `I'm baby ramps kombucha gluten-free ennui swag tattooed street art. Marfa biodiesel letterpress blue bottle subway tile, pop-up pok pok of.`,
   },
   {
