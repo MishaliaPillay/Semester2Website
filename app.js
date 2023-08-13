@@ -18,7 +18,7 @@ header.innerHTML=` <input type="checkbox" name="" id="check" />
 cheese
 <ul>
 <li>
-<a href="./HTML/test.html" class="opened"> <b>Home</b></a>
+<a href="./HTML/test.html" class="opened"> <b> test</b></a>
 </li>
   <li>
     <a href="index.html" class="opened"> <b>Home</b></a>
@@ -26,7 +26,7 @@ cheese
   <li>
     <a href="blogs.html" class="opened"> <b>Blogs</b></a>
   </li>
-  <li>
+  <li>a
     <a href="design.html" class="opened"> <b>Design</b></a>
   </li>
   <li>
