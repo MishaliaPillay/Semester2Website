@@ -124,17 +124,5 @@ const articles = [
     paraFour: "the WETt Codbase",
    
   },
-  {
-    id: 4,
-    bigHeading:"Blog Section",
-    headingOne: "what are the react team principles",
-    paraOne: "the WETt Codbase",
-    headingTwo: "what are the react team principles",
-    paraTwo: "the WETt Codbase",
-    headingThree: "what are the react team principles",
-    paraThree: "the WETt Codbase",
-    headingFour: "what are the react team principles",
-    paraFour: "the WETt Codbase",
-    
-  },
+  
 ];
