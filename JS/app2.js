@@ -11,10 +11,10 @@ articlesSection.innerHTML = articles.map((articles)=> {
 <section class="displaySection">
   <article class="container reveal">
     <h2 class="textOne">${bigHeading}</h2>
-    <article class="textContainer">
+    <article class="textContainer" class="h-feed">
       <article class="textBox">
         <h3 class="textTwo"> ${headingOne}</h3>
-        <p >
+        <p class="p-summary">
         ${paraOne}
         </p>
       </article>
@@ -26,7 +26,7 @@ articlesSection.innerHTML = articles.map((articles)=> {
      
       <article class="textBox">
       <h3> ${headingThree}</h3>
-      <p >
+      <p class="p-summary">
       ${paraThree}
       </p>
       </article>

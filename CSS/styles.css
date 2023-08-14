@@ -192,6 +192,11 @@ text-align: center;
     transform: translateY(0);
     opacity: 1;
   }
-
+  #styleImg{
+    width: 60%;
+   
+    margin: 20px;
+    text-align: center;
+  }
 
   

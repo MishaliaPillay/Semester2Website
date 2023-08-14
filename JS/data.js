@@ -35,7 +35,7 @@ const articles = [
   {
     id: 4,
     bigHeading:"Data - Art Section",
-    headingOne: "This section is coming soo",
+    headingOne: "This section is coming soon!",
     paraOne: "",
     headingTwo: ``,
     paraTwo: "",
