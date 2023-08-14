@@ -143,8 +143,14 @@ text-align: center;
     font-size: 3rem;
     margin: 20px;
   }
- .textTwo{
+ .textTwo{ color: aliceblue;
     font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .textThree{ padding: 50px;
+    color: aliceblue;
+    font-size: 20px;
     text-align: center;
     text-transform: uppercase;
   }

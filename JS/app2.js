@@ -4,24 +4,23 @@ const articlesSection = document.querySelector(".articles");
 
 
 articlesSection.innerHTML = articles.map((articles)=> {
-    const { headingOne, paraOne ,headingTwo, paraTwo, headingThree, paraThree} = articles;
+    const {bigHeading, headingOne, paraOne ,headingTwo, paraTwo, headingThree, paraThree} = articles;
     return `
 
 
 <section class="displaySection">
   <article class="container reveal">
-    <h2 class="textTwo">${headingOne}</h2>
+    <h2 class="textOne">${bigHeading}</h2>
     <article class="textContainer">
       <article class="textBox">
-        <h3> ${headingOne}</h3>
+        <h3 class="textTwo"> ${headingOne}</h3>
         <p >
         ${paraOne}
         </p>
       </article>
-      
+  
       
       ${headingTwo}
-    
       ${paraTwo}
       
      
