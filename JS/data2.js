@@ -45,6 +45,13 @@ const articles = [
     id="styleImg2"
   />
   <figcaption>The theme from above has a rocket back to the top button and a comet by the name of the webpage. This image elaborates on that theme by making an interactive starry background.</figcaption>
+</figure><figure>
+<img
+  src="./Images/iPhone 14 - 1.png"
+  alt="Responsive wireframe"
+  id="styleImg2"
+/>
+<figcaption>This shows the responsive design of the website. I used a flexbox to align and shift the container elements of my text. </figcaption>
 </figure>`,
    headingFour: "what are the react team principles",
     paraFour: "the WETt Codbase",
