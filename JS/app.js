@@ -41,7 +41,7 @@ const navLinks = document.querySelectorAll('nav a').forEach(link => {
     link.classList.add('active');
     
   }
-})
+});
 
 //load transition
 function reveal() {
@@ -58,7 +58,7 @@ function reveal() {
       reveals[i].classList.remove("activePara");
     }
   }
-}
+};
 
 window.addEventListener("scroll", reveal);
 

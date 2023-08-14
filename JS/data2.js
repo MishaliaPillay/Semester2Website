@@ -118,7 +118,7 @@ const articles = [
       alt="infromation structure image"
       id="styleImg2"
     />
-    <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shinning in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
+    <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shining in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
     </figure>`,
     headingFour: "what are the react team principles",
     paraFour: "the WETt Codbase",
