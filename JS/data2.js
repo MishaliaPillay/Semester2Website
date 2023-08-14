@@ -1,10 +1,11 @@
 const articles = [
   {
     id: 1,
-    bigHeading:"Blog Section",
-    headingOne: "BLOG POST 1 - CLOSE READING - OVERVIEW OF DATA VISUALISATION",
+    bigHeading:"Blog Section``",
+    headingOne: "BLOG POST 1 - CLOSE READING - OVERVIEW OF DATA VISUALISATION`` ",
     paraOne: "the WETt Codbase",
-    headingTwo:"",
+    headingTwo:` <a href="blogs.html" class="opened"> Blogs</a>
+    </li>`,
     paraTwo: "", 
     headingThree: "what are the react team principles",
     paraThree: "the WETt Codbase",

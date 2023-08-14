@@ -1,18 +1,19 @@
 const articles = [
   {
     id: 1,
-    bigHeading:"Blog Section",
+    bigHeading: ` <a href="blogs.html" class="texTwo">Blog Section</a>
+    `,
     headingOne: "BLOG POST 1 ",
     paraOne: "CLOSE READING - OVERVIEW OF DATA VISUALISATION",
     headingTwo:``,
-    paraTwo: "", 
+    paraTwo:``, 
     headingThree: "BLOG POST 2",
     paraThree: " CRITICAL REFLECTION - YOUR UI AND UX",
    
   },
   {
     id: 2,
-    bigHeading:"Design Section",
+    bigHeading:`<a href="design.html"class="opened">Design Section</a>`,
     headingOne: "Wireframes",
     paraOne: "This where you can see the Orginal wireframes of this site as well as the Annotated finalised wireframes.",
     headingTwo: ``,
@@ -23,7 +24,7 @@ const articles = [
   },
   {
     id: 3,
-    bigHeading:"Data-Visualisation Section",
+    bigHeading:` <a href="data.html" class="opened"> Data-Visualisation Section</a>`,
     headingOne: "This section is coming soon!", 
     paraOne: "",
     headingTwo: ``,
@@ -34,7 +35,7 @@ const articles = [
   },
   {
     id: 4,
-    bigHeading:"Data - Art Section",
+    bigHeading:`<a href="art.html" class="opened"> Data-Art Section</a>`,
     headingOne: "This section is coming soon!",
     paraOne: "",
     headingTwo: ``,

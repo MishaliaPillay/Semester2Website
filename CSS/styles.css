@@ -26,14 +26,14 @@ nav ul{
  nav ul li a{
      font-size: 20px;
  color:#59DFD0;
- text-decoration: none;
- 
+
+ text-decoration: none ;
  
  }
- nav ul li a :hover{
+ nav ul :hover{
   
-
- background-color:  rgba(59, 131, 246, 0.359);
+  text-decoration: none !important;
+ 
 }
 .navTitle{
   font-size: 100%;
@@ -98,7 +98,7 @@ nav ul li {
   }
   .active,a #header {
    
-    text-decoration: underline 2px solid aliceblue;
+    text-decoration: underline 2px solid aliceblue ;
   
    }
  .heading{
@@ -198,5 +198,18 @@ text-align: center;
     margin: 20px;
     text-align: center;
   }
-
+  a{
+    text-decoration: none;
+    color: aliceblue;
+  }
+  a:hover{
+    text-decoration: 2px underline;
+ 
+  }
+  a .top :hover{
+    text-decoration: none !important;
+  }
+  .top {
+    text-decoration: none !important;
+  }
   
