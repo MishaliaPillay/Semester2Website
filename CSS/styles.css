@@ -212,4 +212,10 @@ text-align: center;
   .top {
     text-decoration: none !important;
   }
+  #styleImg2{
+    width: 90%;
+   
+    margin: 20px;
+    text-align: center;
+  }
   
