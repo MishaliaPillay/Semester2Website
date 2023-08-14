@@ -13,7 +13,7 @@ header.innerHTML=` <input type="checkbox" name="" id="check" />
   >
   </lord-icon>
 </label>
-<label for="navTitle" class="navTitle">SPACE GAZE</label>
+<label for="navTitle" class="navTitle">SPACE GAZE &#9732;☄️ </label>
 
 
 <ul>

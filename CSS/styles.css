@@ -35,12 +35,13 @@ nav ul{
 
  background-color:  rgba(59, 131, 246, 0.359);
 }
-.navTitle{font-size: 90%;
+.navTitle{
+  font-size: 100%;
  color: aliceblue;
    font-weight: bold;
    line-height: 80px;
 
-  margin-left: 10px;
+  margin-left: 20px;
   text-decoration: none;
 
 }
@@ -107,6 +108,11 @@ nav ul li {
     padding-top: 100px;
     margin-left: 50px;
  }
+#spacing{
+  margin: 0px;
+padding-top: 100px;
+text-align: center;
+}
   /*testout 
   
   body{
