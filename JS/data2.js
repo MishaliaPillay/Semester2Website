@@ -96,13 +96,30 @@ const articles = [
   },
   {
     id: 3,
-    bigHeading:"Blog Section",
-    headingOne: "my decade in review", 
-    paraOne: "the WETt Codbase",
-    headingTwo: "what are the react team principles",
-    paraTwo: "the WETt Codbase",
-    headingThree: "what are the react team principles",
-    paraThree: "the WETt Codbase",
+    bigHeading:"Style Guide",
+    headingOne: "My Goal And Aesthetic", 
+    paraOne: "My goal and aesthetic for this website is to be informative and interactive with a professional space-themed layout.",
+    headingTwo: `<article class="textBox">
+    <h3>Fonts & Composition</h3>
+
+    <p class="p-summary">
+    <b>Fonts: </b> I used the Segoe UI Font throughout my website. I found that this font is used on many websites, and I considered this to be a convention. This font is also legible and readable. This is vital for communicating information to the user. 
+
+     </p><p class="p-summary">
+       <b>Composition: </b>I utilised different font sizes and font weights to create a visual hierarchy. This directs the user's attention throughout the web page. The sections that contain paragraphs of text present information in a manner that is easy to read.  
+        </p>
+    
+    </article>`,
+    paraTwo: "",
+    headingThree: "Visual Design Elements",
+    paraThree: `<figure>
+    <img
+      src="./Images/colorpalette.png"
+      alt="infromation structure image"
+      id="styleImg2"
+    />
+    <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shinning in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
+    </figure>`,
     headingFour: "what are the react team principles",
     paraFour: "the WETt Codbase",
    
