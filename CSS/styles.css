@@ -124,8 +124,9 @@ text-align: center;
     float: right;
     color: aliceblue;
     font-size: 100px;
-    padding: 20px;
-    margin: 10px;
+    padding: 50px;
+    margin: 20px;
+    
   }
   .displaySection{    
  
@@ -218,4 +219,4 @@ text-align: center;
     margin: 20px;
     text-align: center;
   }
-  
+ 
