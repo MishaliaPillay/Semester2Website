@@ -60,12 +60,36 @@ const articles = [
   {
     id: 2,
     bigHeading:"IXD Process",
-    headingOne: "goodby, clean code",
-    paraOne: "the WETt Codbase",
-    headingTwo: "what are the react team principles",
-    paraTwo: "the WETt Codbase",
-    headingThree: "what are the react team principles",
-    paraThree: "the WETt Codbase",
+    headingOne: "Goal Alignment & Interface Elements",
+    paraOne: `<p class="p-summary">
+    <b>My Goal:</b> My goal is to give meaning to data and to display it in an interesting and informative manner. My goal is also to create responsive and accessible content. <b>Users Goal:</b>The user's goal is to look at and access data that is visually appealing.
+
+     </p><p class="p-summary">
+       <b>Interface Elements: </b>The only user input that is required is their mouse clicks to change pages and scroll back to the top. The mouse movement also interacts with the background. In the future the data visualisation will be interactive. The moving background gives a taste of this to the user. 
+        </p>`,
+    headingTwo: `<article class="textBox">
+    <h3>Information Structure</h3>
+    <p class="p-summary">
+    <figure>
+<img
+  src="./Images/info structure.png"
+  alt="infromation structure image"
+  id="styleImg2"
+/>
+<figcaption><b>What is says in the image: </b> The sections with long pages and content such as the design page and the homepage have a back to the top button .The nav bar is accessible in every page so the user can easily switch between them .As a user scrolls ,the content loads and fades in . This makes for interesting response .Sections of information are separated by this fade in and these individual sections are separate paragraphs . This moulds to the amount of text present thus no use of unnecessary spacing </figcaption>
+</figure>
+    </p>
+    </article>`,
+    paraTwo: "",
+    headingThree: "User Flow",
+    paraThree: `<figure>
+    <img
+      src="./Images/userflow.png"
+      alt="user flow diagram"
+      id="styleImg2"
+    />
+    <figcaption>This is a basic outline that maps userflow. The user is presented with the nav bar options at all times . The back to the top button is only pages that need it (lots of content).</figcaption>
+    </figure>`,
     headingFour: "what are the react team principles",
     paraFour: "the WETt Codbase",
    
