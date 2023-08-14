@@ -31,25 +31,20 @@ const articles = [
     headingThree: "Annotated Wireframes",
     paraThree: `<figure>
     <img
-      src="./Images/Figure3.png"
-      alt="Figure 3: Bar graph comparison"
+      src="./Images/Blogsog.png"
+      alt="Annotataed blog wireframe"
       id="styleImg2"
     />
-    <figcaption>Figure 3: Bar graph comparison</figcaption>
+    <figcaption>This Image of the Blog section has annotations that are for every page on this website.
+    The colour of the annotations corresponds to specific elements such as :(Green = Visual Response)(Red = Interaction point)(Blue = Visual Design Element).
+    </figcaption>
   </figure><figure>
   <img
-    src="./Images/Figure3.png"
-    alt="Figure 3: Bar graph comparison"
+    src="./Images/Designog.png"
+    alt="Design page wireframe "
     id="styleImg2"
   />
-  <figcaption>Figure 3: Bar graph comparison</figcaption>
-</figure><figure>
-<img
-  src="./Images/Figure3.png"
-  alt="Figure 3: Bar graph comparison"
-  id="styleImg2"
-/>
-<figcaption>Figure 3: Bar graph comparison</figcaption>
+  <figcaption>The theme from above has a rocket back to the top button and a comet by the name of the webpage. This image elaborates on that theme by making an interactive starry background.</figcaption>
 </figure>`,
    headingFour: "what are the react team principles",
     paraFour: "the WETt Codbase",
