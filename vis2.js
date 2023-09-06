@@ -47,7 +47,7 @@ async function createScatterPlot() {
       .style('fill', 'red');
 
     // Add X and Y axes
-    let xAxis = d3.axisBottom(xScale);
+    let xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d, %Y'));
     let yAxis = d3.axisLeft(yScale);
 
     svg.append('g')
