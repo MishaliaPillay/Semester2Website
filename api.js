@@ -1,3 +1,24 @@
+//date change 
+/*
+let today = new Date();
+let date =today;
+let nextWeek =new Date();
+console.log(today);
+nextWeek = date.getDate() + 5;
+console.log(today);
+console.log(nextWeek);
+var day = d3.utcDay(today);
+console.log(day);
+*/
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;}
+  console.log(addDays);
+/*let dateFormat = today.getFullYear() + "-" +((today.getMonth()+1).length != 2 ? "0" + (today.getMonth() + 1) : (today.getMonth()+1)) + "-" + (today.getDate().length != 2 ?"0" + today.getDate() : today.getDate());
+console.log(dateFormat);*/
+
+//regular stuff
 let url ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-08-07&end_date=2023-08-08&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
 
 async function fetchAstData() {
