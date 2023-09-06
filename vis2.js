@@ -33,7 +33,7 @@ async function createScatterPlot() {
         date: new Date(closestApproach.close_approach_date),
         missDistance: parseFloat(closestApproach.miss_distance.kilometers),
         size: parseFloat(asteroid.absolute_magnitude_h),
-        isHazardous: parseBool(asteroid.is_potentially_hazardous_asteroid)
+      isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
       };
     });
 
@@ -46,7 +46,7 @@ async function createScatterPlot() {
       .domain([0, d3.max(parsedData, d => d.missDistance)])
       .range([height, 0]);
       let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([2,50])
-     
+    
     
     
     // Create circles for data points
@@ -99,7 +99,7 @@ function showTooltip(d){
   .style('left', d3.pointer(event)[0] + 100 + "px")
   .style('top', d3.pointer(event) [1] + 100 + "px")
    console.log("working ")
-   tooltip.html("Distance :  " + d.missDistance +" km")
+   tooltip.html("Distance :  " + d.missDistance +" km  " +"Size:  " + d.size +" h")
 };
 function moveTooltip(){
   tooltip.style('left', d3.pointer(event)[0] +100 +'px')
