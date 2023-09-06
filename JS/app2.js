@@ -1,10 +1,10 @@
 
 
-const articlesSection = document.querySelector(".articles");
+let articlesSection = document.querySelector(".articles");
 
 
 articlesSection.innerHTML = articles.map((articles)=> {
-    const {bigHeading, headingOne, paraOne ,headingTwo, paraTwo, headingThree, paraThree} = articles;
+    let {bigHeading, headingOne, paraOne ,headingTwo, paraTwo, headingThree, paraThree} = articles;
     return `
 
 

@@ -1,4 +1,4 @@
-const articles = [
+let articles = [
   {
     id: 1,
     bigHeading:"Wireframes",

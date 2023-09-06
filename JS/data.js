@@ -1,4 +1,4 @@
-const articles = [
+let articles = [
   {
     id: 1,
     bigHeading: ` <a href="blogs.html" class="texTwo">Blog Section</a>
