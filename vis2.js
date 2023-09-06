@@ -4,7 +4,7 @@
 
 
 //DIMENSIONS
-let height =1000,
+let height =800,
 width=600,
 margin=80;
 
@@ -16,7 +16,7 @@ async function createScatterPlot() {
     let asteroidData = await fetchAstData();
 
     // Select the SVG container element
-    let svg = d3.select('section')
+    let svg = d3.select('#root')
       .append('svg')
       .attr('height',height+ margin +margin)
       .attr("width", width+ margin +margin )
@@ -50,7 +50,7 @@ async function createScatterPlot() {
       .append('circle')
       .attr('cx', d => xScale(d.date))
       .attr('cy', d => yScale(d.missDistance))
-      .attr('r', 1.5)
+      .attr('r', 5)
       .style('fill', 'blue')
       .on("mouseover", (event,datum)=>showTooltip(datum))
       .on('mousemove',moveTooltip)
@@ -74,26 +74,24 @@ async function createScatterPlot() {
 let tooltip = d3.select('#root')
 .append('div')
 .style('opacity',0)
-.style("width", " 150px")
+.style("width", " 180px")
 .style("border-radius", "5px")
-.style('padding',"12px")
+.style('padding',"20px")
 .style("background-color", '#000')
 .style("color",'#fff')
 .style("position", "relative");
 
 function showTooltip(d){
-  tooltip.transition().duration(300)
-  .ease(d3.easeBounce)
+  tooltip.transition().duration(200)
   .style('opacity', 1)
- 
-  .style('left', d3.pointer(event)[0] + 70 + "px")
-  .style('top', d3.pointer(event) [1] - 540 + "px")
+  .style('left', d3.pointer(event)[0] + 100 + "px")
+  .style('top', d3.pointer(event) [1] + 100 + "px")
    console.log("working ")
-   tooltip.html("Distance:" + d.missDistance)
+   tooltip.html("Distance :  " + d.missDistance +"km")
 };
 function moveTooltip(){
-  tooltip.style('left', d3.pointer(event)[0] +70 +'px')
-  .style('top',d3.pointer(event)[1]-540 +'px')
+  tooltip.style('left', d3.pointer(event)[0] +100 +'px')
+  .style('top',d3.pointer(event)[1]+ 100 +'px')
 }
 
 // Call the function to create the scatter plot
