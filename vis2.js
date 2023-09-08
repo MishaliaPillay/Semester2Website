@@ -5,7 +5,7 @@
 
 //DIMENSIONS
 let height =800,
-width=600,
+width=900,
 margin=80;
 
 
@@ -24,19 +24,88 @@ async function createScatterPlot() {
       .attr("transform",  `translate(${margin}, ${margin})`);
      // near_earth_objects["2023-08-07"][0].close_approach_data[0].close_approach_date
     // Parse dates and miss distances\
-    let parsedData2 = asteroidData.near_earth_objects;
-    console.log(parsedData2[0]);
-    let parsedData = asteroidData.near_earth_objects["2023-08-07"].map((asteroid) => {
+/*
+    function DateGenerator()
+    {
+        let date="\"2023-08-";
+    
+        let datestring=[]
+        let day =7;
+        for(let i=0; i<8; i++)
+        {
+        
+            if(day<10)
+            {
+                date+="0"+day.toString()+"\"";
+            }else{
+                date+=day.toString()+"\"";
+            }
+        
+            datestring.push(date)
+            date="\"2023-08-"
+            day++;
+        }
+    }
+    DateGenerator();
+    
+    for(let i=0; i<7; i++){
+        let parsedData = asteroidData.near_earth_objects[datestring[i]].map((asteroid) => {
+            let closestApproach = asteroid.close_approach_data[0];
+            //let closestApproach = asteroidData.near_earth_objects["2023-08-07"][length ++].close_approach_data[0];
+            return {
+              date: new Date(closestApproach.close_approach_date),
+              missDistance: parseFloat(closestApproach.miss_distance.kilometers),
+              size: parseFloat(asteroid.absolute_magnitude_h),
+              isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
+            };
+          });
+    }
+   */
+
+    const dates = Object.keys(asteroidData.near_earth_objects); 
+    
+    // Initialize an empty array to store parsed data for all dates
+    const parsedData = [];
+    dates.forEach((date) => {
+      // Iterate through asteroids for the current date
+      asteroidData.near_earth_objects[date].forEach((asteroid) => {
+        const closestApproach = asteroid.close_approach_data[0];
+        const dataForDate = {
+          date: new Date(closestApproach.close_approach_date),
+          missDistance: parseFloat(closestApproach.miss_distance.astronomical),size: parseFloat(asteroid.absolute_magnitude_h),
+      isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
+        };
+
+        // Push the parsed data for the current asteroid to the 'parsedData' array
+        parsedData.push(dataForDate);
+      });
+    });
+    /*dates.forEach((date) => {
+      // Iterate through asteroids for the current date
+      asteroidData.near_earth_objects[date].forEach((asteroid) => {
+        const closestApproach = asteroid.close_approach_data[0];
+        const dataForDate = {
+          date: new Date(closestApproach.close_approach_date),
+          missDistance: parseFloat(closestApproach.miss_distance.astronomical),
+        };
+
+        // Push the parsed data for the current asteroid to the 'parsedData' array
+        parsedData.push(dataForDate);
+      });*//*
+console.log(dates);
+  let parsedData2 = asteroidData.near_earth_objects;
+    console.log(parsedData2);
+  
+ let parsedData = asteroidData.near_earth_objects["2023-08-07"].map((asteroid) => {
       let closestApproach = asteroid.close_approach_data[0];
       //let closestApproach = asteroidData.near_earth_objects["2023-08-07"][length ++].close_approach_data[0];
       return {
         date: new Date(closestApproach.close_approach_date),
         missDistance: parseFloat(closestApproach.miss_distance.kilometers),
-        size: parseFloat(asteroid.absolute_magnitude_h),
-      isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
+        
       };
-    });
-
+    });*/
+  
     // Set up scales
     let xScale = d3.scaleTime()
       .domain([d3.min(parsedData, d => d.date), d3.max(parsedData, d => d.date)])
@@ -47,9 +116,11 @@ async function createScatterPlot() {
       .range([height, 0]);
       let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([2,50])
     
+      let colorScale = d3.scaleOrdinal()
+    .domain([true, false]) 
+    .range(['red', 'teal']); 
     
-    
-    // Create circles for data points
+    //  circles 
     svg.selectAll('circle')
       .data(parsedData)
       .enter()
@@ -58,7 +129,7 @@ async function createScatterPlot() {
       .attr('cy', d => yScale(d.missDistance))
       .attr('r', d => rScale(d.size))
       .style("stroke", "#000")
-      .style('fill', 'red')
+      .style('fill', d => colorScale(d.isHazardous))
       .style("opacity", "0.7")
       .on("mouseover", (event,datum)=>showTooltip(datum))
       .on('mousemove',moveTooltip)    

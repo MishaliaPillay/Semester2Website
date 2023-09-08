@@ -68,14 +68,14 @@
   background-size: 512px 512px;
 }
 .top-left {
-  background-image: url("./Images/topleft.png");
+  background-image: url("/Images/topleft.png");
 }
 .top-right {
-  background-image: url("./Images/topright.png");
+  background-image: url("/Images/topright.png");
 }
 .bottom-left {
-  background-image: url("./Images/bottomleft.png");
+  background-image: url("/Images/bottomleft.png");
 }
 .bottom-right {
-  background-image: url("./Images/bottomright.png");
+  background-image: url("/Images/bottomright.png");
 }

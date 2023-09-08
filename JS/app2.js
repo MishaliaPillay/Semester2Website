@@ -10,7 +10,7 @@ articlesSection.innerHTML = articles.map((articles)=> {
 
 <section class="displaySection">
   <article class="container reveal">
-    <h2 class="textOne">${bigHeading}</h2>
+    <h2 class="textOne" >${bigHeading}</h2>
     <article class="textContainer" class="h-feed">
       <article class="textBox">
         <h3 class="textTwo"> ${headingOne}</h3>
