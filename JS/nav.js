@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let navItems = [{ text: "Home", url: "index.html" },
       { text: "Blogs", url: "blogs.html" },
       { text: "Design", url: "design.html" },
-      { text: "Data-Visualisation", url: "data.html" },
+      { text: "Data-Visualisation", url: "testt.html" },
       { text: "Design-Art", url: "art.html" }
   ];
 
