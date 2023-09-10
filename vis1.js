@@ -5,7 +5,7 @@
 
 //DIMENSIONS
 let height =800,
-width=900,
+width=700,
 margin=80;
 
 
@@ -114,12 +114,12 @@ console.log(dates);
     // Set up scales
     let xScale = d3.scaleTime()
       .domain([d3.min(parsedData, d => d.date), d3.max(parsedData, d => d.date)])
-      .range([0, width]);
+      .range([40, width]);
 
     let yScale = d3.scaleLinear()
       .domain([0, d3.max(parsedData, d => d.missDistance)])
       .range([height, 0]);
-      let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,50])
+      let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,30])
     
       let colorScale = d3.scaleOrdinal()
     .domain([true, false]) 
@@ -130,7 +130,7 @@ console.log(dates);
       .data(parsedData)
       .enter()
       .append('circle')
-      .attr('cx', d => xScale(d.date))
+      .attr('cx', d => xScale(d.date)-10)
       .attr('cy', d => yScale(d.missDistance))
       .attr('r', d => rScale(d.size))
       .style("stroke", "#000")
@@ -141,16 +141,43 @@ console.log(dates);
       .on("mouseout", hideTooltip)
           ; 
 
+
     // Add X and Y axes
-    let xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d'));
-    let yAxis = d3.axisLeft(yScale);
+    let createYAxis= 
+      svg.append('g').call(d3.axisLeft(yScale))
+      .call((g)=> {
+          g.append("text")
+          .attr("x", -300)
+          .attr("y", -65)
+          .attr('transform', 'rotate(-90)')
+          .style("fill", "#000")
+          .style("font-size", "20px")
+          .text("Miss Distance");
+      });
+  
+  let createXAxis=
+    svg
+    .append('g')
+    .attr('transform', `translate(0, ${height})`)
+    .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d')).ticks(8))
+    //method below  call takens in a fucntion as an arguement runs a fucntion on a selection 
+    .call((g) => {
+        g.append("text")
+        .attr("x", width/2)
+        .attr("y", +35)
+        .style("fill", "#000")
+        .style("font-size", "20px")
+        .text("Dates");})
+  
+   // let xAxis = d3.axisBottom(xScale));
+    //let yAxis = d3.axisLeft(yScale);
 
     svg.append('g')
       .attr('transform', `translate(0, ${height})`)
-      .call(xAxis);
+      .call(createXAxis);
 
     svg.append('g')
-      .call(yAxis);
+      .call(createYAxis);
   } catch (error) {
     console.error('Error:', error);
   }
