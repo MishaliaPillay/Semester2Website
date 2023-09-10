@@ -84,7 +84,7 @@ console.log(parsedData);
    
 
        
-        const orbitingBody = {
+        let orbitingBody = {
           planet:parsedString(orbit.orbitingBody) ,
 
           date: new Date(orbit.close_approach_date)
@@ -104,12 +104,12 @@ console.log(parsedData);
 
 
     /*
-    const parsedData = [];
+    let parsedData = [];
     dates.forEach((date) => {
       // Iterate through asteroids for the current date
       asteroidData.near_earth_objects[date].forEach((asteroid) => {
-        const closestApproach = asteroid.close_approach_data[0];
-        const dataForDate = {
+        let closestApproach = asteroid.close_approach_data[0];
+        let dataForDate = {
 
 
           date: new Date(closestApproach.close_approach_date)
@@ -127,8 +127,8 @@ console.log(parsedData);
     /*dates.forEach((date) => {
       // Iterate through asteroids for the current date
       asteroidData.near_earth_objects[date].forEach((asteroid) => {
-        const closestApproach = asteroid.close_approach_data[0];
-        const dataForDate = {
+        let closestApproach = asteroid.close_approach_data[0];
+        let dataForDate = {
           date: new Date(closestApproach.close_approach_date),
           missDistance: parseFloat(closestApproach.miss_distance.astronomical),
         };
@@ -151,29 +151,34 @@ console.log(dates);
     });*/
   
     // Set up scales
-    let xScale = d3.scaleLinear()
+   /* let xScale = d3.scaleLinear()
+
+
       .domain([0,3])
-      .range([0, width]);
+      .range([0, width]);*/
+  let xScale = d3.scaleBand()
+    .domain(['Venus','Earth','Merc'])
+    .range([0, width])
+   ;
+
+
 
     let yScale = d3.scaleLinear()
       .domain([0, d3.max(parsedData, d => d.missDistance)])
       .range([height, 0]);
-      let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,50])
+     
     
-     /* let colorScale = d3.scaleOrdinal()
-    .domain([true, false]) 
-    .range(['red', 'teal']); */
-    
+     let colorScale = d3.scaleOrdinal().domain(['Venus','Earth','Merc']).range(d3.schemePaired)
     //  circles 
     svg.selectAll('circle')
       .data(parsedData)
       .enter()
       .append('circle')
-      .attr('cx',d=>xScale(d.planet))
+      .attr('cx',d=>xScale(d.planet)+150)
       .attr('cy', d => yScale(d.missDistance))
-      .attr('r', '2')
+      .attr('r', '10')
       .style("stroke", "#000")
-      .style('fill',"blue")
+      .style('fill',(d)=> colorScale(d.planet))
       .style("opacity", "0.7")
       .on("mouseover", (event,datum)=>showTooltip(datum))
       .on('mousemove',moveTooltip)    
@@ -181,15 +186,41 @@ console.log(dates);
           ; 
 
     // Add X and Y axes
-    let xAxis = d3.axisBottom(xScale);
-    let yAxis = d3.axisLeft(yScale);
+  
+  let createYAxis= 
+      svg.append('g').call(d3.axisLeft(yScale))
+      .call((g)=> {
+          g.append("text")
+          .attr("x", -300)
+          .attr("y", -65)
+          .attr('transform', 'rotate(-90)')
+          .style("fill", "#000")
+          .style("font-size", "20px")
+          .text("Miss Distance");
+      });
+  
+  let createXAxis=
+    svg
+    .append('g')
+    .attr('transform', `translate(0, ${height})`)
+    .call(d3.axisBottom(xScale).ticks(2))
+    //method below  call takens in a fucntion as an arguement runs a fucntion on a selection 
+    .call((g) => {
+        g.append("text")
+        .attr("x", width/2)
+        .attr("y", +35)
+        .style("fill", "#000")
+        .style("font-size", "20px")
+        .text("Planet");})
+  
+
 
     svg.append('g')
       .attr('transform', `translate(0, ${height})`)
-      .call(xAxis);
+      .call(createXAxis);
 
     svg.append('g')
-      .call(yAxis);
+      .call(createYAxis);
   } catch (error) {
     console.error('Error:', error);
   }
@@ -214,7 +245,7 @@ function showTooltip(d){
   .style('left', d3.pointer(event)[0] + 100 + "px")
   .style('top', d3.pointer(event) [1] + 100 + "px")
    console.log("working ")
-   tooltip.html("Distance :  " + d.missDistance +" km  " +"Size:  " + d.size +" h")
+   tooltip.html("Distance :  " + d.missDistance +" km  ")
 };
 function moveTooltip(){
   tooltip.style('left', d3.pointer(event)[0] +100 +'px')

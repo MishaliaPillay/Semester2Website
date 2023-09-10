@@ -62,15 +62,15 @@ async function createScatterPlot() {
     }
    */
 
-    const dates = Object.keys(asteroidData.near_earth_objects); 
+    let dates = Object.keys(asteroidData.near_earth_objects); 
     
     // Initialize an empty array to store parsed data for all dates
-    const parsedData = [];
+    let parsedData = [];
     dates.forEach((date) => {
       // Iterate through asteroids for the current date
       asteroidData.near_earth_objects[date].forEach((asteroid) => {
-        const closestApproach = asteroid.close_approach_data[0];
-        const dataForDate = {
+        let closestApproach = asteroid.close_approach_data[0];
+        let dataForDate = {
 
 
           date: new Date(closestApproach.close_approach_date)
@@ -88,8 +88,8 @@ async function createScatterPlot() {
     /*dates.forEach((date) => {
       // Iterate through asteroids for the current date
       asteroidData.near_earth_objects[date].forEach((asteroid) => {
-        const closestApproach = asteroid.close_approach_data[0];
-        const dataForDate = {
+        let closestApproach = asteroid.close_approach_data[0];
+        let dataForDate = {
           date: new Date(closestApproach.close_approach_date),
           missDistance: parseFloat(closestApproach.miss_distance.astronomical),
         };

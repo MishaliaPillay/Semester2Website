@@ -7,11 +7,11 @@ console.log(today);
 nextWeek = date.getDate() + 5;
 console.log(today);
 console.log(nextWeek);
-var day = d3.utcDay(today);
+let day = d3.utcDay(today);
 console.log(day);
 */
 function addDays(date, days) {
-  var result = new Date(date);
+  let result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;}
   console.log(addDays);
@@ -20,7 +20,7 @@ console.log(dateFormat);*/
 
 //regular stuff
 let url ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-08-07&end_date=2023-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
-const loadingMessage = document.getElementById('loadingText');
+let loadingMessage = document.getElementById('loadingText');
 async function fetchAstData() {    loadingMessage.style.display = 'block';
     try {
       let response = await fetch(url);

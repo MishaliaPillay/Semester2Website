@@ -167,6 +167,10 @@ padding-left: 80%;
     text-align: center;
     text-transform: uppercase;
   }
+  .textFour{
+    padding: 0;
+    margin: 0;
+  }
   .textContainer{
      display: flex;
   }
