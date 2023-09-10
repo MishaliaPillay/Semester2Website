@@ -4,14 +4,6 @@ let articles = [
     bigHeading:"Wireframes",
     headingOne: "Orginal Wireframes",
     paraOne: `<figure>
-    <img
-      src="./Images/HomePagept1og.png"
-      alt="This is orignal homepage wireframe"
-      id="styleImg2"
-    />
-    <figcaption>This is the orignal homepage wireframe. The homepage is envisioned to be one long page that gives the users an overview of what can be  found on the site .Thus the images below will follow in sequence after this image.
-    </figcaption>
-  </figure><figure>
   <img
     src="./Images/HomePagept2og.png"
     alt="Design and Blog section orginal wireframe for homepage."
@@ -26,8 +18,20 @@ let articles = [
 />
 <figcaption>This shows the Data-Art and Data-Visualisation sections these will also contain descriptions . This is the end of the homepage and there will be a back to the top button. </figcaption>
 </figure>`,
-    headingTwo:` `,
-    paraTwo: "", 
+    image:`
+    
+    
+    
+    <figure>
+    <img
+      src="./Images/HomePagept1og.png"
+      alt="This is orignal homepage wireframe"
+      id="styleImg2"
+    />
+    <figcaption>This is the orignal homepage wireframe. The homepage is envisioned to be one long page that gives the users an overview of what can be  found on the site .Thus the images below will follow in sequence after this image.
+    </figcaption>
+  </figure>`,
+    paraTwo: `id="Wireframes"`, 
     headingThree: "Annotated Wireframes",
     paraThree: `<figure>
     <img
@@ -53,9 +57,7 @@ let articles = [
 />
 <figcaption>This shows the responsive design of the website. I used a flexbox to align and shift the container elements of my text. </figcaption>
 </figure>`,
-   headingFour: "what are the react team principles",
-    paraFour: "the WETt Codbase",
-   
+
   },
   {
     id: 2,
@@ -67,7 +69,7 @@ let articles = [
      </p><p class="p-summary">
        <b>Interface Elements: </b>The only user input that is required is their mouse clicks to change pages and scroll back to the top. The mouse movement also interacts with the background. In the future the data visualisation will be interactive. The moving background gives a taste of this to the user. 
         </p>`,
-    headingTwo: `<article class="textBox">
+    image: `<article class="textBox">
     <h3>Information Structure</h3>
     <p class="p-summary">
     <figure>
@@ -80,7 +82,7 @@ let articles = [
 </figure>
     </p>
     </article>`,
-    paraTwo: "",
+    paraTwo: `id="IXD Process"`,
     headingThree: "User Flow",
     paraThree: `<figure>
     <img
@@ -90,16 +92,14 @@ let articles = [
     />
     <figcaption>This is a basic outline that maps userflow. The user is presented with the nav bar options at all times . The back to the top button is only pages that need it (lots of content).</figcaption>
     </figure>`,
-    headingFour: "what are the react team principles",
-    paraFour: "the WETt Codbase",
-   
+
   },
   {
     id: 3,
     bigHeading:"Style Guide",
     headingOne: "My Goal And Aesthetic", 
     paraOne: "My goal and aesthetic for this website is to be informative and interactive with a professional space-themed layout.",
-    headingTwo: `<article class="textBox">
+    image: `<article class="textBox">
     <h3>Fonts & Composition</h3>
 
     <p class="p-summary">
@@ -110,7 +110,7 @@ let articles = [
         </p>
     
     </article>`,
-    paraTwo: "",
+    paraTwo: `id="StyleGuide"`,
     headingThree: "Visual Design Elements",
     paraThree: `<figure>
     <img
@@ -120,9 +120,7 @@ let articles = [
     />
     <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shining in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
     </figure>`,
-    headingFour: "what are the react team principles",
-    paraFour: "the WETt Codbase",
-   
+
   },
   
 ];

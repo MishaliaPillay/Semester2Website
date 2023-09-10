@@ -13,11 +13,11 @@ margin=80;
 
 async function createScatterPlot() {
   try {
-    let asteroidData = await fetchAstData();
+    let asteroidData = await fetchAstData2();
 
     // Select the SVG container element
     let svg = d3.select('#root')
-      .append('svg')
+      .append('svg').style("background-color", '#00a0a949')
       .attr('height',height+ margin +margin)
       .attr("width", width+ margin +margin )
       .append('g')
@@ -194,7 +194,7 @@ console.log(dates);
           .attr("x", -300)
           .attr("y", -65)
           .attr('transform', 'rotate(-90)')
-          .style("fill", "#000")
+          .style("fill", "white")
           .style("font-size", "20px")
           .text("Miss Distance");
       });
@@ -209,7 +209,7 @@ console.log(dates);
         g.append("text")
         .attr("x", width/2)
         .attr("y", +35)
-        .style("fill", "#000")
+        .style("fill", "white")
         .style("font-size", "20px")
         .text("Planet");})
   

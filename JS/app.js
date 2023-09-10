@@ -1,4 +1,4 @@
-
+/*
 function reveal() {
    let reveals = document.querySelectorAll(".reveal");
 
@@ -15,7 +15,7 @@ function reveal() {
   }
 };
 
-window.addEventListener("scroll", reveal);
+window.addEventListener("scroll", reveal);*/
 
 
 //starry background

@@ -4,9 +4,9 @@
 
 
 //DIMENSIONS
-let height =800,
-width=700,
-margin=80;
+let heightt =800,
+widthh=700,
+marginn=80;
 
 
 
@@ -16,12 +16,13 @@ async function createScatterPlot() {
     let asteroidData = await fetchAstData();
 
     // Select the SVG container element
-    let svg = d3.select('#root')
+    let svg = d3.select('#roott')
       .append('svg')
-      .attr('height',height+ margin +margin)
-      .attr("width", width+ margin +margin )
+      .style("background-color", '#00a0a949')
+      .attr('height',heightt+ marginn +marginn)
+      .attr("width", widthh+ marginn +marginn )
       .append('g')
-      .attr("transform",  `translate(${margin}, ${margin})`);
+      .attr("transform",  `translate(${marginn}, ${marginn})`);
      // near_earth_objects["2023-08-07"][0].close_approach_data[0].close_approach_date
     // Parse dates and miss distances\
 /*
@@ -114,11 +115,11 @@ console.log(dates);
     // Set up scales
     let xScale = d3.scaleTime()
       .domain([d3.min(parsedData, d => d.date), d3.max(parsedData, d => d.date)])
-      .range([40, width]);
+      .range([40, widthh]);
 
     let yScale = d3.scaleLinear()
       .domain([0, d3.max(parsedData, d => d.missDistance)])
-      .range([height, 0]);
+      .range([heightt, 0]);
       let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,30])
     
       let colorScale = d3.scaleOrdinal()
@@ -130,15 +131,16 @@ console.log(dates);
       .data(parsedData)
       .enter()
       .append('circle')
+   
       .attr('cx', d => xScale(d.date)-10)
       .attr('cy', d => yScale(d.missDistance))
       .attr('r', d => rScale(d.size))
       .style("stroke", "#000")
       .style('fill', d => colorScale(d.isHazardous))
       .style("opacity", "0.7")
-      .on("mouseover", (event,datum)=>showTooltip(datum))
-      .on('mousemove',moveTooltip)    
-      .on("mouseout", hideTooltip)
+      .on("mouseover", (event,datum)=>showTooltipp(datum))
+      .on('mousemove',moveTooltipp)    
+      .on("mouseout", hideTooltipp)
           ; 
 
 
@@ -150,7 +152,7 @@ console.log(dates);
           .attr("x", -300)
           .attr("y", -65)
           .attr('transform', 'rotate(-90)')
-          .style("fill", "#000")
+          .style("fill", "white")
           .style("font-size", "20px")
           .text("Miss Distance");
       });
@@ -158,14 +160,14 @@ console.log(dates);
   let createXAxis=
     svg
     .append('g')
-    .attr('transform', `translate(0, ${height})`)
+    .attr('transform', `translate(0, ${heightt})`)
     .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d')).ticks(8))
     //method below  call takens in a fucntion as an arguement runs a fucntion on a selection 
     .call((g) => {
         g.append("text")
-        .attr("x", width/2)
+        .attr("x", widthh/2)
         .attr("y", +35)
-        .style("fill", "#000")
+        .style("fill", "white")
         .style("font-size", "20px")
         .text("Dates");})
   
@@ -173,7 +175,7 @@ console.log(dates);
     //let yAxis = d3.axisLeft(yScale);
 
     svg.append('g')
-      .attr('transform', `translate(0, ${height})`)
+      .attr('transform', `translate(0, ${heightt})`)
       .call(createXAxis);
 
     svg.append('g')
@@ -183,7 +185,7 @@ console.log(dates);
   }
 }
 
-let tooltip = d3.select('#root')
+let tooltipp = d3.select('#roott')
 .append('div')
 .attr("stroke","blue" ,"2px") 
 
@@ -196,20 +198,20 @@ let tooltip = d3.select('#root')
 .style("color",'#fff')
 .style("position", "relative");
 
-function showTooltip(d){
-  tooltip.transition().duration(200)
+function showTooltipp(d){
+  tooltipp.transition().duration(200)
   .style('opacity', 1)
   .style('left', d3.pointer(event)[0] + 100 + "px")
   .style('top', d3.pointer(event) [1] + 100 + "px")
    console.log("working ")
-   tooltip.html("Distance :  " + d.missDistance +" km  " +"Size:  " + d.size +" h")
+   tooltipp.html("Distance :  " + d.missDistance +" km  " +"Size:  " + d.size +" h")
 };
-function moveTooltip(){
-  tooltip.style('left', d3.pointer(event)[0] +100 +'px')
+function moveTooltipp(){
+  tooltipp.style('left', d3.pointer(event)[0] +100 +'px')
   .style('top',d3.pointer(event)[1]+ 100 +'px')
 }
-function hideTooltip(){
-  tooltip.style('opacity',0);
+function hideTooltipp(){
+  tooltipp.style('opacity',0);
 }
 // Call the function to create the scatter plot
 createScatterPlot();

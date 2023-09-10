@@ -19,12 +19,12 @@ function addDays(date, days) {
 console.log(dateFormat);*/
 
 //regular stuff
-let url ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-08-07&end_date=2023-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
-let loadingMessage = document.getElementById('loadingText');
-async function fetchAstData() {    loadingMessage.style.display = 'block';
+let urll ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-08-07&end_date=2023-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
+let loadingMessagee = document.getElementById('loadingTextt');
+async function fetchAstData() {    loadingMessagee.style.display = 'block';
     try {
-      let response = await fetch(url);
-      loadingMessage.style.display = 'none';
+      let response = await fetch(urll);
+      loadingMessagee.style.display = 'none';
 
       if (!response.ok) {
         throw new Error('Network response was not ok');

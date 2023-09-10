@@ -1,6 +1,6 @@
 let url ="https://api.nasa.gov/neo/rest/v1/neo/3542519?start_date=2023-08-07&end_date=2023-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
 let loadingMessage = document.getElementById('loadingText');
-async function fetchAstData() {    loadingMessage.style.display = 'block';
+async function fetchAstData2() {    loadingMessage.style.display = 'block';
     try {
       let response = await fetch(url);
       loadingMessage.style.display = 'none';
@@ -19,7 +19,7 @@ async function fetchAstData() {    loadingMessage.style.display = 'block';
   
   async function main() {
     try {
-      let asteroidData = await fetchAstData();
+      let asteroidData = await fetchAstData2();
       // Process the data as needed
       console.log(asteroidData);
       console.log(asteroidData.close_approach_data[100]);

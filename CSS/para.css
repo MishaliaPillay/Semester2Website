@@ -4,7 +4,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  padding: 0 4em;
+ 
 }
 main {
   min-width: 300px;
@@ -29,11 +29,16 @@ margin-right: 80%;
     margin: 50px;
   }
 }
-.paraContent {
+.paraContent {   color: aliceblue;
+  margin: 20%;
+  padding: 20%;
+ 
+
   font-size: 1em;
   line-height: 1.75em;
   border-top: 3px solid;
   border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+  
   border-image-slice: 1;
   border-width: 3px;
   /*
@@ -48,6 +53,7 @@ margin-right: 80%;
   position: relative;
   color: #fcfdff;
 }
+
 .paraContent:before {
   content: counter(section);
   position: absolute;
@@ -55,28 +61,29 @@ margin-right: 80%;
   padding: 10px;
   height: 1.25em;
   width: 1.25em;
-  background-color: #34435e;
+  background: #00a1a9;
   text-align: center;
   line-height: 1.25em;
   color: #fff;
   font-size: 1em;
+
 }
 .paraContent:nth-child(odd) {
-  border-right: 3px solid;
-  padding-left: 0;
+  border-right: 3px solid; 
+  padding-left: 2%;
 }
 .paraContent:nth-child(odd):before {
   left: 100%;
   margin-left: -20px;
 }
 .paraContent:nth-child(even) {
-  border-left: 3px solid;
-  padding-right: 0;
+  border-left: 3px solid; 
+  padding-right: 2%;
 }
 .paraContent:nth-child(even):before {
   right: 100%;
   margin-right: -20px;
-}
+}/*
 .paraContent:first-child {
   border-top: 0;
   border-top-right-radius: 0;
@@ -85,7 +92,7 @@ margin-right: 80%;
 .paraContent:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-}
+}*/
 .largerText{
 text-align: center;
   margin: 0 auto;
@@ -220,13 +227,18 @@ text-align: center;
   top: 17px;
   left: 5px;
 }
-.sidenav { margin-top: 15%;
+.sidenav {   border: 3px solid;
+  border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+  
+  border-image-slice: 1;
+  border-width: 3px;
+ margin-top: 15%;
   width: 130px;
   position: fixed;
   z-index: 1;
   top: 20px;
   left: 10px;
-  background: #ff0303;
+  background: #0f172af0;
   overflow-x: hidden;
   padding: 8px 0;
 }
@@ -234,15 +246,15 @@ text-align: center;
 .sidenav a { border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
   padding: 20px 10px 20px 16px;
   text-decoration: none;
-  font-size: 25px;
-  color: #2196F3;
+  font-size: 20px;
+color:#59DFD0;
   display: block;
 }
 
 .sidenav a:hover {
-  color: #064579;
+text-decoration: underline 1px white;
 }
-@media screen and (max-width: 450px)  {
-  .sidenav {padding-top: 15px;  margin-top: 20%;}
-  .sidenav a {font-size: 18px; padding: 6px 8px 6px 16px; }
+@media screen and (max-width: 633px)  {
+  .sidenav {display: none;}
+  .sidenav a {display: none; }
 }

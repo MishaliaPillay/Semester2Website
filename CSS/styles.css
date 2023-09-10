@@ -157,11 +157,13 @@ padding-left: 80%;
     margin: 20px;
   }
  .textTwo{ color: aliceblue;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     text-transform: uppercase;
+  margin: 2px;
+
   }
-  .textThree{ padding: 50px;
+  .textThree{ 
     color: aliceblue;
     font-size: 20px;
     text-align: center;
