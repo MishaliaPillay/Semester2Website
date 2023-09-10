@@ -60,50 +60,11 @@ async function createScatterPlot() {
             };
           });
     }
-   */let orbitArray=[];
+   */
 
-for(let i=0; i<100; i++)
-{
-    orbitArray.push(asteroidData.close_approach_data[100+i]);
-   
-}
-console.log(orbitArray[0])
-console.log(orbitArray[99]);
-let parsedData = orbitArray.map((asteroid) => {
-  
-  //let closestApproach = asteroidData.near_earth_objects["2023-08-07"][length ++].close_approach_data[0];
-  return {
-    date: new Date(asteroid.close_approach_date),
-    missDistance: parseFloat(asteroid.miss_distance.kilometers),
-    planet: asteroid.orbiting_body
-  };
-})
-console.log(parsedData);
-    /*orbitArray.forEach((orbit) => {
-      // Iterate through asteroids for the current date
-   
-
-       
-        const orbitingBody = {
-          planet:parsedString(orbit.orbitingBody) ,
-
-          date: new Date(orbit.close_approach_date)
-          
-          
-          ,
-          missDistance: parseFloat(orbit.miss_distance.kilometers)
-      
-        };
-
-        // Push the parsed data for the current asteroid to the 'parsedData' array
-        parsedData.push(orbitingBody);
-        console.log(parsedData);
-      });
-  */
+    const dates = Object.keys(asteroidData.near_earth_objects); 
+    
     // Initialize an empty array to store parsed data for all dates
-
-
-    /*
     const parsedData = [];
     dates.forEach((date) => {
       // Iterate through asteroids for the current date
@@ -116,14 +77,14 @@ console.log(parsedData);
           
           
           ,
-          missDistance: parseFloat(closestApproach.miss_distance.astronomical),size: parseFloat(asteroid.absolute_magnitude_h),
+          missDistance: parseFloat(closestApproach.miss_distance.kilometers),size: parseFloat(asteroid.absolute_magnitude_h),
       isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
         };
 
         // Push the parsed data for the current asteroid to the 'parsedData' array
         parsedData.push(dataForDate);
       });
-    });*/
+    });
     /*dates.forEach((date) => {
       // Iterate through asteroids for the current date
       asteroidData.near_earth_objects[date].forEach((asteroid) => {
@@ -151,8 +112,8 @@ console.log(dates);
     });*/
   
     // Set up scales
-    let xScale = d3.scaleLinear()
-      .domain([0,3])
+    let xScale = d3.scaleTime()
+      .domain([d3.min(parsedData, d => d.date), d3.max(parsedData, d => d.date)])
       .range([0, width]);
 
     let yScale = d3.scaleLinear()
@@ -160,20 +121,20 @@ console.log(dates);
       .range([height, 0]);
       let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,50])
     
-     /* let colorScale = d3.scaleOrdinal()
+      let colorScale = d3.scaleOrdinal()
     .domain([true, false]) 
-    .range(['red', 'teal']); */
+    .range(['red', 'teal']); 
     
     //  circles 
     svg.selectAll('circle')
       .data(parsedData)
       .enter()
       .append('circle')
-      .attr('cx',d=>xScale(d.planet))
+      .attr('cx', d => xScale(d.date))
       .attr('cy', d => yScale(d.missDistance))
-      .attr('r', '2')
+      .attr('r', d => rScale(d.size))
       .style("stroke", "#000")
-      .style('fill',"blue")
+      .style('fill', d => colorScale(d.isHazardous))
       .style("opacity", "0.7")
       .on("mouseover", (event,datum)=>showTooltip(datum))
       .on('mousemove',moveTooltip)    
@@ -181,7 +142,7 @@ console.log(dates);
           ; 
 
     // Add X and Y axes
-    let xAxis = d3.axisBottom(xScale);
+    let xAxis = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d'));
     let yAxis = d3.axisLeft(yScale);
 
     svg.append('g')
