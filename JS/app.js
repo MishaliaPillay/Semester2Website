@@ -56,7 +56,7 @@ let z1 = document.getElementsByClassName("z-1")[0];
 let z2 = document.getElementsByClassName("z-2")[0];
 let z3 = document.getElementsByClassName("z-3")[0];
 
-let ratio = 0.05;
+let ratio = 0.2;
 let x;
 let y;
 

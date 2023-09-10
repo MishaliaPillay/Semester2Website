@@ -182,7 +182,13 @@ padding-left: 80%;
     padding: 20px;
     background: #00a0a949;
     border-radius: 5px;
+    border: 3px solid;
+  border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+  
+  border-image-slice: 1;
+  border-width: 3px;
   }
+  
    .textContainer .textBox h3{
     font-size: 30px;
     text-align: center;
@@ -267,4 +273,8 @@ padding-left: 80%;
     50% {border-color: black}
     100% {border-color: transparent}
   }
-  
+  .footer{
+   
+    font-size: 10px;
+padding-top: 10px;
+  }

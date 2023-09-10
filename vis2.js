@@ -161,15 +161,15 @@ console.log(dates);
     .range([0, width])
    ;
 
-/*// i need to still see colour change Select the x-axis and change the color of the text
-svg.select('.x-axis')
-  .selectAll('text')
-  .style('fill', 'your-color-here'); // Replace 'your-color-here' with the desired color
+// i need to still see colour change Select the x-axis and change the color of the text
+svg.select('.xScale')
+  .selectAll()
+  .style('fill', 'white'); // Replace 'your-color-here' with the desired color
 
 // Select the y-axis and change the color of the text
-svg.select('.y-axis')
-  .selectAll('text')
-  .style('fill', 'your-color-here');*/ 
+svg.select('.yScale')
+  .selectAll()
+  .style('fill', 'white');
 
     let yScale = d3.scaleLinear()
       .domain([0, d3.max(parsedData, d => d.missDistance)])
