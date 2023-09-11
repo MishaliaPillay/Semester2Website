@@ -186,7 +186,7 @@ console.log(dates);
 }
 
 let tooltipp = d3.select('#roott')
-.append('div')
+.append('p')
 .attr("stroke","blue" ,"2px") 
 
 .style('opacity',0)

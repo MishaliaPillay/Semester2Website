@@ -235,7 +235,7 @@ svg.select('.yScale')
 }
 
 let tooltip = d3.select('#root')
-.append('div')
+.append('p')
 .attr("stroke","blue" ,"2px") 
 
 .style('opacity',0)
