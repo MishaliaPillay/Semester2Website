@@ -14,7 +14,7 @@ ${image}
  
 
   
-    <section class="paraContent" class="p-summary"><h3 class="textThree">${headingThree}</h3>${paraThree}
+    <section class="paraContent" class="p-summary"><h3 class="textTwo">${headingThree}</h3>${paraThree}
     </section>
 `;
 });/*

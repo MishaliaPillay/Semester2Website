@@ -14,7 +14,7 @@ main {
 }
 
 .imgg{
-  width: 60%;
+  width: 40%;
    
 margin-right: 80%;
 }
@@ -232,7 +232,7 @@ text-align: center;
   
   border-image-slice: 1;
   border-width: 3px;
- margin-top: 15%;
+ margin-top: 9%;
   width: 140px;
   position: fixed;
   z-index: 1;
@@ -244,13 +244,16 @@ text-align: center;
 }
 
 .sidenav a { border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
-  padding: 20px 10px 20px 16px;
+  padding: 10px 10px 15px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
 color:#59DFD0;
   display: block;
 }
-
+.bold{
+  font-weight: bold;
+  font-size: 10px;
+}
 .sidenav a:hover {
 text-decoration: underline 1px white;
 }

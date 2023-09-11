@@ -154,20 +154,22 @@ padding-left: 80%;
   .textOne{
     color:aliceblue;
     font-size: 3rem;
-    margin: 20px;
+    padding: 2%;
   }
  .textTwo{ color: aliceblue;
-    font-size: 30px;
+    font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
-  margin: 2px;
 
   }
-  .textThree{ 
+  .textThree{  
+    font-weight: lighter;
+    
+    padding: 2%;
     color: aliceblue;
     font-size: 20px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: uppercase;  font-family: 'Brush Script MT', cursive;
   }
   .textFour{
     padding: 0;
@@ -237,7 +239,7 @@ padding-left: 80%;
   .top {
     text-decoration: none !important;
   }
-  #styleImg2{
+  #imgg{
     width: 90%;
    
     margin: 20px;
