@@ -184,6 +184,9 @@ console.log(dates);
     console.error('Error:', error);
   }
 }
+/*xScale.select(".axisc").attr("stroke","#E04836")
+.attr("stroke-width","6")
+.attr("opacity",".6");*/
 
 let tooltipp = d3.select('#roott')
 .append('p')

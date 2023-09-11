@@ -307,3 +307,11 @@ padding-top: 10px;
     font-size: 48px;
     margin-top: 20px;
 }
+.axisc text{
+fill: aliceblue !important;
+}.axisc line{
+stroke: aliceblue !important;
+}
+.axisc path{
+  stroke: aliceblue !important;
+}

@@ -5,7 +5,28 @@ let articles = [
     `,
     headingOne: "Composition  ",
     paraOne: "The three broad composition classes of asteroids are C-, S-, and M-types.The C-type (chondrite) asteroids are most common. They probably consist of clay and silicate rocks, and are dark in appearance. They are among the most ancient objects in the solar system.The S-types (stony) are made up of silicate materials and nickel-iron.The M-types are metallic (nickel-iron). The asteroids' compositional differences are related to how far from the Sun they formed. Some experienced high temperatures after they formed and partly melted, with iron sinking to the center and forcing basaltic (volcanic) lava to the surface.",
-    image:``,
+    image:`<figure>
+    <img
+      src="./Images/chondrite.png"
+      alt="chondrite image"
+      id="imgg"
+    />
+    <figcaption>This shows the C-type (chondrite).</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/stony.png"
+      alt="stony image"
+      id="imgg"
+    />
+    <figcaption>This shows the S-types (stony).</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/nickolite.png"
+      alt="footer image"
+      id="imgg"
+    />
+    <figcaption>This shows the M-types(nickel-iron).</figcaption>
+    </figure>`,
     paraTwo:`id="Composition"`, 
     headingThree: "",
     paraThree: "Scientists continuously monitor Earth-crossing asteroids, whose paths intersect Earth's orbit, and near-Earth asteroids that approach Earth's orbital distance to within about 28 million miles (45 million kilometers) and may pose an impact danger. Radar is a valuable tool in detecting and monitoring potential impact hazards. By reflecting transmitted signals off objects, images and other information can be derived from the echoes. Scientists can learn a great deal about an asteroid's orbit, rotation, size, shape, and metal concentration.",
@@ -38,7 +59,14 @@ let articles = [
     bigHeading:``,
     headingOne: "",
     paraOne: "Asteroids are also named for places and a variety of other things. (The IAU discourages naming asteroids for pets, so Mr. Spock stands alone).",
-    image: ``,
+    image: `<figure>
+    <img
+      src="./Images/spaceshuttle.png"
+      alt="spaceshuttle image"
+      id="imgg"
+    />
+    <figcaption>This shows the space shuttle from 2003.</figcaption>
+    </figure>`,
     paraTwo: "",
     headingThree: "",
     paraThree: "Asteroids are also given a number, for example (99942) Apophis. The Harvard Smithsonian Center for Astrophysics keeps a fairly current list of asteroid names.",
