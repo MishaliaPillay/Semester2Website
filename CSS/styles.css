@@ -172,8 +172,13 @@ padding-left: 80%;
     text-transform: uppercase;  font-family: 'Lucida Calligraphy', cursive;
   }
   .textFour{
-    padding: 0;
-    margin: 0;
+    font-weight: lighter;
+    
+    padding: 1%;
+    color: aliceblue;
+  
+    
+ font-size: 20px;
   }
   .textContainer{
      display: flex;
