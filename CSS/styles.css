@@ -165,11 +165,11 @@ padding-left: 80%;
   .textThree{  
     font-weight: lighter;
     
-    padding: 2%;
+    padding: 1%;
     color: aliceblue;
-    font-size: 20px;
+    font-size:25px;
     text-align: center;
-    text-transform: uppercase;  font-family: 'Brush Script MT', cursive;
+    text-transform: uppercase;  font-family: 'Lucida Calligraphy', cursive;
   }
   .textFour{
     padding: 0;

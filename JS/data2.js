@@ -236,7 +236,7 @@ let articles = [
     <p>In my research on the most appropriate and effective fonts, I found that some fonts are not accessible through certain devices. This is where I found Web Safe fonts, these adapt to any browser and any device. Using Web Safe fonts improves accessibility since any user is able to view the content on this website.</p>
     <p>My Sans -Serif font is a Web Safe font and it is a common font which shows its effectiveness. As discussed in the previous style guide this font is legible and it is readable which makes it easier for the user to read since they do not need to spend time figuring out the letter formation. There is also a sense of minimalism with this font causing it to be versatile and neat. </p>
    
-    <p>I also made use of the Cursive font, Brush Script MT (cursive) which is Web Safe, for smaller headings in the design section of this website. The design section discusses creative decisions, and I chose this font because it mimics handwriting which adds a personal touch. This font is readable but it is not the most legible thus it is only used a few times for shorter headings. </p>
+    <p>I also made use of the Cursive font, Lucida Handwriting (cursive) which is Web Safe, for smaller headings in the design section of this website. The design section discusses creative decisions, and I chose this font because it mimics handwriting which adds a personal touch. This font is readable but it is not the most legible thus it is only used a few times for shorter headings. </p>
     <h2>References:</h2>
     <p class="p-author">Osman, M. (2023) The ultimate list of web-safe HTML and CSS fonts, HubSpot Blog. Available at: https://blog.hubspot.com/website/web-safe-html-css-fonts (Accessed: 11 September 2023). </p>
     
@@ -258,66 +258,77 @@ let articles = [
     headingThree: "Revised Visual Design Elements",
     paraThree: `<figure>
     <img
-      src="./Images/colorpalette.png"
-      alt="infromation structure image"
+      src="./Images/Complementary.png"
+      alt="Complementary  colors image"
       id="imgg"
     />
-    <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shining in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
-    </figure>`
+    <figcaption>This shows that the color in the background and the color of nav text are complementary.</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/color1.png"
+      alt="color palette image"
+      id="imgg"
+    />
+    <figcaption>This is the main color palette of this website. </figcaption>
+    </figure><figure>
+    <img
+      src="./Images/color2.png"
+      alt="color palatte image2 "
+      id="imgg"
+    />
+    <figcaption>This shows the second color palette of this website.</figcaption>
+    </figure>  <p >The complementary colours contrast each other, which draws attention to specific elements on the screen. This can be seen by the light blue colours of the nav text.</p> <p >The rest of the colour pallets show complementary split colours which use adjacent colours colours for areas with less contrast. This is seen in the colours used around the borders of the paragraphs on this website. </p>`
 
   },{
     id: 7,
     bigHeading:"Style Guide",
     headingOne: "Extra Research", 
     paraOne: "It was identified that I had not added a footer in the previous assignment and this left an impression on the user that the website is incomplete.I wanted to take careful consideration in designing my footer by researching the importance and different methods of implementation methods. A footer helps with navigation this is done by connecting the user to other areas of interest that explore the most important parts  of the site (Cardello, 2023). The footer also acts as the final call to action by giving the user their last chance to sign up (Cardello, 2023).",
-    image: `
-    <h3>Fonts & Composition</h3>
-
-    <p class="p-summary"> <h3 class="textThree">Fonts:</h3>
-   I used the Segoe UI Font throughout my website. I found that this font is used on many websites, and I considered this to be a convention. This font is also legible and readable. This is vital for communicating information to the user. 
-
-     </p><p class="p-summary"><h3 class="textThree">Composition:</h3>
-      I utilised different font sizes and font weights to create a visual hierarchy. This directs the user's attention throughout the web page. The sections that contain paragraphs of text present information in a manner that is easy to read.  
-        </p>
-    
-   `,
-    paraTwo: `id="extraResearch"`,
-    headingThree: "Revised Visual Design Elements",
-    paraThree: `<figure>
+    image: ` <h2>Reference:</h2> <p class="p-author" > Cardello, J. (2023) 13 unique website Footer Design examples: Webflow blog, Webflow. 
+    Available at: https://webflow.com/blog/website-footer-design-examples?utm_source =google&utm_medium=search &utm_campaign=SS-GoogleSearch-Nonbrand- DynamicSearchAds-Core&utm_term=dsa -1637784841628___585305490212__ &gclid= CjwKCAjw3dCnBhBCEiwAVvLcu9uZd 5IDmk7PYWex0 -LBskaw26GaqaeqxFlUSuolfk4q 129oAI7kqRoCwpcQAvD_ BwE (Accessed: 03 September 2023). </p> 
+    <figure>
     <img
-      src="./Images/colorpalette.png"
-      alt="infromation structure image"
+      src="./Images/footereg.png"
+      alt="footer image"
       id="imgg"
     />
-    <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shining in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
-    </figure>`
+    <figcaption>This shows an example of a footer from the website above</figcaption>
+    </figure>
+    <p >My footer has necessary information such as where the data from the visualisations are from as well as the origin of the factual elements on the home page. There is no call to action in the footer since the user is not required to sign up for anything on this website. The footer displays short concise information about the website.</p>
+   `,
+    paraTwo: `id="extraResearch"`,
+    headingThree: "Extra Research Continued",
+    paraThree: `
+    <p>This website discusses the benefits of “scrollytelling” which is a term used to describe the act of telling a story to the user as they scroll and come across animations. This website also gave examples of this in practice as well as the different affordances when used correctly and intentionally - such as the scroll feature used on the Apple website to display different features of a product.</p>
+    <h2>Reference:</h2><p class="p-author">Website scroll animation 101: Tips, best practices and examples (no date) Vev Blog. Available at: https://www.vev.design/blog/website-scroll-animation/ (Accessed: 11 September 2023).  </p> 
+    <p>To accomplish this storytelling I needed to implement parallax features on my website. This helps load features at different speeds by placing content on different levels. The previous iteration of my website had this feature, it created too much white space which left my website feeling bare. </p>`
 
   },{
     id: 8,
     bigHeading:"Data Visualisation",
     headingOne: "Data Visualisation", 
-    paraOne: "My goal and aesthetic for this website is to be informative and interactive with a professional space-themed layout.",
-    image: `
-    <h3>Fonts & Composition</h3>
-
-    <p class="p-summary"><h3 class="textThree">Fonts</h3>
- I used the Segoe UI Font throughout my website. I found that this font is used on many websites, and I considered this to be a convention. This font is also legible and readable. This is vital for communicating information to the user. 
-
-     </p><p class="p-summary"><h3 class="textThree">Composition:</h3>
-    I utilised different font sizes and font weights to create a visual hierarchy. This directs the user's attention throughout the web page. The sections that contain paragraphs of text present information in a manner that is easy to read.  
-        </p>
+    paraOne: "Both data visualisations will be scatterplots showing data on asteroids.The first visualisation will show the distance between the asteroids and Earth on the y-axis, relative to the date on the x-axis. The second visualisation will show the asteroids over 100 years and the miss distance(y-axis) for the planets(x-axis) - Venus, Mercury and Earth. ",
+    image: `<figure>
+    <img
+      src="./Images/blg2.4.png"
+      alt="Data visual 1"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning of the First Data Visualisation"</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/blg2.3.png"
+      alt="Data visual 2 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning of the First Data Visualisation</figcaption>
+    </figure>
+    The first Scatterplot will display asteroids that are potentially hazardous. This will be communicated through the use of different colours - all the asteroids will be one colour and the hazardous asteroids will be red. I expected there to be overlapping of asteroids on the graph, this will affect the visual design of the graph and some elements will be hidden. I intend to fix this by changing the opacity of points so that all points are visible.
     
     `,
     paraTwo: `id="dataVis"`,
-    headingThree: "Visual Design Elements",
-    paraThree: `<figure>
-    <img
-      src="./Images/colorpalette.png"
-      alt="infromation structure image"
-      id="imgg"
-    />
-    <figcaption>I created this color palette in the beginning stages of this website. I decided to turn the image in a sense , to give the feel of the sun shining in . This fits with the space aesthetic .I also used space-themed icons to add to the aesthetic as well as white text to correlate with the stars in the background. </figcaption>
-    </figure>`
+    headingThree: "",
+    paraThree: ``
 
   }
   
