@@ -64,58 +64,33 @@ let articles = [
     headingOne: "Revised Wireframes",
     paraOne: `<figure>
   <img
-    src="./Images/HomePagept2og.png"
-    alt="Design and Blog section orginal wireframe for homepage."
+    src="./Images/REvisedDesignog.png"
+    alt="Revised  wireframe ."
     id="imgg"
   />
-  <figcaption>This is where the Blog and Design section overview wil be. Within the two boxes will be descriptions of those Pages. </figcaption>
-</figure><figure>
-<img
-  src="./Images/HomePagept3og.png"
-  alt="Data-Art and Data-Visualisation sections , with a back to the top button on homapage."
-  id="imgg"
-/>
-<figcaption>This shows the Data-Art and Data-Visualisation sections these will also contain descriptions . This is the end of the homepage and there will be a back to the top button. </figcaption>
+  <figcaption>The layout of my website has remained mostly the same. The change that I have made can be shown in the wireframe above. I have Decreased the withe space by removing the separate sections. The content of my webpage is better connected through the design of the paragraph line that threads through content. This line also has sections that are numbered which helps the use see their progress throughout the website. </figcaption>
 </figure>`,
     image:`
-    
-    
-    
-    <figure>
-    <img
-      src="./Images/HomePagept1og.png"
-      alt="This is orignal homepage wireframe"
-      id="imgg"
-    />
-    <figcaption>This is the orignal homepage wireframe. The homepage is envisioned to be one long page that gives the users an overview of what can be  found on the site .Thus the images below will follow in sequence after this image.
-    </figcaption>
-  </figure>`,
+  `,
     paraTwo: `id="RWireframes"`, 
-    headingThree: "Revised Annotated Wireframes",
+    headingThree: "Data visualisation Planning",
     paraThree: `<figure>
     <img
-      src="./Images/Blogsog.png"
-      alt="Annotataed blog wireframe"
+      src="./Images/blg2.4.png"
+      alt="Data visual 1"
       id="imgg"
     />
-    <figcaption>This Image of the Blog section has annotations that are for every page on this website.
-    The colour of the annotations corresponds to specific elements such as :(Green = Visual Response)(Red = Interaction point)(Blue = Visual Design Element).
-    </figcaption>
-  </figure><figure>
-  <img
-    src="./Images/Designog.png"
-    alt="Design page wireframe "
-    id="imgg"
-  />
-  <figcaption>The theme from above has a rocket back to the top button and a comet by the name of the webpage. This image elaborates on that theme by making an interactive starry background.</figcaption>
-</figure><figure>
-<img
-  src="./Images/iPhone 14 - 1.png"
-  alt="Responsive wireframe"
-  id="imgg"
-/>
-<figcaption>This shows the responsive design of the website. I used a flexbox to align and shift the container elements of my text. </figcaption>
-</figure>`
+    <figcaption>This shows a wireframe for the planning of the First Data Visualisation"</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/blg2.3.png"
+      alt="Data visual 2 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning of the First Data Visualisation</figcaption>
+    </figure>
+   
+    `
 
   },
   {
@@ -153,44 +128,9 @@ let articles = [
     <figcaption>This is a basic outline that maps userflow. The user is presented with the nav bar options at all times . The back to the top button is only pages that need it (lots of content).</figcaption>
     </figure>`
 
-  },{
-    id: 4,
-    bigHeading:"IXD Process",
-    headingOne: " Revised Goal Alignment & Interface Elements",
-    paraOne: `<p class="p-summary">
-    <h3 class="textThree">My Goal</h3>
-    My goal is to give meaning to data and to display it in an interesting and informative manner. My goal is also to create responsive and accessible content. <b>Users Goal:</b>The user's goal is to look at and access data that is visually appealing.
-
-     </p><p class="p-summary"><h3 class="textThree">Interface Elements:</h3>
-      The only user input that is required is their mouse clicks to change pages and scroll back to the top. The mouse movement also interacts with the background. In the future the data visualisation will be interactive. The moving background gives a taste of this to the user. 
-        </p>`,
-    image: `<h3 class="textThree">Information Structure</h3>
-    
-    <p class="p-summary">
-    <figure>
-<img
-  src="./Images/info structure.png"
-  alt="infromation structure image"
-  id="imgg"
-/>
-<figcaption><h3 class="textThree">What is says in the image:</h3>The sections with long pages and content such as the design page and the homepage have a back to the top button .The nav bar is accessible in every page so the user can easily switch between them .As a user scrolls ,the content loads and fades in . This makes for interesting response .Sections of information are separated by this fade in and these individual sections are separate paragraphs . This moulds to the amount of text present thus no use of unnecessary spacing </figcaption>
-</figure>
-    </p>
-    `,
-    paraTwo: `id="RIXD Process"`,
-    headingThree: " Revised User Flow",
-    paraThree: `<figure>
-    <img
-      src="./Images/userflow.png"
-      alt="user flow diagram"
-      id="imgg"
-    />
-    <figcaption>This is a basic outline that maps userflow. The user is presented with the nav bar options at all times . The back to the top button is only pages that need it (lots of content).</figcaption>
-    </figure>`
-
   },
   {
-    id: 5,
+    id: 4,
     bigHeading:"Style Guide",
     headingOne: "My Goal And Aesthetic", 
     paraOne: "My goal and aesthetic for this website is to be informative and interactive with a professional space-themed layout.",
@@ -217,7 +157,7 @@ let articles = [
     </figure>`
 
   }, {
-    id: 6,
+    id: 5,
     bigHeading:"Style Guide",
     headingOne: " Revised My Goal And Aesthetic", 
     paraOne: "My goal and aesthetic for this website is to be informative and interactive with a professional space-themed layout.",
@@ -280,7 +220,7 @@ let articles = [
     </figure>  <p >The complementary colours contrast each other, which draws attention to specific elements on the screen. This can be seen by the light blue colours of the nav text.</p> <p >The rest of the colour pallets show complementary split colours which use adjacent colours colours for areas with less contrast. This is seen in the colours used around the borders of the paragraphs on this website. </p>`
 
   },{
-    id: 7,
+    id: 6,
     bigHeading:"Style Guide",
     headingOne: "Extra Research", 
     paraOne: "It was identified that I had not added a footer in the previous assignment and this left an impression on the user that the website is incomplete.I wanted to take careful consideration in designing my footer by researching the importance and different methods of implementation methods. A footer helps with navigation this is done by connecting the user to other areas of interest that explore the most important parts  of the site (Cardello, 2023). The footer also acts as the final call to action by giving the user their last chance to sign up (Cardello, 2023).",
@@ -304,7 +244,7 @@ let articles = [
     <p>To accomplish this storytelling I needed to implement parallax features on my website. This helps load features at different speeds by placing content on different levels. The previous iteration of my website had this feature, it created too much white space which left my website feeling bare. </p>`
 
   },{
-    id: 8,
+    id: 7,
     bigHeading:"Data Visualisation",
     headingOne: "Data Visualisation", 
     paraOne: "Both data visualisations will be scatterplots showing data on asteroids.The first visualisation will show the distance between the asteroids and Earth on the y-axis, relative to the date on the x-axis. The second visualisation will show the asteroids over 100 years and the miss distance(y-axis) for the planets(x-axis) - Venus, Mercury and Earth. ",
