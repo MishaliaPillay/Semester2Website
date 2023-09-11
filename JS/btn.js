@@ -1,8 +1,8 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
-    const startButton = document.getElementById("startButton");
-    const counter = document.getElementById("counter");
-    const targetNumber = 1304990; // The number you want to count up to
+    let startButton = document.getElementById("startButton");
+    let counter = document.getElementById("counter");
+    let targetNumber = 1304990; // The number you want to count up to
     let currentNumber = 0;
 
     function updateCounter() {

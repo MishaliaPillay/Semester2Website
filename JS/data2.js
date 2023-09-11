@@ -98,7 +98,7 @@ let articles = [
     bigHeading:"IXD Process",
     headingOne: "Goal Alignment & Interface Elements",
     paraOne: `<p class="p-summary"> <h3 class="textThree">My Goal:</h3>
-    My goal is to give meaning to data and to display it in an interesting and informative manner. My goal is also to create responsive and accessible content. <b>Users Goal:</b>The user's goal is to look at and access data that is visually appealing.
+    My goal is to give meaning to data and to display it in an interesting and informative manner. My goal is also to create responsive and accessible content. Users Goal:The user's goal is to look at and access data that is visually appealing.
 
      </p><p class="p-summary">
      <h3 class="textThree">Interface Elements:</h3>
@@ -113,7 +113,7 @@ let articles = [
   alt="infromation structure image"
   id="imgg"
 />
-<figcaption><b>What is says in the image: </b> The sections with long pages and content such as the design page and the homepage have a back to the top button .The nav bar is accessible in every page so the user can easily switch between them .As a user scrolls ,the content loads and fades in . This makes for interesting response .Sections of information are separated by this fade in and these individual sections are separate paragraphs . This moulds to the amount of text present thus no use of unnecessary spacing </figcaption>
+<figcaption>What is says in the image:  The sections with long pages and content such as the design page and the homepage have a back to the top button .The nav bar is accessible in every page so the user can easily switch between them .As a user scrolls ,the content loads and fades in . This makes for interesting response .Sections of information are separated by this fade in and these individual sections are separate paragraphs . This moulds to the amount of text present thus no use of unnecessary spacing </figcaption>
 </figure>
     </p>
    `,

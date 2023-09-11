@@ -124,8 +124,9 @@ console.log(dates);
     
       let colorScale = d3.scaleOrdinal()
     .domain([true, false]) 
-    .range(['red', 'teal']); 
-    
+    .range(['red', 'gray']); 
+
+     
     //  circles 
     svg.selectAll('circle')
       .data(parsedData)
@@ -184,6 +185,7 @@ console.log(dates);
     console.error('Error:', error);
   }
 }
+ 
 /*xScale.select(".axisc").attr("stroke","#E04836")
 .attr("stroke-width","6")
 .attr("opacity",".6");*/
