@@ -5,7 +5,7 @@
 
 //DIMENSIONS
 let heightt =800,
-widthh=700,
+widthh=900,
 marginn=80;
 
 
@@ -25,43 +25,7 @@ async function createScatterPlot() {
       .attr("transform",  `translate(${marginn}, ${marginn})`);
      // near_earth_objects["2023-08-07"][0].close_approach_data[0].close_approach_date
     // Parse dates and miss distances\
-/*
-    function DateGenerator()
-    {
-        let date="\"2023-08-";
-    
-        let datestring=[]
-        let day =7;
-        for(let i=0; i<8; i++)
-        {
-        
-            if(day<10)
-            {
-                date+="0"+day.toString()+"\"";
-            }else{
-                date+=day.toString()+"\"";
-            }
-        
-            datestring.push(date)
-            date="\"2023-08-"
-            day++;
-        }
-    }
-    DateGenerator();
-    
-    for(let i=0; i<7; i++){
-        let parsedData = asteroidData.near_earth_objects[datestring[i]].map((asteroid) => {
-            let closestApproach = asteroid.close_approach_data[0];
-            //let closestApproach = asteroidData.near_earth_objects["2023-08-07"][length ++].close_approach_data[0];
-            return {
-              date: new Date(closestApproach.close_approach_date),
-              missDistance: parseFloat(closestApproach.miss_distance.kilometers),
-              size: parseFloat(asteroid.absolute_magnitude_h),
-              isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
-            };
-          });
-    }
-   */
+
 
     let dates = Object.keys(asteroidData.near_earth_objects); 
     
@@ -86,31 +50,7 @@ async function createScatterPlot() {
         parsedData.push(dataForDate);
       });
     });
-    /*dates.forEach((date) => {
-      // Iterate through asteroids for the current date
-      asteroidData.near_earth_objects[date].forEach((asteroid) => {
-        let closestApproach = asteroid.close_approach_data[0];
-        let dataForDate = {
-          date: new Date(closestApproach.close_approach_date),
-          missDistance: parseFloat(closestApproach.miss_distance.astronomical),
-        };
 
-        // Push the parsed data for the current asteroid to the 'parsedData' array
-        parsedData.push(dataForDate);
-      });*//*
-console.log(dates);
-  let parsedData2 = asteroidData.near_earth_objects;
-    console.log(parsedData2);
-  
- let parsedData = asteroidData.near_earth_objects["2023-08-07"].map((asteroid) => {
-      let closestApproach = asteroid.close_approach_data[0];
-      //let closestApproach = asteroidData.near_earth_objects["2023-08-07"][length ++].close_approach_data[0];
-      return {
-        date: new Date(closestApproach.close_approach_date),
-        missDistance: parseFloat(closestApproach.miss_distance.kilometers),
-        
-      };
-    });*/
   
     // Set up scales
     let xScale = d3.scaleTime()
@@ -147,20 +87,23 @@ console.log(dates);
 
     // Add X and Y axes
     let createYAxis= 
-      svg.append('g').call(d3.axisLeft(yScale))
+      svg.append('g').style("color", "white")   .style("font-size", "12px").call(d3.axisLeft(yScale))
       .call((g)=> {
           g.append("text")
           .attr("x", -300)
           .attr("y", -65)
           .attr('transform', 'rotate(-90)')
           .style("fill", "white")
+          .attr("padding", "40px")
           .style("font-size", "20px")
           .text("Miss Distance");
       });
   
+
+
   let createXAxis=
     svg
-    .append('g')
+    .append('g').style("color", "white") .style("font-size", "12px")
     .attr('transform', `translate(0, ${heightt})`)
     .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d')).ticks(8))
     //method below  call takens in a fucntion as an arguement runs a fucntion on a selection 
@@ -168,14 +111,14 @@ console.log(dates);
         g.append("text")
         .attr("x", widthh/2)
         .attr("y", +35)
-        .style("fill", "white")
+        .style("fill", "white").style("fill", "white")
         .style("font-size", "20px")
         .text("Dates");})
   
    // let xAxis = d3.axisBottom(xScale));
     //let yAxis = d3.axisLeft(yScale);
 
-    svg.append('g')
+    svg.append('g').append("text")
       .attr('transform', `translate(0, ${heightt})`)
       .call(createXAxis);
 
