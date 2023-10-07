@@ -90,6 +90,7 @@ async function createScatterPlot() {
       svg.append('g').style("color", "white")   .style("font-size", "12px").call(d3.axisLeft(yScale))
       .call((g)=> {
           g.append("text")
+        
           .attr("x", -300)
           .attr("y", -65)
           .attr('transform', 'rotate(-90)')
