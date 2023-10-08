@@ -1,83 +1,112 @@
-document.addEventListener("DOMContentLoaded", visualizeData);
+let height = window.innerHeight,
+    width = window.innerWidth;
 
-async function visualizeData() {
-    const asteroidData = await fectchDataInteractive(); // Assuming fetchDataInteractive is a correct function
-    let nodes = [];
+// CREATE SVG
+let svg = d3.select("#root")
+    .append("svg")
+    .attr("height", height)
+    .attr("width", width);
 
-    // Extract asteroid data and create nodes
-    Object.keys(asteroidData.near_earth_objects).forEach(date => {
-        asteroidData.near_earth_objects[date].forEach(asteroid => {
+// Sample API call (replace with your data fetching logic)
+async function fetchData() {
+    const asteroidData = await fectchDataInteractive();
+    const transformedData = transformAsteroidData(asteroidData); // Pass asteroidData as a parameter
+    
+    let rScale = d3.scaleSqrt()
+        .domain([d3.min(transformedData, d => d.size), d3.max(transformedData, d => d.size)])
+        .range([1, 30]);
+
+    // FORCE SIMULATION
+    let forceXcombine = d3.forceX(width / 2).strength(0.04);
+    let forceXsplit = d3.forceX(function (d) {
+        return d.isHazardous ? 700000 : 6;
+    }).strength(10);
+    let forceY = d3.forceY(height / 2).strength(0.04);
+    let forceCollide = d3.forceCollide((d) => rScale(d.size));
+    let simulation = d3.forceSimulation(transformedData)
+        .force("forceXcombine", forceXcombine)
+        .force("forceY", forceY)
+        .force("forceCollide", forceCollide);
+
+    function drawBubbles(data) {
+        simulation.nodes(data).on("tick", ticked);
+
+        let circles = svg.selectAll()
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("r", (d) => rScale(d.size))
+            .style("fill", (d) => (d.isHazardous ? "red" : "blue"))
+            .on("mouseover", (event,datum)=>showTooltipp(datum))
+            .on('mousemove',moveTooltipp)    
+            .on("mouseout", hideTooltipp);
+
+        function ticked() {
+            circles.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+        }
+
+        d3.select("#split").on("click", () => {
+            let hazardousData = data.filter(d => d.isHazardous);
+            simulation.force("forceXcombine", forceXsplit).nodes(hazardousData).alpha(0.5).restart();
+        });
+
+        d3.select("#combine").on("click", () => {
+            simulation.force("forceXcombine", forceXcombine).alpha(0.5).restart();
+        });
+    }
+
+    drawBubbles(transformedData);
+}
+let tooltipp = d3.select('#root')
+    .append('p')
+    .attr("stroke", "blue", "2px")
+    .style('opacity', 0)
+    .style("width", "180px")
+    .style("border-radius", "5px")
+    .attr("font-size", "8px")
+    .style('padding', "20px")
+    .style("background-color", '#000')
+    .style("color", '#fff')
+    .style("position", "absolute")
+    .style("z-index", 999); // Set a high z-index value
+
+
+function showTooltipp(d) {
+    tooltipp.transition().duration(200)
+        .style('opacity', 1)
+        .style('left', event.pageX + 20 + "px")
+        .style('top', event.pageY - 20 + "px")
+        tooltipp.html("Distance: " + d.missDistance.toFixed(0) + " km<br/>" + "Date: " + d3.timeFormat('%b %d')(d.date)   +        "       Size: "  + d.size + " h");
+}
+
+function moveTooltipp() {
+    tooltipp.style('left', event.pageX + 20 + 'px')
+        .style('top', event.pageY - 20 + 'px');
+}
+function hideTooltipp(){
+  tooltipp.style('opacity',0);
+}
+function transformAsteroidData(asteroidData) { // Accept asteroidData as a parameter
+    let dates = Object.keys(asteroidData.near_earth_objects);
+    // Initialize an empty array to store parsed data for all dates
+    let parsedData = [];
+    dates.forEach((date) => {
+        // Iterate through asteroids for the current date
+        asteroidData.near_earth_objects[date].forEach((asteroid) => {
             let closestApproach = asteroid.close_approach_data[0];
             let dataForDate = {
-                id: asteroid.id,
                 date: new Date(closestApproach.close_approach_date),
                 missDistance: parseFloat(closestApproach.miss_distance.kilometers),
                 size: parseFloat(asteroid.absolute_magnitude_h),
                 isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
             };
-            nodes.push(dataForDate);
+
+            // Push the parsed data for the current asteroid to the 'parsedData' array
+            parsedData.push(dataForDate);
         });
     });
-    let rScale = d3
-    .scaleSqrt()
-    .domain([d3.min(nodes, d => d.size), d3.max(nodes, d => d.size)])
-    .range([1 ,30]); // Scale the range of node radii
-    const width = window.innerWidth * 0.8;
-    const height = window.innerHeight * 0.8;
-
-    const svg = d3.select("#graph-container")
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height);
-
-   
-    const link = svg.selectAll(".link")
-        .data(nodes)
-        .enter().append("line")
-        .attr("class", "link");
-
-    const node = svg.selectAll(".node")
-        .data(nodes)
-        .enter().append("circle")
-        .attr("class", "node")
-        .style("stroke","#000")
-        .attr("r", d => rScale(d.size))
-        .attr("fill", d => (d.isHazardous ? "#FF0000" : "#1f77b4"));
-
-    const separateButton = document.getElementById("separate-button");
-
-    const simulation = d3.forceSimulation(nodes)
-    .force("charge", d3.forceManyBody().strength(-2))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collision", d3.forceCollide().radius(d => d.radius)); // Add forceCollide
-
-// ...
-
-separateButton.addEventListener("click", function() {
-    const hazardousNodes = nodes.filter(node => node.isHazardous);
-    const nonHazardousNodes = nodes.filter(node => !node.isHazardous);
-
-    // Apply forces to hazardous nodes
-    simulation.nodes(hazardousNodes)
-        .force("x", d3.forceX(width / 4).strength(0.5))
-        .force("y", d3.forceY(height / 2).strength(0.5))
-        .alpha(0.3)
-        .restart();
-
-    // Apply forces to non-hazardous nodes
-    simulation.nodes(nonHazardousNodes)
-        .force("x", d3.forceX(3 * width / 4).strength(0.5))
-        .force("y", d3.forceY(height / 2).strength(0.5))
-        .alpha(0.3)
-        .restart();
-});
-    simulation.on("tick", () => {
-        link.attr("x1", d => d.x)
-            .attr("y1", d => d.y)
-            .attr("x2", d => d.x)
-            .attr("y2", d => d.y);
-
-        node.attr("cx", d => d.x)
-            .attr("cy", d => d.y);
-    });
+    return parsedData;
 }
+
+// Fetch data and draw bubbles
+fetchData();
