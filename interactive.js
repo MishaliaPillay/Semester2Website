@@ -10,20 +10,19 @@ const TOLERANCE = 0.0001
 // Sample API call (replace with your data fetching logic)
 async function fetchData() {
     const asteroidData = await fectchDataInteractive(); // Corrected the function name
-    const transformedData = transformAsteroidData(asteroidData);
-    
+    let transformedData = transformAsteroidData(asteroidData);
+    transformedData = transformedData.filter(d => !isNaN(d.size));
     console.log(transformedData);
     let rScale = d3.scaleSqrt()
       .domain([d3.min(transformedData, d => d.size), d3.max(transformedData, d => d.size)])
       .range([5,30]);
-  
+      
+
     // FORCE SIMULATION
     let forceXcombine = d3.forceX(width / 2).strength(0.04);
     let forceXsplit = d3.forceX(function (d) {
-      // Modify this function to split based on size (magnitude) threshold (20 in this case)
-      return d => d.size <= 20 ? 100 : width - 100;
-    }).strength(0.5);
-  
+    return d.size <= 20 ? 100 : width - 100;
+}).strength(0.5);
     let forceY = d3.forceY(height / 2).strength(0.04);
     let forceCollide = d3.forceCollide((d) => rScale(d.size));
     let simulation = d3.forceSimulation(transformedData)
@@ -44,7 +43,8 @@ async function fetchData() {
         .on('mousemove', moveTooltip)
         .on("mouseout", hideTooltip);
   
-      function ticked() {
+      function ticked() { 
+        console.log("X-coordinates:", data.map(d => d.x)); // Log
         circles.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
       }
       let belowThreshold = transformedData.filter(d => {
