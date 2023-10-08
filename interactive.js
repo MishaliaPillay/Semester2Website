@@ -41,7 +41,6 @@ async function visualizeData() {
       .force("charge", d3.forceManyBody().strength(-100))
       .force("center", d3.forceCenter(width / 2, height / 2));
   
- 
     // Draw links
     const link = svg
       .selectAll(".link")
@@ -69,6 +68,38 @@ async function visualizeData() {
       .attr("r", d => (rScale(d.size)))
       .attr("fill", d => (d.isHazardous ? "#FF0000" : "#1f77b4"));
   
+    // Customize central node
+    
+    let centralNodeX = width / 2;
+    let centralNodeY = height / 2;
+
+    // Central node element
+    const centralNodeElement = svg
+        .append("circle")
+        .attr("class", "central-node")
+        .attr("stroke", "#000")
+        .attr("r", 50)
+        .attr("fill", "#00FF00")
+        .attr("cx", centralNodeX)
+        .attr("cy", centralNodeY);
+        // Create a zoom behavior
+    const zoom = d3.zoom()
+    .scaleExtent([0.1, 1000]) // Set the minimum and maximum zoom scale
+    .on("zoom", zoomed);
+
+// Apply the zoom behavior to the SVG container
+svg.call(zoom);
+
+// Zoom function
+function zoomed(event) {
+    // Update the node and link positions based on the current zoom transform
+    svg.selectAll(".node").attr("transform", event.transform);
+    svg.selectAll(".link").attr("transform", event.transform);
+
+    // Update central node position based on the current zoom transform
+    const [newCentralNodeX, newCentralNodeY] = event.transform.apply([centralNodeX, centralNodeY]);
+    centralNodeElement.attr("cx", newCentralNodeX).attr("cy", newCentralNodeY);
+}
     // Simulation tick function
     simulation.on("tick", () => {
       link
@@ -78,8 +109,10 @@ async function visualizeData() {
         .attr("y2", d => d.y);
   
       node.attr("cx", d => d.x).attr("cy", d => d.y);
+  
+      // Update central node position
+      centralNodeElement.attr("cx", width / 2).attr("cy", height / 2);
     });
   }
   
   visualizeData();
-  
