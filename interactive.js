@@ -1,120 +1,85 @@
-const width = window.innerWidth;
-const height = window.innerHeight;
-const svg = d3.select("#threeD")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
-    const centerX = width / 2;
-const centerY = height / 2;
+async function visualizeData() {
+    const asteroidData = await fectchDataInteractive(); // Assuming fetchData function returns parsed asteroid data
+    console.log(asteroidData);
+  
+    // Extract asteroid data and create nodes
+    let dates = Object.keys(asteroidData.near_earth_objects);
+    let nodes = [];
+    let centralNode = { isCentral: true }; // Create a central node
+  
+    dates.forEach(date => {
+      asteroidData.near_earth_objects[date].forEach(asteroid => {
+        let closestApproach = asteroid.close_approach_data[0];
+        let dataForDate = {
+          id: asteroid.id,
+          date: new Date(closestApproach.close_approach_date),
+          missDistance: parseFloat(closestApproach.miss_distance.kilometers),
+          size: parseFloat(asteroid.absolute_magnitude_h),
+          isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
+        };
+  
+        nodes.push(dataForDate);
+      });
+    });
+  
+    // Set up D3 simulation
 
-async function fetchDataInteractive() {
-    let url ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2022-08-07&end_date=2022-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
-    try {
-        let response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        let data = await response.json();
-        return data.near_earth_objects;
-    } catch (error) {
-        console.error('Fetch error:', error);
-        return [];
-    }
-}
-
-async function main() {
-    try {
-        let asteroidData = await fetchDataInteractive();
-        // Process the data and create nodes for the 3D model
-        const nodes = processData(asteroidData);
-        const links = createLinks(nodes);
-   
-        // Create the 3D force simulation
-        const simulation = d3.forceSimulation(nodes)
-            .force("link", d3.forceLink(links).distance(50))
-            .force("charge", d3.forceManyBody().strength(-10))
-            .force("center", d3.forceCenter(centerX, centerY));
-
-        // Create lines for links
-        const link = svg.selectAll(".link")
-            .data(links)
-            .enter().append("line")
-            .attr("class", "link");
-
-        // Create circles for nodes (representing asteroids)
-        const node = svg.selectAll(".node")
-        
-            .data(nodes)
-            .enter().append("circle")
-            .attr("class", "node")
-            .attr("r", d => calculateRadius(d.magnitude))
-            .attr("fill", "red")
-            .transition()
-            .duration(3000
-                ).ease(d3.easeExpInOut);
-
-        // Implement interactivity
-        svg.call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged));
-
-        svg.call(d3.zoom()
-            .on("zoom", zoomed));
-
-        function dragstarted(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
-
-        function dragged(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-        }
-
-        function zoomed(event) {
-            svg.attr("transform", event.transform);
-        }
-
-        function processData(data) {
-            // Process NASA API data and return nodes array
-            let nodes = [];
-            for (let date in data) {
-                nodes = nodes.concat(data[date].map(asteroid => {
-                    return {
-                        miss_distance: asteroid.close_approach_data[0].miss_distance.kilometers,
-                        magnitude: asteroid.absolute_magnitude_h,
-                        x: centerX + (Math.random() - 0.5) * width, // Random initial x position
-                        y: centerY + (Math.random() - 0.5) * height // Random initial y position
-                    
-                   
-                   
-                    };
-                }));
-            }
-            return nodes;
-        }
-
-        function createLinks(nodes) {
-            // Create links between Earth (center node) and asteroids
-            return nodes.map(asteroid => {
-                return {
-                    source: { x: width / 2, y: height / 2 }, // Earth (center of the screen)
-                    target: asteroid
-                };
-            });
-        }
-
-        function calculateRadius(magnitude) {
-            // Calculate radius based on asteroid magnitude (adjust the scaling factor as needed)
-            return magnitude * 10;
-        }
-
-    } catch (error) {
-        // Handle any errors that occurred during the data retrieval
-        console.error('Data retrieval error:', error);
-    }
-}
-
-// Call the main function to start the process
-main();
+    const svgWidthFraction = 0.8; // 80% of window width
+    const svgHeightFraction = 0.6; // 60% of window height
+    
+    const width = window.innerWidth * svgWidthFraction;
+    const height = window.innerHeight * svgHeightFraction;
+    
+    const svg = d3
+      .select("#graph-container")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+    
+    const simulation = d3
+      .forceSimulation(nodes)
+      .force("charge", d3.forceManyBody().strength(-100))
+      .force("center", d3.forceCenter(width / 2, height / 2));
+  
+ 
+    // Draw links
+    const link = svg
+      .selectAll(".link")
+      .data(nodes)
+      .enter()
+      .append("line")
+      .attr("class", "link")
+      .attr("stroke", "#999")
+      .attr("stroke-opacity", 0.6);
+  
+    // Create a scale for node radii
+    let rScale = d3
+      .scaleSqrt()
+      .domain([d3.min(nodes, d => d.size), d3.max(nodes, d => d.size)])
+      .range([1, 30]);
+  
+    // Draw nodes with dynamic radii based on asteroid sizes
+    const node = svg
+      .selectAll(".node")
+      .data(nodes)
+      .enter()
+      .append("circle")
+      .attr("class", "node")
+      .attr("stroke", "#000")
+      .attr("r", d => (rScale(d.size)))
+      .attr("fill", d => (d.isHazardous ? "#FF0000" : "#1f77b4"));
+  
+    // Simulation tick function
+    simulation.on("tick", () => {
+      link
+        .attr("x1", width / 2) // Central x-coordinate
+        .attr("y1", height / 2) // Central y-coordinate
+        .attr("x2", d => d.x)
+        .attr("y2", d => d.y);
+  
+      node.attr("cx", d => d.x).attr("cy", d => d.y);
+    });
+  }
+  
+  visualizeData();
+  

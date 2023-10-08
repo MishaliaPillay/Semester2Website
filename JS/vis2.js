@@ -23,44 +23,8 @@ async function createScatterPlot() {
       .append('g')
       .attr("transform",  `translate(${margin}, ${margin})`);
      // near_earth_objects["2023-08-07"][0].close_approach_data[0].close_approach_date
-    // Parse dates and miss distances\
-/*
-    function DateGenerator()
-    {
-        let date="\"2023-08-";
-    
-        let datestring=[]
-        let day =7;
-        for(let i=0; i<8; i++)
-        {
-        
-            if(day<10)
-            {
-                date+="0"+day.toString()+"\"";
-            }else{
-                date+=day.toString()+"\"";
-            }
-        
-            datestring.push(date)
-            date="\"2023-08-"
-            day++;
-        }
-    }
-    DateGenerator();
-    
-    for(let i=0; i<7; i++){
-        let parsedData = asteroidData.near_earth_objects[datestring[i]].map((asteroid) => {
-            let closestApproach = asteroid.close_approach_data[0];
-            //let closestApproach = asteroidData.near_earth_objects["2023-08-07"][length ++].close_approach_data[0];
-            return {
-              date: new Date(closestApproach.close_approach_date),
-              missDistance: parseFloat(closestApproach.miss_distance.kilometers),
-              size: parseFloat(asteroid.absolute_magnitude_h),
-              isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
-            };
-          });
-    }
-   */let orbitArray=[];
+
+   let orbitArray=[];
 
 for(let i=0; i<100; i++)
 {
