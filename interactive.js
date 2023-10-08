@@ -1,118 +1,83 @@
+document.addEventListener("DOMContentLoaded", visualizeData);
+
 async function visualizeData() {
-    const asteroidData = await fectchDataInteractive(); // Assuming fetchData function returns parsed asteroid data
-    console.log(asteroidData);
-  
-    // Extract asteroid data and create nodes
-    let dates = Object.keys(asteroidData.near_earth_objects);
+    const asteroidData = await fectchDataInteractive(); // Assuming fetchDataInteractive is a correct function
     let nodes = [];
-    let centralNode = { isCentral: true }; // Create a central node
-  
-    dates.forEach(date => {
-      asteroidData.near_earth_objects[date].forEach(asteroid => {
-        let closestApproach = asteroid.close_approach_data[0];
-        let dataForDate = {
-          id: asteroid.id,
-          date: new Date(closestApproach.close_approach_date),
-          missDistance: parseFloat(closestApproach.miss_distance.kilometers),
-          size: parseFloat(asteroid.absolute_magnitude_h),
-          isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
-        };
-  
-        nodes.push(dataForDate);
-      });
-    });
-  
-    // Set up D3 simulation
 
-    const svgWidthFraction = 0.8; // 80% of window width
-    const svgHeightFraction = 0.6; // 60% of window height
-    
-    const width = window.innerWidth * svgWidthFraction;
-    const height = window.innerHeight * svgHeightFraction;
-    
-    const svg = d3
-      .select("#graph-container")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
-    
-    const simulation = d3
-      .forceSimulation(nodes)
-      .force("charge", d3.forceManyBody().strength(-100))
-      .force("center", d3.forceCenter(width / 2, height / 2));
-  
-    // Draw links
-    const link = svg
-      .selectAll(".link")
-      .data(nodes)
-      .enter()
-      .append("line")
-      .attr("class", "link")
-      .attr("stroke", "#999")
-      .attr("stroke-opacity", 0.6);
-  
-    // Create a scale for node radii
+    // Extract asteroid data and create nodes
+    Object.keys(asteroidData.near_earth_objects).forEach(date => {
+        asteroidData.near_earth_objects[date].forEach(asteroid => {
+            let closestApproach = asteroid.close_approach_data[0];
+            let dataForDate = {
+                id: asteroid.id,
+                date: new Date(closestApproach.close_approach_date),
+                missDistance: parseFloat(closestApproach.miss_distance.kilometers),
+                size: parseFloat(asteroid.absolute_magnitude_h),
+                isHazardous: Boolean(asteroid.is_potentially_hazardous_asteroid)
+            };
+            nodes.push(dataForDate);
+        });
+    });
     let rScale = d3
-      .scaleSqrt()
-      .domain([d3.min(nodes, d => d.size), d3.max(nodes, d => d.size)])
-      .range([1, 30]);
-  
-    // Draw nodes with dynamic radii based on asteroid sizes
-    const node = svg
-      .selectAll(".node")
-      .data(nodes)
-      .enter()
-      .append("circle")
-      .attr("class", "node")
-      .attr("stroke", "#000")
-      .attr("r", d => (rScale(d.size)))
-      .attr("fill", d => (d.isHazardous ? "#FF0000" : "#1f77b4"));
-  
-    // Customize central node
-    
-    let centralNodeX = width / 2;
-    let centralNodeY = height / 2;
+    .scaleSqrt()
+    .domain([d3.min(nodes, d => d.size), d3.max(nodes, d => d.size)])
+    .range([1 ,30]); // Scale the range of node radii
+    const width = window.innerWidth * 0.8;
+    const height = window.innerHeight * 0.8;
 
-    // Central node element
-    const centralNodeElement = svg
-        .append("circle")
-        .attr("class", "central-node")
-        .attr("stroke", "#000")
-        .attr("r", 50)
-        .attr("fill", "#00FF00")
-        .attr("cx", centralNodeX)
-        .attr("cy", centralNodeY);
-        // Create a zoom behavior
-    const zoom = d3.zoom()
-    .scaleExtent([0.1, 1000]) // Set the minimum and maximum zoom scale
-    .on("zoom", zoomed);
+    const svg = d3.select("#graph-container")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
 
-// Apply the zoom behavior to the SVG container
-svg.call(zoom);
+   
+    const link = svg.selectAll(".link")
+        .data(nodes)
+        .enter().append("line")
+        .attr("class", "link");
 
-// Zoom function
-function zoomed(event) {
-    // Update the node and link positions based on the current zoom transform
-    svg.selectAll(".node").attr("transform", event.transform);
-    svg.selectAll(".link").attr("transform", event.transform);
+    const node = svg.selectAll(".node")
+        .data(nodes)
+        .enter().append("circle")
+        .attr("class", "node")
+        .style("stroke","#000")
+        .attr("r", d => rScale(d.size))
+        .attr("fill", d => (d.isHazardous ? "#FF0000" : "#1f77b4"));
 
-    // Update central node position based on the current zoom transform
-    const [newCentralNodeX, newCentralNodeY] = event.transform.apply([centralNodeX, centralNodeY]);
-    centralNodeElement.attr("cx", newCentralNodeX).attr("cy", newCentralNodeY);
-}
-    // Simulation tick function
+    const separateButton = document.getElementById("separate-button");
+
+    const simulation = d3.forceSimulation(nodes)
+    .force("charge", d3.forceManyBody().strength(-2))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collision", d3.forceCollide().radius(d => d.radius)); // Add forceCollide
+
+// ...
+
+separateButton.addEventListener("click", function() {
+    const hazardousNodes = nodes.filter(node => node.isHazardous);
+    const nonHazardousNodes = nodes.filter(node => !node.isHazardous);
+
+    // Apply forces to hazardous nodes
+    simulation.nodes(hazardousNodes)
+        .force("x", d3.forceX(width / 4).strength(0.5))
+        .force("y", d3.forceY(height / 2).strength(0.5))
+        .alpha(0.3)
+        .restart();
+
+    // Apply forces to non-hazardous nodes
+    simulation.nodes(nonHazardousNodes)
+        .force("x", d3.forceX(3 * width / 4).strength(0.5))
+        .force("y", d3.forceY(height / 2).strength(0.5))
+        .alpha(0.3)
+        .restart();
+});
     simulation.on("tick", () => {
-      link
-        .attr("x1", width / 2) // Central x-coordinate
-        .attr("y1", height / 2) // Central y-coordinate
-        .attr("x2", d => d.x)
-        .attr("y2", d => d.y);
-  
-      node.attr("cx", d => d.x).attr("cy", d => d.y);
-  
-      // Update central node position
-      centralNodeElement.attr("cx", width / 2).attr("cy", height / 2);
+        link.attr("x1", d => d.x)
+            .attr("y1", d => d.y)
+            .attr("x2", d => d.x)
+            .attr("y2", d => d.y);
+
+        node.attr("cx", d => d.x)
+            .attr("cy", d => d.y);
     });
-  }
-  
-  visualizeData();
+}
