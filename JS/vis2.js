@@ -1,8 +1,4 @@
 
-
-
-
-
 //DIMENSIONS
 let height =800,
 width=900,
@@ -141,7 +137,7 @@ function showTooltip(d){
   .style('left', d3.pointer(event)[0] + 100 + "px")
   .style('top', d3.pointer(event) [1] + 100 + "px")
    console.log("working ")
-   tooltip.html("Distance :  " + d.missDistance +" km  ")
+   tooltip.html("Distance :  " + d.missDistance.toFixed(0) +" km  ")
 };
 function moveTooltip(){
   tooltip.style('left', d3.pointer(event)[0] +100 +'px')

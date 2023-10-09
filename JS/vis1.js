@@ -152,8 +152,8 @@ function showTooltipp(d){
   .style('opacity', 1)
   .style('left', d3.pointer(event)[0] + 100 + "px")
   .style('top', d3.pointer(event) [1] + 100 + "px")
-   console.log("working ")
-   tooltipp.html("Distance :  " + d.missDistance +" km  " +"Size:  " + d.size +" h")
+   //console.log("working ")
+   tooltipp.html("Distance :  " + d.missDistance.toFixed(0) +" km  " +"Size:  " + d.size.toFixed(0) +" h")
 };
 function moveTooltipp(){
   tooltipp.style('left', d3.pointer(event)[0] +100 +'px')

@@ -13,7 +13,7 @@ async function fetchData() {
     const asteroidData = await fectchDataInteractive(); // Corrected the function name
     let transformedData = transformAsteroidData(asteroidData);
     transformedData = transformedData.filter(d => !isNaN(d.size));
-    console.log(transformedData);
+    //console.log(transformedData);
     let rScale = d3.scaleSqrt()
       .domain([d3.min(transformedData, d => d.size), d3.max(transformedData, d => d.size)])
       .range([5,30]);
@@ -35,7 +35,7 @@ async function fetchData() {
   
     function drawBubbles(data) {
       simulation.nodes(data).on("tick", ticked);
-      console.log("Sizes of asteroids:", data.map(d => d.size));
+      //console.log("Sizes of asteroids:", data.map(d => d.size));
       let circles = svg.selectAll()
         .data(data)
         .enter()
@@ -50,9 +50,9 @@ async function fetchData() {
       function ticked() { 
         circles.attr("cx", (d) => d.x).attr("cy", (d) => d.y); }
       let belowThreshold = transformedData.filter(d => {
-        console.log("Asteroid Size: ", d.size);
+        
         return d.size <= 20;
-         console.log(belowThreshold);
+         //console.log(belowThreshold);
     })
     d3.select("#split").on("click", () => { removeArrow();
       svg.selectAll(".date-text").remove();
@@ -163,7 +163,7 @@ function showTooltip(d) {
         .style('opacity', 1)
         .style('left', event.pageX + 20 + "px")
         .style('top', event.pageY - 20 + "px");
-    tooltipppp.html("Distance: " + d.missDistance.toFixed(0) + " km<br/>" + "Date: " + d3.timeFormat('%b %d')(d.date) + " Size: " + d.size + " h"   +" Speed: " + d.speed.toFixed(0) +"kmh");
+   tooltipppp.html("Distance: " + d.missDistance.toFixed(0) + " km<br/>" + "Date: " + d3.timeFormat('%b %d')(d.date) + " Size: " + d.size + " h"   +" Speed: " + d.speed.toFixed(0) +"kmh");
 }
 
 function moveTooltip() {
