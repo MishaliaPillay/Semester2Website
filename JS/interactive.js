@@ -1,5 +1,5 @@
-let heighttt = 600,
-    widthhh = 1100;
+let heighttt = 400,
+    widthhh = 1000;
 
 // CREATE SVG
 let svg = d3.select("#rootttt")

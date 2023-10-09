@@ -267,6 +267,54 @@ let articles = [
     
     `,
     paraTwo: `id="dataVis"`,
+    headingThree: "Revised Visualisation",
+    paraThree: `I have since modified this and Changed the one graph into a line graph . This was due to the feedback that I received from my previous assignment . My graphs were too similar . Thus I decided to explore a new method of display . A line graph which helps visualise the the movement of that asteroid over time. <figure>
+    <img
+      src="./Images/linegr.png"
+      alt="Data visual 1"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the revised visualisation ."</figcaption>`
+
+  }
+  ,{
+    id: 7,
+    bigHeading:"Data Visualisation",
+    headingOne: " Interactive Data Visualisation", 
+    paraOne: "Both data visualisations will be scatterplots showing data on asteroids.The first visualisation will show the distance between the asteroids and Earth on the y-axis, relative to the date on the x-axis. The second visualisation will show the asteroids over 100 years and the miss distance(y-axis) for the planets(x-axis) - Venus, Mercury and Earth. ",
+    image: `<figure>
+    <img
+      src="./Images/reset.png"
+      alt="Data visual 1"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation ."</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/size.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation when the size button is pressed.</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/date.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation when the date button is pressed.</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/speed.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation when the speed button is pressed.</figcaption>
+    </figure>
+    The first Scatterplot will display asteroids that are potentially hazardous. This will be communicated through the use of different colours - all the asteroids will be one colour and the hazardous asteroids will be red. I expected there to be overlapping of asteroids on the graph, this will affect the visual design of the graph and some elements will be hidden. I intend to fix this by changing the opacity of points so that all points are visible.
+    
+    `,
+    paraTwo: `id="dataVisinteractive"`,
     headingThree: "",
     paraThree: ``
 
