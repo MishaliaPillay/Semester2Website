@@ -16,7 +16,7 @@ async function fetchData() {
     //console.log(transformedData);
     let rScale = d3.scaleSqrt()
       .domain([d3.min(transformedData, d => d.size), d3.max(transformedData, d => d.size)])
-      .range([5,30]);
+      .range([5,20]);
       
 
     // FORCE SIMULATION
