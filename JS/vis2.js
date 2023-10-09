@@ -80,7 +80,7 @@ svg.select('.yScale')
     // Add X and Y axes
   
   let createYAxis= 
-      svg.append('g').call(d3.axisLeft(yScale))
+      svg.append('g').style("color", "white")   .style("font-size", "12px").call(d3.axisLeft(yScale))
       .call((g)=> {
           g.append("text")
           .attr("x", -300)
@@ -88,12 +88,12 @@ svg.select('.yScale')
           .attr('transform', 'rotate(-90)')
           .style("fill", "white")
           .style("font-size", "20px")
-          .text("Miss Distance");
+          .text("Miss Distance between the Asteroids and Earth");
       });
   
   let createXAxis=
     svg
-    .append('g')
+    .append('g').style("color", "white")   .style("font-size", "12px")
     .attr('transform', `translate(0, ${height})`)
     .call(d3.axisBottom(xScale).ticks(2))
     //method below  call takens in a fucntion as an arguement runs a fucntion on a selection 
