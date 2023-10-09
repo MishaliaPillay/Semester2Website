@@ -22,13 +22,15 @@ async function fetchData() {
     let forceXcombine = d3.forceX(width / 2).strength(0.04);
     let forceXsplit = d3.forceX(function (d) {
     return d.size <= 20 ? 100 : width - 100;
-}).strength(0.5);
+}).strength(0.4);
     let forceY = d3.forceY(height / 2).strength(0.04);
-    let forceCollide = d3.forceCollide((d) => rScale(d.size));
+    let forceCollide = d3.forceCollide((d) => rScale(d.size)*1);
     let simulation = d3.forceSimulation(transformedData)
-      .force("forceXcombine", forceXcombine)
-      .force("forceY", forceY)
-      .force("forceCollide", forceCollide);
+    .force("forceX", d3.forceX(width / 2).strength(0.04))
+    .force("forceY", d3.forceY(height / 2).strength(0.04))
+    .force("forceCollide", d3.forceCollide().radius(d => rScale(d.size) + 1))
+    .alphaDecay(0)
+    .alphaMin(0.1);
   
     function drawBubbles(data) {
       simulation.nodes(data).on("tick", ticked);
@@ -44,34 +46,19 @@ async function fetchData() {
         .on("mouseout", hideTooltip);
   
       function ticked() { 
-        console.log("X-coordinates:", data.map(d => d.x)); // Log
-        circles.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-      }
+        circles.attr("cx", (d) => d.x).attr("cy", (d) => d.y); }
       let belowThreshold = transformedData.filter(d => {
         console.log("Asteroid Size: ", d.size);
         return d.size <= 20;
          console.log(belowThreshold);
     })
-      d3.select("#combinee").on("click", () => {
-        console.log("Split button clicked");
-        // Split the data based on the size (magnitude) threshold (20 in this case)
-        let belowThreshold = transformedData.filter(d => {
-            console.log("Size of Asteroid: ", d.size);
-            return d.size <= 20;
-        });
-        let aboveThreshold = transformedData.filter(d => d.size > 20);
-    
-   
-        console.log("Below Threshold Data:");
-   
-        // Apply forces to the filtered data subsets
-        simulation.nodes(belowThreshold).force("forceXcombine", forceXsplit).alpha(0.5).restart();
-        simulation.nodes(aboveThreshold).force("forceXcombine", forceXsplit).alpha(0.5).restart();
-      });
+    d3.select("#split").on("click", () => {
+      simulation.force("forceX", d3.forceX(d => d.size <= 20 ? 100 : width - 100).strength(0.4)).alpha(0.5).restart();
+    });
   
-      d3.select("#combine").on("click", () => { console.log("combine button clicked");
-        simulation.force("forceXcombine", forceXcombine).alpha(0.5).restart();
-      });
+    d3.select("#combine").on("click", () => {
+      simulation.force("forceX", d3.forceX(width / 2).strength(0.04)).alpha(0.5).restart();
+    });
     }
   
     drawBubbles(transformedData);
