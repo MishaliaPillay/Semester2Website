@@ -49,20 +49,4 @@ function clearempty()
   }
 }*/
 
-function ClearEmptyParagraphs()
-{let block = document.getElementsByClassName("textBox")
-//console.log(block)
-let k
 
-for(k=0; k<block.length;k++)
-{
-    //console.log(block[k].innerHTML)
-    if(block[k].firstChild.innerText==="")
-    {
-        //console.log("cheese")
-        block[k].style.display="none";
-    }
-    else {//console.log("nothing")}
-}
-};
-ClearEmptyParagraphs();
