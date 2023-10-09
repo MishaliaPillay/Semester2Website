@@ -1,11 +1,11 @@
 
 
-  let urll ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2022-08-07&end_date=2022-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
-  let loadingMessagee = document.getElementById('loadingTextt');
-  async function fectchDataInteractive() {    loadingMessagee.style.display = 'block';
+  let urlll ="https://api.nasa.gov/neo/rest/v1/feed?start_date=2022-08-07&end_date=2022-08-14&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
+  let loadingMessageee = document.getElementById('loadingTexttt');
+  async function fectchDataInteractive() {    loadingMessageee.style.display = 'block';
       try {
-        let response = await fetch(urll);
-        loadingMessagee.style.display = 'none';
+        let response = await fetch(urlll);
+        loadingMessageee.style.display = 'none';
   
         if (!response.ok) {
           throw new Error('Network response was not ok');
