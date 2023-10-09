@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { text: "Blogs", url: "blogs.html" },
       { text: "Design", url: "design.html" },
       { text: "Data-Visualisation", url: "data.html" },
-      { text: "Design-Art", url: "art.html" }
+      { text: "Design-Art", url: "interactive.html" }
   ];
 
   // Iterate through the array to create list items and links
