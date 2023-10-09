@@ -55,11 +55,11 @@ async function createScatterPlot() {
     // Set up scales
     let xScale = d3.scaleTime()
       .domain([d3.min(parsedData, d => d.date), d3.max(parsedData, d => d.date)])
-      .range([40, widthh]);
+      .range([40, widthh-50]);
 
     let yScale = d3.scaleLinear()
       .domain([0, d3.max(parsedData, d => d.missDistance)])
-      .range([heightt, 0]);
+      .range([heightt-50, 20]);
       let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,30])
     
       let colorScale = d3.scaleOrdinal()
@@ -73,7 +73,7 @@ async function createScatterPlot() {
       .enter()
       .append('circle')
    
-      .attr('cx', d => xScale(d.date)-10)
+      .attr('cx', d => xScale(d.date))
       .attr('cy', d => yScale(d.missDistance))
       .attr('r', d => rScale(d.size))
       .style("stroke", "#000")
@@ -87,7 +87,7 @@ async function createScatterPlot() {
 
     // Add X and Y axes
     let createYAxis= 
-      svg.append('g').style("color", "white")   .style("font-size", "12px").call(d3.axisLeft(yScale))
+      svg.append('g').style("color", "white")   .style("font-size", "10px").call(d3.axisLeft(yScale))
       .call((g)=> {
           g.append("text")
         
@@ -97,24 +97,24 @@ async function createScatterPlot() {
           .style("fill", "white")
           .attr("padding", "40px")
           .style("font-size", "20px")
-          .text("Miss Distance");
+          .text("Miss Distance between the Asteroids and Earth");
       });
   
 
 
   let createXAxis=
     svg
-    .append('g').style("color", "white") .style("font-size", "12px")
+    .append('g').style("color", "white") .style("font-size", "10px")
     .attr('transform', `translate(0, ${heightt})`)
     .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b %d')).ticks(8))
     //method below  call takens in a fucntion as an arguement runs a fucntion on a selection 
     .call((g) => {
         g.append("text")
         .attr("x", widthh/2)
-        .attr("y", +35)
+        .attr("y", +45)
         .style("fill", "white").style("fill", "white")
         .style("font-size", "20px")
-        .text("Dates");})
+        .text("The Dates for the recordings of Asteroid Data");})
   
    // let xAxis = d3.axisBottom(xScale));
     //let yAxis = d3.axisLeft(yScale);
