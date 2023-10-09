@@ -180,6 +180,15 @@ padding-right: 80%;
     
  font-size: 20px;
   }
+  .load{
+    font-weight: bold;
+    
+    padding: 1%;
+    color: aliceblue;
+  
+    
+ font-size: 30px;
+  }
   .textContainer{
      display: flex;
   }
