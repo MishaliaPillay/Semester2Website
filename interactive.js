@@ -59,6 +59,15 @@ async function fetchData() {
     d3.select("#combine").on("click", () => {
       simulation.force("forceX", d3.forceX(width / 2).strength(0.04)).alpha(0.5).restart();
     });
+    d3.select("#separate-by-date-button").on("click", () => {
+      const dateScale = d3.scaleLinear()
+        .domain([d3.min(transformedData, d => d.date), d3.max(transformedData, d => d.date)])
+        .range([100, width - 100]);
+    
+      simulation.force("forceX", d3.forceX(d => dateScale(d.date)).strength(0.4)).alpha(0.5).restart();
+    });
+
+
     }
   
     drawBubbles(transformedData);
