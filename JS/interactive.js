@@ -56,12 +56,12 @@ async function fetchData() {
     })
     d3.select("#split").on("click", () => { removeArrow();
       svg.selectAll(".date-text").remove();
-      simulation.force("forceX", d3.forceX(d => d.size <= 20 ? 100 : widthhh - 100).strength(0.4)).alpha(0.5).restart();
+      simulation.force("forceX", d3.forceX(d => d.size <= 20 ? 100 : widthhh - 100).strength(0.1)).alpha(0.5).restart();
     });
   
     d3.select("#combine").on("click", () => {  removeArrow();
       svg.selectAll(".date-text").remove();
-      simulation.force("forceX", d3.forceX(widthhh / 2).strength(0.04)).alpha(0.5).restart();
+      simulation.force("forceX", d3.forceX(widthhh / 2).strength(0.09)).alpha(0.5).restart();
     });
     d3.select("#separate-by-date-button").on("click", () => { removeArrow();
       const dateScale = d3.scaleLinear()
