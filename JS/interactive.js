@@ -1,4 +1,4 @@
-let heighttt = 800,
+let heighttt = 600,
     widthhh = 1100;
 
 // CREATE SVG
@@ -74,7 +74,7 @@ async function fetchData() {
         .attr("x", d => dateScale(d)) // Use the dateScale to position the text
         .attr("y", heighttt - 30) // Y-coordinate just above the bottom of the SVG
         .attr("text-anchor", "middle")
-        .attr("fill", "black")
+        .attr("fill", "white")
         .text(d => d3.timeFormat('%b %d')(d))
         .attr("class", "date-text");
       simulation.force("forceX", d3.forceX(d => dateScale(d.date)).strength(0.4)).alpha(0.5).restart();
@@ -117,7 +117,7 @@ async function fetchData() {
       .attr("orient", "auto")
       .append("path")
       .attr("d", "M1,1 L9,5 L1,9")
-      .attr("fill", "black");
+      .attr("fill", "white");
   
     // Add the arrow below the bubbles
     svg.append("line")
@@ -126,14 +126,15 @@ async function fetchData() {
       .attr("y1", heighttt - 20) // Y-coordinate of the line (just above the bottom of the SVG)
       .attr("y2", heighttt - 20) // Y-coordinate of the line (just above the bottom of the SVG)
       .attr("marker-end", "url(#arrow)") // Attach the arrow marker
-      .attr("stroke", "black")
+      .attr("fill", "white")
+      .attr("stroke", "white")
       .attr("stroke-width", 2)
       .attr("class", "arrow-line"); // Add a class to the arrow line for easy removal
       svg.append("text")
       .attr("x", (3 * widthhh) / 4 -5) // X-coordinate at the end of the arrow head (right side)
       .attr("y", heighttt - 30) // Y-coordinate just above the bottom of the SVG
       .attr("text-anchor", "end")
-      .attr("fill", "black")
+      .attr("fill", "white")
       .text("Highest Speed")
       .attr("class", "arrow-text"); 
   }
