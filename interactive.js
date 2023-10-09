@@ -39,8 +39,9 @@ async function fetchData() {
         .data(data)
         .enter()
         .append("circle")
+        .attr("stroke","white")
         .attr("r", (d) => rScale(d.size))
-        .style("fill", (d) => (d.isHazardous ? "red" : "blue"))
+        .style("fill", (d) => (d.isHazardous ? "#D32213" : "#5BCEFA"))
         .on("mouseover", (event, datum) => showTooltip(datum))
         .on('mousemove', moveTooltip)
         .on("mouseout", hideTooltip);
@@ -53,21 +54,32 @@ async function fetchData() {
          console.log(belowThreshold);
     })
     d3.select("#split").on("click", () => { removeArrow();
+      svg.selectAll(".date-text").remove();
       simulation.force("forceX", d3.forceX(d => d.size <= 20 ? 100 : width - 100).strength(0.4)).alpha(0.5).restart();
     });
   
     d3.select("#combine").on("click", () => {  removeArrow();
+      svg.selectAll(".date-text").remove();
       simulation.force("forceX", d3.forceX(width / 2).strength(0.04)).alpha(0.5).restart();
     });
     d3.select("#separate-by-date-button").on("click", () => { removeArrow();
       const dateScale = d3.scaleLinear()
         .domain([d3.min(transformedData, d => d.date), d3.max(transformedData, d => d.date)])
         .range([100, width - 100]);
-    
+        svg.selectAll(".date-text")
+        .data([d3.min(transformedData, d => d.date), d3.max(transformedData, d => d.date)])
+        .enter()
+        .append("text")
+        .attr("x", d => dateScale(d)) // Use the dateScale to position the text
+        .attr("y", height - 30) // Y-coordinate just above the bottom of the SVG
+        .attr("text-anchor", "middle")
+        .attr("fill", "black")
+        .text(d => d3.timeFormat('%b %d')(d))
+        .attr("class", "date-text");
       simulation.force("forceX", d3.forceX(d => dateScale(d.date)).strength(0.4)).alpha(0.5).restart();
     });
     // ... (previous code remains unchanged)
-    d3.select("#speed-button").on("click", () => {
+    d3.select("#speed-button").on("click", () => {  svg.selectAll(".date-text").remove();
       // Sort the data by speed, from lowest to highest
       transformedData.sort((a, b) => a.speed - b.speed);
     
@@ -118,8 +130,8 @@ async function fetchData() {
       .attr("stroke-width", 2)
       .attr("class", "arrow-line"); // Add a class to the arrow line for easy removal
       svg.append("text")
-      .attr("x", (3 * width) / 4 - 20) // X-coordinate at the end of the arrow head (right side)
-      .attr("y", height - 10) // Y-coordinate just above the bottom of the SVG
+      .attr("x", (3 * width) / 4 -5) // X-coordinate at the end of the arrow head (right side)
+      .attr("y", height - 30) // Y-coordinate just above the bottom of the SVG
       .attr("text-anchor", "end")
       .attr("fill", "black")
       .text("Highest Speed")
@@ -128,7 +140,7 @@ async function fetchData() {
   
   function removeArrow() {
     // Remove the arrow line by selecting it by class and removing it
-    svg.select(".arrow-line").remove();
+    svg.select(".arrow-line").remove(); svg.select(".arrow-text").remove();
   }
   
 
