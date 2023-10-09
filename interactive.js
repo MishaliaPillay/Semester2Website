@@ -35,7 +35,7 @@ async function fetchData() {
   
     function drawBubbles(data) {
       simulation.nodes(data).on("tick", ticked);
-      //console.log("Sizes of asteroids:", data.map(d => d.size));
+      console.log("Sizes of asteroids:", data.map(d => d.size));
       let circles = svg.selectAll()
         .data(data)
         .enter()
@@ -52,7 +52,7 @@ async function fetchData() {
       let belowThreshold = transformedData.filter(d => {
         
         return d.size <= 20;
-         //console.log(belowThreshold);
+         console.log(belowThreshold);
     })
     d3.select("#split").on("click", () => { removeArrow();
       svg.selectAll(".date-text").remove();
@@ -100,7 +100,6 @@ async function fetchData() {
     });
     
 
-// ... (rest of the code remains unchanged)
 
     
     }
