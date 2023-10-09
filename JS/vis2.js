@@ -1,6 +1,6 @@
 // DIMENSIONS
-let height = 800,
-  width = 900,
+let height = 500,
+  width = 600,
   margin = 80;
 
 async function createLineChart() {
@@ -57,14 +57,9 @@ async function createLineChart() {
     .attr('class', 'line')
     .attr('d', d => line(d.data))
     .style('stroke', d => colorScale(d.planet))
-    .style('stroke-width', 2)
+    .style('stroke-width', 4)
     .style('fill', 'none')
-    .on('mousemove', function (event, datum) {
-      updateTooltip(event, datum);
-    })
-    .on('mouseout', function () {
-      hideTooltip();
-    });
+    ;
     const legendData = [
       { planet: 'Venus', color: colorScale('Venus') },
       { planet: 'Earth', color: colorScale('Earth') },
@@ -73,7 +68,7 @@ async function createLineChart() {
     // Create legend group
 let legend = svg.append('g')
 .attr('class', 'legend')
-.attr('transform', `translate(${width -100}, 50)`); // Adjust position as needed
+.attr('transform', `translate(${width -90}, 20)`); // Adjust position as needed
 
 // Create legend items
 let legendItems = legend.selectAll('.legend-item')
@@ -102,6 +97,102 @@ legendItems.append('text')
 .style('fill', 'white')
 .style('font-size', '14px');
 
+
+
+
+// Create vertical line for tooltip
+let verticalLine = svg.append('line')
+  .attr('class', 'vertical-line')
+  .attr('stroke', '#ccc')
+  .attr('stroke-width', 1)
+  .attr('stroke-dasharray', '5,5')
+  .attr('y1', 0)
+  .attr('y2', height)
+  .style('visibility', 'hidden');
+
+// Create tooltip for vertical line
+let verticalTooltip = svg.append('text')
+  .attr('class', 'vertical-tooltip')
+  .attr('text-anchor', 'middle')
+  .style('font-size', '14px')
+  .style('fill', '#fff')
+  .style('visibility', 'hidden');
+
+
+// Update tooltip line and text on mousemove
+
+
+// Helper function to find the closest data point to a given x-value
+function findClosestDataPoint(data, xValue) {
+  let bisector = d3.bisector(d => d.date).left;
+  let index = bisector(data, xValue, 1);
+  let left = data[index - 1];
+  let right = data[index];
+  return right && (right.date - xValue < xValue - left.date) ? right : left;
+}
+
+
+
+svg.on('mousemove', function (event) {
+  updateVerticalTooltip(event);
+});
+
+// Helper function to update the vertical line and tooltip content
+function updateVerticalTooltip(event) {
+  let [xPosition] = d3.pointer(event);
+  verticalLine.attr('x1', xPosition).attr('x2', xPosition).style('visibility', 'visible');
+
+  // Find data points at the x-position using the xScale invert method
+  let invertedX = xScale.invert(xPosition);
+  let tooltipContent = planetData.map(planet => {
+    let closestDataPoint = findClosestDataPoint(planet.data, invertedX);
+    return `${planet.planet}: ${Math.round(closestDataPoint.missDistance)} km`;
+  }).join('\n');
+
+  // Get the width and height of the tooltip content for styling the box
+  let bbox = verticalTooltip.node().getBBox();
+
+  // Update the tooltip text and position
+  verticalTooltip.text(tooltipContent)
+    .attr('x', xPosition)
+    .attr('y', -10 - bbox.height)  // Adjust the y position to place tooltip above the line
+    .style('visibility', 'visible')
+    .style('fill', 'white').style("font-weight", "Bold");
+
+  // Add a rectangle behind the tooltip text to create a box
+  verticalTooltipBox
+    .attr('x', bbox.x - 5)  // Add some padding to the left
+    .attr('y', bbox.y - 5)  // Add some padding to the top
+    .attr('width', bbox.width + 10)  // Add padding to both sides
+    .attr('height', bbox.height + 10)  // Add padding to the top and bottom
+    .style('visibility', 'visible');
+}
+
+// Create tooltip box
+let verticalTooltipBox = svg.append('rect')
+  .attr('class', 'tooltip-box')
+  .style('fill', 'rgba(255, 255, 255, 0.1)')  // Set the background color and opacity
+  .style('stroke', 'white')  // Set the border color
+  .style('stroke-width', 1)  // Set the border width
+  .style('visibility', 'hidden');  // Initially hide the tooltip box
+
+
+// Mouseout event listener
+svg.on('mouseout', function () {  verticalTooltipBox.style('visibility', 'hidden');
+  verticalLine.style('visibility', 'hidden');
+  verticalTooltip.style('visibility', 'hidden');
+});
+
+
+
+
+
+
+
+
+
+
+
     // Add X and Y axes
     svg.append('g').style("color", "white")   .style("font-size", "10px")
       .attr('transform', `translate(0, ${height})`)
@@ -116,56 +207,12 @@ legendItems.append('text')
     svg.append('g').style("color", "white")   .style("font-size", "10px")
       .call(d3.axisLeft(yScale))
       .append("text")
-      .attr("x", -300)
+      .attr("x", -30)
       .attr("y", -65)
       .attr('transform', 'rotate(-90)')
       .style("fill", "white")
       .style("font-size", "20px")
       .text("Miss Distance between the Asteroids and Earth");
-
-// Add tooltip text
-let tooltipText = svg.append('text')  // Moved inside createLineChart
-      .attr('class', 'tooltip-text')
-      .attr('text-anchor', 'middle')
-      .style('font-size', '14px')
-      .style('fill', '#fff')
-      .style('visibility', 'hidden');
-
-      let tooltipLine = svg.append('line')  // Moved inside createLineChart
-      .attr('class', 'tooltip-line')
-      .attr('stroke', '#ccc')
-      .attr('stroke-width', 1)
-      .attr('stroke-dasharray', '5,5')
-      .attr('x1', 0)
-      .attr('x2', 0)
-      .attr('y1', 0)
-      .attr('y2', height)
-      .style('visibility', 'hidden');
-// Update tooltip line and text on mousemove
-function updateTooltip(event, datum) {
-  let xPosition = d3.pointer(event)[0];
-  tooltipLine.attr('x1', xPosition).attr('x2', xPosition).style('visibility', 'visible');
-
-  let missDistance = yScale.invert(yScale(datum.missDistance));
-  tooltipText.text(missDistance.toFixed(2) + ' km')
-    .attr('x', xPosition)
-    .attr('y', yScale(datum.missDistance) - 10)
-    .style('visibility', 'visible');
-    let yPosition = yScale(datum.missDistance);
-    if (!isNaN(yPosition)) {
-      tooltipText.attr('y', yPosition - 10);
-      // ... (rest of your code)
-    } else {
-      tooltipText.style('visibility', 'hidden'); // Hide tooltip if yPosition is NaN
-    }
-}
-
-// Hide tooltip line and text on mouseout
-function hideTooltip() {
-  tooltipLine.style('visibility', 'hidden');
-  tooltipText.style('visibility', 'hidden');
-}
-
 
 
   } catch (error) {
