@@ -4,8 +4,8 @@ let heighttt = window.innerHeight,
 // CREATE SVG
 let svg = d3.select("#rootttt")
     .append("svg")
-    .attr("heighttt", heighttt)
-    .attr("widthhh", widthhh)
+    .attr("height", heighttt)
+    .attr("width", widthhh)
     .style("background-color", '#00a0a949');
 const TOLERANCE = 0.0001
 // Sample API call (replace with your data fetching logic)
