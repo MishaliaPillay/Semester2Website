@@ -281,7 +281,7 @@ let articles = [
     id: 7,
     bigHeading:"Data Visualisation",
     headingOne: " Interactive Data Visualisation", 
-    paraOne: "Both data visualisations will be scatterplots showing data on asteroids.The first visualisation will show the distance between the asteroids and Earth on the y-axis, relative to the date on the x-axis. The second visualisation will show the asteroids over 100 years and the miss distance(y-axis) for the planets(x-axis) - Venus, Mercury and Earth. ",
+    paraOne: "My intention for this interactive visualisation was to give more meaning to the data and make it more readable for the user. I figured displaying the data in the form of bubbles is fun and interesting. I tend to get bored quite easily when looking at static visualizations, this is why I made the asteroids in the form of bubbles and gave them a force. This causes the bubbles to be constantly moving, giving the user something interesting took at. ",
     image: `<figure>
     <img
       src="./Images/reset.png"
@@ -311,12 +311,11 @@ let articles = [
     />
     <figcaption>This shows a wireframe for the planning the interactive visualisation when the speed button is pressed.</figcaption>
     </figure>
-    The first Scatterplot will display asteroids that are potentially hazardous. This will be communicated through the use of different colours - all the asteroids will be one colour and the hazardous asteroids will be red. I expected there to be overlapping of asteroids on the graph, this will affect the visual design of the graph and some elements will be hidden. I intend to fix this by changing the opacity of points so that all points are visible.
     
     `,
     paraTwo: `id="dataVisinteractive"`,
     headingThree: "",
-    paraThree: ``
+    paraThree: `The buttons help make the interaction fun since the user doesn't just watch the data they can change it and "play" with it. Users are in charge of the interaction as the data only changes when they press a button. I created the different filters for the buttons based on the most valuable aspects of the information provided by the NASA API. `
 
   }
   
