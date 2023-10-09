@@ -4,8 +4,8 @@
 
 
 //DIMENSIONS
-let heightt =800,
-widthh=900,
+let heightt =600,
+widthh=700,
 marginn=80;
 
 
@@ -55,11 +55,11 @@ async function createScatterPlot() {
     // Set up scales
     let xScale = d3.scaleTime()
       .domain([d3.min(parsedData, d => d.date), d3.max(parsedData, d => d.date)])
-      .range([40, widthh-50]);
+      .range([0, widthh-50]);
 
     let yScale = d3.scaleLinear()
       .domain([0, d3.max(parsedData, d => d.missDistance)])
-      .range([heightt-50, 20]);
+      .range([heightt-50, 0]);
       let rScale =d3.scaleSqrt().domain([d3.min(parsedData, d => d.size), d3.max(parsedData, d => d.size)]).range([1,30])
     
       let colorScale = d3.scaleOrdinal()
@@ -91,7 +91,7 @@ async function createScatterPlot() {
       .call((g)=> {
           g.append("text")
         
-          .attr("x", -300)
+          .attr("x", -100)
           .attr("y", -65)
           .attr('transform', 'rotate(-90)')
           .style("fill", "white")
