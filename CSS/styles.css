@@ -322,10 +322,25 @@ border-width: 3px;
   color: aliceblue;
 
 
+}.startButton2 {   background: #00a0a949;
+  border-radius: 10px;
+  border: 3px solid;
+border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+transition:  0.1s ;
+border-image-slice: 1;
+border-width: 3px;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: aliceblue;
+
+
 }
 #startButton:hover{
   border-width: 6px;
 }.startButton:hover{
+
+  border-width: 6px;
+}.startButton2:hover{
 
   border-width: 6px;
 }
