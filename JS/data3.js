@@ -50,7 +50,7 @@ let articles = [
       paraOne: "There are 20 asteroids and there are 10 colors used to distinguish between the asteroids. I chose to use 10 colours as opposed to giving all 20 asteroids their colour because it would have been too many colours to keep track of and too many closely related shades. The choice of 10 colours decreases the cognitive load of the user. This is in line with the goal for this data art as well as avoiding the unnecessary complication of the data. ",
       image: `<figure>
       <img
-        src="./Images/dashed1.png"
+        src="./Images/bars.png"
         alt="Circular bar plot bars image"
         id="imgg2"
       />
@@ -68,14 +68,14 @@ let articles = [
       paraOne: "The tooltips are not styled, this was done intentionally to not obscure or take away attention from the data art. This tooltip is simple and effective as it displays all the relevant information to a user. This was also chosen since there are many bars on the circular bar plot, this not only means that there are lots of data to analyse but lots of colour and meanings to unpack, this simple tooltip decreases the cognitive load on the user. ",
       image: `<figure>
       <img
-        src="./Images/spaceshuttle.png"
+        src="./Images/tooltip.png"
         alt="tooltip  image"
         id="imgg2"
       />
       <figcaption>Tooltip as user hovers over a bar,on Circular bar plot.</figcaption>
       </figure><figure>
       <img
-        src="./Images/spaceshuttle.png"
+        src="./Images/btns.png"
         alt="buttons image"
         id="imgg2"
       />
@@ -92,7 +92,7 @@ let articles = [
         paraOne: "The size scale helps visualize the influence that the magnitude of an asteroid has on its motion. An example of this from the data art is that the largest asteroids are 1915 Quetzalcoatl and 1221 Amor, the colour of these asteroids is dark blue, and these asteroids have the furthest miss distances. This is interesting because these asteroids only have encounters with Earth and they are not potentially hazardous. Thus, for this data set it can be said that the larger an asteroid is the further away it will be from a planet, thus has a decreased risk than smaller asteroids. ",
         image: `<figure>
         <img
-          src="./Images/spaceshuttle.png"
+          src="./Images/scale.png"
           alt="14-17 size scale image"
           id="imgg2"
         />
