@@ -73,11 +73,66 @@ let articles = [
         id="imgg2"
       />
       <figcaption>Tooltip as user hovers over a bar,on Circular bar plot.</figcaption>
+      </figure><figure>
+      <img
+        src="./Images/spaceshuttle.png"
+        alt="buttons image"
+        id="imgg2"
+      />
+      <figcaption>Image of the buttons.</figcaption>
       </figure>`,
       paraTwo: "",
-      headingThree: "",
-      paraThree: "Asteroids are also given a number, for example (99942) Apophis. The Harvard Smithsonian Center for Astrophysics keeps a fairly current list of asteroid names.",
+      headingThree: "Filters",
+      paraThree: "The buttons that for this data art were added to help distil the information for the user, it helps the user take control of their understanding. The user can visualize how many / few asteroids a planet has encountered. ",
       
-    },
+    },{
+        id: 5,
+        bigHeading:``,
+        headingOne: "Observations: Asteroid size differences",
+        paraOne: "The size scale helps visualize the influence that the magnitude of an asteroid has on its motion. An example of this from the data art is that the largest asteroids are 1915 Quetzalcoatl and 1221 Amor, the colour of these asteroids is dark blue, and these asteroids have the furthest miss distances. This is interesting because these asteroids only have encounters with Earth and they are not potentially hazardous. Thus, for this data set it can be said that the larger an asteroid is the further away it will be from a planet, thus has a decreased risk than smaller asteroids. ",
+        image: `<figure>
+        <img
+          src="./Images/spaceshuttle.png"
+          alt="14-17 size scale image"
+          id="imgg2"
+        />
+        <figcaption>This image shows the asteroids between sizes 14-17h.</figcaption>
+        </figure><figure>
+        <img
+          src="./Images/spaceshuttle.png"
+          alt="buttons image"
+          id="imgg2"
+        />
+        <figcaption>Image of the buttons.</figcaption>
+        </figure>`,
+        paraTwo: "",
+        headingThree: "",
+        paraThree: " Another observation is that most asteroid sizes lie between 14 – and 17 in this data set, the decreased opacity of the circles in the scale helps us see this. These findings could help determine the average size of asteroids and follow along the circular bar plot to see if the size affects the frequency of close approach distances. ",
+        
+      },,{
+        id: 6,
+        bigHeading:``,
+        headingOne: "Observations: Asteroids Encounters with Earth vs other planets",
+        paraOne: "Since this circular bar plot displays the data of these asteroids in relation to four planets, we can compare the number of asteroids that approach a planet as well as the frequency over time. The interactive buttons below the data art help to filter the bars according to the different planets, a quick click through puts into perspective the mass amount of asteroids that Earth encounters compared to the other planets. This raises new questions such as: Is this because NASA focuses its research on Earth and all these asteroids are recorded near Earth then its trajectory is tracked? or does Earth’s position in the solar system lead it to have the greatest number of encounters with asteroids? Another example from the data set is that when a user clicks the button for mercury, it is seen that only one asteroid (1566 Icarus) has approached it however Earth has had encounters with all of the asteroids in this data set. ",
+        image: `<figure>
+        <img
+          src="./Images/spaceshuttle.png"
+          alt="14-17 size scale image"
+          id="imgg2"
+        />
+        <figcaption>This image shows the asteroids between sizes 14-17h.</figcaption>
+        </figure><figure>
+        <img
+          src="./Images/spaceshuttle.png"
+          alt="buttons image"
+          id="imgg2"
+        />
+        <figcaption>Image of the buttons.</figcaption>
+        </figure>`,
+        paraTwo: " ",
+        headingThree: "Conclusion",
+        paraThree: "Overall, this data helps make it clear that there is a need for NASA to track this data and the importance of the research that they do. It is really shocking and almost scary to observe how many asteroids encounter Earth and how many of them are potentially hazardous as seen on the data visualization page. The colour bars make the data more friendly and inviting which helps the data set look easier to understand at all levels (scientists and unfamiliar users) Another way this is accommodated is the full names of these asteroids are displayed which gives information to both types of users.",
+        
+      },
   ];
   
