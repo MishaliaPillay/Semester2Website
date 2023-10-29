@@ -47,7 +47,7 @@ let articles = [
       id: 3,
       bigHeading:``,
       headingOne: "Design Decision: Bar Colour ", 
-      paraOne: "There are 20 asteroids and there are 10 colors used to distinguish between the asteroids. I chose to use 10 colours as opposed to giving all 20 asteroids their colour because it would have been too many colours to keep track of and too many closely related shades. The choice of 10 colours decreases the cognitive load of the user. This is in line with the goal for this data art as well as avoiding the unnecessary complication of the data. ",
+      paraOne: "There are 20 asteroids and there are 10 colors used to distinguish between the asteroids. I chose to use 10 colours as opposed to giving all 20 asteroids their own colour because it would have been too many colours to keep track of and too many closely related shades. The choice of 10 colours decreases the cognitive load of the user. This is in line with the goal for this data art as well as avoiding the unnecessary complication of the data. ",
       image: `<figure>
       <img
         src="./Images/bars.png"

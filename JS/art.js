@@ -225,6 +225,14 @@ bars.append('path')
         .append('g')
         .attr('class', 'legend')
         .attr('transform', (d, i) => `translate(-${svgWidth / 2},${svgHeight / 12 - 250 + i * 20})`);
+// Add label above legend
+svg.append('text')
+    .attr('x', svgWidth / 3) // X-coordinate for the label (adjust as needed)
+    .attr('y', -230) // Y-coordinate for the label (adjust as needed)
+    .attr('text-anchor', 'right')
+    .style('font-size', '16px')
+    .style('fill', 'white')
+    .text('Legend:');
 
     legend.append('rect')
         .attr('x', svgWidth - 18)
@@ -261,6 +269,14 @@ function createAsteroidCircles(svg, data, magnitudeScale) {
         .range([5, 20]); // Define the range of circle radii based on absolute magnitudes
 
     const numberOfCircles = asteroidData.length;
+// Add label above size scale
+svg.append('text')
+    .attr('x', -450) // X-coordinate for the label (adjust as needed)
+    .attr('y', magnitudeScale.range()[1] - 50) // Y-coordinate for the label (adjust as needed)
+    .attr('text-anchor', 'middle')
+    .style('font-size', '14px')
+    .style('fill', 'white')
+    .text('Size Scale:');
 
     // Log the number of circles to the console
     console.log('Number of circles:', numberOfCircles);
