@@ -13,12 +13,28 @@
     <title>Data-Art</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <link rel="stylesheet" href="./CSS/para.css">
     <link rel="stylesheet" href="./CSS/styles.css" />
     <link rel="stylesheet" href="./CSS/stars.css" /> <link rel="icon" type="image/x-icon" href="/Images/space.png" />
   </head>
   <body>
     <h1 class="textOne" id="spacing">Data-Art</h1>
     <main>
+      <section id="top"></section>
+      <h1 class="textOne" id="spacing">Home</h1>
+      <section>
+        <article class="textContainer" class="h-feed">
+          <article class="textBox">
+            <h3 class="p-summary" id="blog1">Asteroids am I right ?</h3>
+            <p class="e-content">
+              This page shows insightful content on asteroids. All the Factual
+              information is taken from the NASA website. This gives an
+              introduction to the visualisations that will be encountered on
+              this site
+            </p>
+          </article>
+        </article>
+      </section>
       <section id="my_dataviz"></section>
       <section id="roott"></section>
       <section class="btns"><button class="startButton" id="Earth">Earth</button>
@@ -27,10 +43,11 @@
       <button   class="startButton"id="Merc">Mercury</button> 
       <button  class="startButton2" id="reset">Reset</button> 
     </section>
+
       
       <section class="tooltip"></section>
 
-
+      <section class="articles"></section>
 
 
 
@@ -71,8 +88,9 @@
     <script src="./JS/app2.js"></script>
     <script src="./JS/data.js"></script>
     <script src="./JS/apiart.js"></script>
-    <script src="./JS/art.js"></script>
+    <script src="./JS/art.js"></script><script src="./JS/data3.js"></script>
     <script src="./JS/para.js"></script>
+    
   </body>
   <footer>
     <section class="footer"><p>All the Data For the Visualisations are gathered from the Nasa API on NEOWs.</p>The facts on asteroids are from the Nasa Solar system website. <p></p></section>
