@@ -55,7 +55,7 @@ let articles = [
         id="imgg2"
       />
       <figcaption>Circular bar plots , bars with differnet colurs with the same width.</figcaption>
-      </figure><`,
+      </figure>`,
       paraTwo: `id="asteName"`,
       headingThree: "Inner circle (circular bar plot)",
       paraThree: "The centre of the circular bar plot has a circle that is animated by zooming in and out as it changes colour. The centre of the plot represents the planets that these asteroids encounter, and these planets vary in colour and size. Thus, this animated colour-changing circle is used to emulate the different planets and help the user identify what the centre of the bar plot represents. Earth is blue, Venus is pale yellow, Mars is red, and Mercury is dark grey. The colours that were chosen are based on the information from the NASA website. ",
@@ -97,13 +97,6 @@ let articles = [
           id="imgg2"
         />
         <figcaption>This image shows the asteroids between sizes 14-17h.</figcaption>
-        </figure><figure>
-        <img
-          src="./Images/spaceshuttle.png"
-          alt="buttons image"
-          id="imgg2"
-        />
-        <figcaption>Image of the buttons.</figcaption>
         </figure>`,
         paraTwo: "",
         headingThree: "",
@@ -116,18 +109,11 @@ let articles = [
         paraOne: "Since this circular bar plot displays the data of these asteroids in relation to four planets, we can compare the number of asteroids that approach a planet as well as the frequency over time. The interactive buttons below the data art help to filter the bars according to the different planets, a quick click through puts into perspective the mass amount of asteroids that Earth encounters compared to the other planets. This raises new questions such as: Is this because NASA focuses its research on Earth and all these asteroids are recorded near Earth then its trajectory is tracked? or does Earth’s position in the solar system lead it to have the greatest number of encounters with asteroids? Another example from the data set is that when a user clicks the button for mercury, it is seen that only one asteroid (1566 Icarus) has approached it however Earth has had encounters with all of the asteroids in this data set. ",
         image: `<figure>
         <img
-          src="./Images/spaceshuttle.png"
-          alt="14-17 size scale image"
+          src="./Images/Merc.png"
+          alt="Mercury image"
           id="imgg2"
         />
-        <figcaption>This image shows the asteroids between sizes 14-17h.</figcaption>
-        </figure><figure>
-        <img
-          src="./Images/spaceshuttle.png"
-          alt="buttons image"
-          id="imgg2"
-        />
-        <figcaption>Image of the buttons.</figcaption>
+        <figcaption>Mercury's asteroid 1566 Icarus.</figcaption>
         </figure>`,
         paraTwo: " ",
         headingThree: "Conclusion",
