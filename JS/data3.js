@@ -20,7 +20,7 @@ let articles = [
       />
       <figcaption>Dashed lines from Circular Bar plot.</figcaption>
       </figure>`,
-      paraTwo:`id="Composition"`, 
+      paraTwo:`id="Design"`, 
       headingThree: "Bar plot ordered by Date ",
       paraThree: "The bars are arranged by date, this emulates a clock of sorts since it displays data of asteroids through time(dates). This helps users answer questions such as: Has the frequency of asteroid encounters changed in any way, did some asteroids “survive” longer than others, were some asteroids “active” for shorter periods than others according to the data art? Ordering the data by date helps situate the user, as the user can identify a start and end point. ",
      
@@ -98,7 +98,7 @@ let articles = [
         />
         <figcaption>This image shows the asteroids between sizes 14-17h.</figcaption>
         </figure>`,
-        paraTwo: "",
+        paraTwo:`id="Observe"`,
         headingThree: "",
         paraThree: " Another observation is that most asteroid sizes lie between 14 – and 17 in this data set, the decreased opacity of the circles in the scale helps us see this. These findings could help determine the average size of asteroids and follow along the circular bar plot to see if the size affects the frequency of close approach distances. ",
         
