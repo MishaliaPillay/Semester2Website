@@ -1,7 +1,7 @@
 
 
-const svgWidth = 1080;
-const svgHeight = 600;
+const svgWidth = window.innerWidth/1.5;
+const svgHeight = window.innerHeight/1.5;
 const defaultOpacity = 0.1;
 const selectedOpacity = 1.0;
 let selectedOrbitingBody = null;
@@ -245,6 +245,7 @@ svg.append('text')
         .attr('y', 9)
         .attr('dy', '.35em')
         .style('text-anchor', 'end')
+        .style('font-size', '80%')
         .text(d => d)
         .style('fill', 'white');
 }
@@ -271,12 +272,12 @@ function createAsteroidCircles(svg, data, magnitudeScale) {
     const numberOfCircles = asteroidData.length;
 // Add label above size scale
 svg.append('text')
-    .attr('x', -450) // X-coordinate for the label (adjust as needed)
+    .attr('x',"-40%") // X-coordinate for the label (adjust as needed)
     .attr('y', magnitudeScale.range()[1] - 50) // Y-coordinate for the label (adjust as needed)
     .attr('text-anchor', 'middle')
-    .style('font-size', '14px')
+    .style('font-size', "80%")
     .style('fill', 'white')
-    .text('Size Scale:');
+    .text('Size Scale');
 
     // Log the number of circles to the console
     console.log('Number of circles:', numberOfCircles);
@@ -287,7 +288,7 @@ svg.append('text')
         .enter()
         .append('circle')
         .attr('class', 'asteroid-circle')
-        .attr('cx', -450) // X-coordinate for circles (adjust as needed)
+        .attr('cx', "-40%") // X-coordinate for circles (adjust as needed)
         .attr('cy', d => magnitudeScale(d.absolute_magnitude_h) - 20) // Y-coordinate based on magnitudeScale
         .attr('r', d => circleRadiusScale(d.absolute_magnitude_h)) // Radius based on circleRadiusScale
         .attr('fill', d => colorScale(d.name))
@@ -302,7 +303,7 @@ svg.append('text')
         .enter()
         .append('circle')
         .attr('class', 'asteroid-circle')
-        .attr('cx', -450) // X-coordinate for circles (adjust as needed)
+        .attr('cx', "-40%") // X-coordinate for circles (adjust as needed)
         .attr('cy', d => magnitudeScale(d.absolute_magnitude_h) - 20) // Y-coordinate based on magnitudeScale
         .attr('r', d => circleRadiusScale(d.absolute_magnitude_h)) // Radius based on circleRadiusScale
         .attr('fill', d => colorScale(d.name))
@@ -314,26 +315,25 @@ svg.append('text')
     // Create white Y axis
     const yAxis = svg.append('g')
         .attr('class', 'y-axis')
-        .attr('transform', `translate(-450, 0)`); // Adjust the x-coordinate of the axis as needed
+        .attr('tx', `translate(-400%, 0)`); // Adjust the x-coordinate of the axis as needed
 
-    const yAxisTicks = yAxis.selectAll('.y-tick')
-        .data(magnitudeScale.ticks(10)) // Adjust the number of ticks as needed
+        const yAxisTicks = yAxis.selectAll('.y-tick')
+        .data(magnitudeScale.ticks(10))
         .enter()
         .append('g')
         .attr('class', 'y-tick');
 
     yAxisTicks.append('line')
-        .attr('x1', 0)
-        .attr('x2', -50) // Length of the tick line
-        .attr('y1', d => magnitudeScale(d) - 20) // Adjusted y-coordinate based on magnitudeScale
-        .attr('y2', d => magnitudeScale(d) - 20) // Adjusted y-coordinate based on magnitudeScale
+        .attr('x1', "-40%") // Move the starting point of the line to -40% of the container width
+        .attr('x2', "-50%") // Move the ending point of the line to -50% of the container width
+        .attr('y1', d => magnitudeScale(d) - 20)
+        .attr('y2', d => magnitudeScale(d) - 20)
         .attr('stroke', 'white')
         .style('stroke-dasharray', '3,3');
 
-    // Optionally, you can add tick labels to the axis
     yAxisTicks.append('text')
-        .attr('x', 15) // Distance between tick line and label
-        .attr('y', d => magnitudeScale(d) - 20) // Adjusted y-coordinate based on magnitudeScale
+        .attr('x', "-40%") // Move the text to -35% of the container width
+        .attr('y', d => magnitudeScale(d) - 20)
         .attr('dy', '0.35em')
         .style('font-size', '15px')
         .style('fill', 'white')
