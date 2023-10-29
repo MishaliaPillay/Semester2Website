@@ -1,6 +1,7 @@
 // DIMENSIONS
-let height = 500,
-  width = 600,
+const width = window.innerWidth/2;
+const height = window.innerHeight/2;
+let
   margin = 80;
 
 async function createLineChart() {

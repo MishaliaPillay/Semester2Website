@@ -1,5 +1,8 @@
-let heighttt = 400,
-    widthhh = 1000;
+
+const widthhh = window.innerWidth/1.5;
+const heighttt = window.innerHeight/1.5;
+
+
 
 // CREATE SVG
 let svg = d3.select("#rootttt")
@@ -22,7 +25,7 @@ async function fetchData() {
     // FORCE SIMULATION
     let forceXcombine = d3.forceX(widthhh / 2).strength(0.04);
     let forceXsplit = d3.forceX(function (d) {
-    return d.size <= 20 ? 100 : widthhh - 100;
+    return d.size <= 20 ? 100 : widthhh - "10%";
 }).strength(0.4);
     let forceY = d3.forceY(heighttt / 2).strength(0.04);
     let forceCollide = d3.forceCollide((d) => rScale(d.size)*1);

@@ -4,8 +4,10 @@
 
 
 //DIMENSIONS
-let heightt =600,
-widthh=700,
+
+const widthh = window.innerWidth/2;
+const heightt = window.innerHeight/2;
+let
 marginn=80;
 
 
