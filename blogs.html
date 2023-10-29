@@ -562,6 +562,180 @@ https://doi.org/10.1201/9781315281575-
           </article>
         </article>
       </section>
+
+
+      <section class="displaySection">
+        <article class="textContainer" class="h-feed">
+          <article class="textBox">
+            <h3 id="blog2">
+              Blog Post 4 - Critical Reflection - Data Driven Artwork
+            </h3> 
+            <h4>What is Data-Driven Art?</h4>
+            <p class="e-content">
+              Traditional data visualization involves the meaning-making of a data set and translating it
+into a readable form that effectively conveys information to the viewer. Artistic
+Visualizations follow suit; however it is created with the “intent” of creating art (Viégas and
+Wattenberg, 2007, p. 2), thus there is an emphasis on applying aesthetics to the data. It
+is necessary to make the distinction that Artistic Visualizations contain data and that the
+“aesthetics” that are applied are not that of beauty but rather the idea that the artwork will
+evoke the “concept of emotion” (Li, McMahon and Haddad, 2013, p. 4) (MiMi, 2023).
+            </p>
+            <p class="e-content">
+              I intend to analyze the Data-Driven artwork on the website Space Gaze using the
+theoretical framework of Artistic Visualizations. I will also evaluate the planning and the
+steps taken to create this artwork, as well as discuss the impact that my research has
+had in designing the data-driven artwork through the exploration of example artworks.
+            </p>
+            
+            <h4>What Did I hope to achieve?</h4><p class="e-content">
+              The Data-Driven Artwork on the website Space Gaze displays data on asteroids from the
+NASA API. The data set chosen looks at the various paths taken by each asteroid for the
+duration of its life span. Only 20 asteroids are displayed as it yields over 1000 data points,
+this has enough data to display overarching trends, while still being readable so that a
+user is still able to see specific asteroids that are displayed in the legend.
+            </p><p class="e-content">
+              I wanted to create a Circular Bar plot using D3, as seen in Figure 1, I chose this because
+it is seen as one of the “best ways” (Think, 2020) to display mass amounts of data due
+to its aesthetic nature, by making better use of the space while allowing it to depict
+“obvious patterns” in the data. Another reason that I chose a Circular Bar plot is that it is
+not necessary to see the exact value of the bars since it displays the overall trends of the
+asteroid, however, if a user does want to know the exact miss distance, there is a tooltip
+that displays this information when a user hovers over the bars.
+            </p>
+            <figure>
+              <img
+                src="./Images/wireframedataart.png"
+                alt="Data Art Wireframe"
+                id="styleImg"
+              />
+              
+              <figcaption>Figure 1 shows the wireframe of the data art.</figcaption>
+            </figure>
+            <h4>What are examples that inspired my Data-Driven Artwork?</h4>
+            <p class="e-content">
+              Two examples of Data-Driven Artworks have inspired the design of the wireframe above,
+both these artworks creatively convey information to the viewer, and they offer a deeper
+insight into the data that is displayed. The first example directly correlates with my choice
+of which bits of data to display, this example is an Orbit map of the solar system with over
+1,800 data points, shown in Figure 2 (Lutz, 2019). By displaying a large amount of data,
+it gives an idea of the vastness of space as well as the multitude of asteroids and comets
+that are in our solar system.
+
+            </p><p class="e-content">
+              he Orbit map influenced my decision to widen the scope of data by showing the closest
+approaches of all planets that an asteroid encounters. By placing all planets at the (0;0)
+coordinate we can identify that an asteroid might have a smaller distance between one
+planet and a larger distance between another.
+            </p><p class="e-content">
+              The shape of this design also fits the conventions that a user may be accustomed to
+when looking at space data due to its circular nature, this has also influenced my decision
+to make a Circular Bar plot. This example helped me consider what emotions and the
+message I want to give the user through my data art, and it was to share this
+overwhelming amount of asteroid data in a more digestible way so that the user can fully
+take in the dataset. A Circular Bar plot also affects the emotions of a user as they will feel
+more comfortable with the data set since it is in a familiar form. I wanted to make this
+information more accessible so that people who see this design gain insight without
+needing to have a scientific background, and this method of display helps accomplish
+this.
+            </p>
+            
+            <figure>
+              <img
+                src="./Images/orbit map.png"
+                alt="orbit map"
+                id="styleImg"
+              />
+              
+              <figcaption>Figure 2 Example 1, An Orbit Map of the Solar System
+              </figcaption>
+            </figure>
+            
+            <p class="e-content">
+              The second example inspired me to add the miss distance markers around the interior of
+the Circular Bar plot, as this would give a sense of the distances of each planet at first
+glance. It was important for me to make this data art reveal a lot of information from the
+first encounter, as it deepens the understanding of the data and entices the viewer to take
+a closer look and interact with the data. While the interest of the viewer is peaked by a
+colourful and plentiful map, it is valuable to add interactive elements such as buttons that
+filter the diagram, to give the user clearer views of the asteroid information.
+            </p> 
+            <figure>
+              <img
+                src="./Images/starring.png"
+                alt="starring into space image"
+                id="styleImg"
+              />
+              
+              <figcaption>Figure 3 Example 2, starring into Space
+              </figcaption>
+            </figure> 
+            <h4>How did I go about designing it?</h4><p class="e-content">
+              After designing a Circular Bar plot in d3 using the wireframe inspired by the two examples
+above, I then decided to implement interactive elements, such as buttons to filter the
+asteroid data for each planet. This is seen in Figure 4 where a button is generated for
+every planet that the asteroids approach, when this button is clicked the other asteroids
+fade and only the ones selected are visible. I decided to add this element in because I
+feel easily overstimulated with large amounts of information, this filtering option clarifies
+information for me. I felt that this was in line with the emotions that I wanted to create with
+this data Artwork.
+            </p> 
+            <h4>What are the strengths and weaknesses?</h4><p class="e-content">
+              A strength of this design is the distilling of information with the use of the buttons, this is
+useful since it helps the user filter out which information they wish to focus on. Another
+strength is the miss distance markers are aided by the tooltip, since the user can hover
+over a bar and get specific values, and the user already has a sense of the value from
+the markers.
+            </p> <p class="e-content">
+              A weakness of this design is that it only shows the data of 20 asteroids, thus future
+iterations should include a slider that helps the change the set of the 20 asteroids as it is
+moved. Since this data-driven artwork intends to inform the user of the trends of asteroids
+the inclusion of the slider could enhance the level of understanding by comparing different
+data sets.
+            </p> <p class="e-content">
+              This data-driven artwork is effective in its overall design, by focusing on the emotions that
+it seeks to coax from a user. This design conveys a large amount of information to the
+user, but it also does a good job of helping the user discover insight on their own through
+the interactive elements. This design also relays the narrative that asteroids travel long
+paths encountering many planets, while also displaying the shocking number of close
+approaches that these asteroids have with Earth. This data-driven artwork is informative
+and effective through its choice of engagement with the data set.
+            </p> 
+            
+           
+            
+          
+            <h2>References:</h2>
+            <p class="p-author">
+              Benzi, K. (2020) Kirell Benzi - What is Data Art? A definition. Available at:
+              https://www.kirellbenzi.com/blog/data-art-definition (Accessed: 25 October 2023).
+            </p> <p class="p-author">
+              Li, R.Q., McMahon, M. and Haddad, H. (2013) ‘An investigation into a new aesthetics of
+              scientific data visualisation – The Australian Council of University Art and Design
+              Schools’. Available at: https://acuads.com.au/conference/article/an-investigation-into-a-
+              new-aesthetics-of-scientific-data-visualisation/ (Accessed: 25 October 2023).
+            </p> <p class="p-author">
+              Lutz, E. (2019) An Orbit Map of the Solar System, Tabletop Whale. Available at:
+              http://tabletopwhale.com/2019/06/10/the-solar-system.html (Accessed: 26 October
+              2023).
+            </p> <p class="p-author">
+              MiMi (2023) ‘What is Data Art?’, agoradigital.art, 5 February. Available at:
+              https://agoradigital.art/what-is-data-art/ (Accessed: 25 October 2023).
+            </p> <p class="p-author">
+              Think (2020) Circular Barplot in Data Visualization, Think Design. Available at:
+              https://think.design/services/data-visualization-data-design/circular-barplot/ (Accessed:
+              25 October 2023).
+            </p> <p class="p-author">
+              Viégas, F.B. and Wattenberg, M. (2007) ‘Artistic Data Visualization: Beyond Visual
+              Analytics’, in D. Schuler (ed.) Online Communities and Social Computing. Berlin,
+              Heidelberg: Springer Berlin Heidelberg (Lecture Notes in Computer Science), pp. 182–
+              191. Available at: https://doi.org/10.1007/978-3-540-73257-0_21.
+              
+            </p> 
+       
+          
+          </article>
+        </article>
+      </section>
       <a href="#top" id="bottom" class="top">&#128621;</a>
       <section id="stars"></section>
       <section class="containerr">
