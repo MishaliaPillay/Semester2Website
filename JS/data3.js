@@ -3,7 +3,7 @@ let articles = [
       id: 1,
       bigHeading: ` <a href="blogs.html" class="texTwo">Blog Section</a>
       `,
-      headingOne: "Design Decision :  Dashed Lines:",
+      headingOne: "Design Decision: Dashed Lines",
       paraOne: "There is consistent use of dashed lines to indicate the scales in this data art. This was used for the asteroid miss distance in the circular bar plot and for the scale of the magnitude of the asteroids. This has created a visual convention, the importance of this convention is that it affects the “look and feel”(Parker, 2012). This helps create flow in the design of this data art as the user can encrypt the data art quicker once they identify the scale conventions of dashed lines that are used. ",
       image:`<figure>
       <img
@@ -14,58 +14,65 @@ let articles = [
       <figcaption>Dashed lines from size scale.</figcaption>
       </figure><figure>
       <img
-        src="./Images/stony.png"
-        alt="stony image"
+        src="./Images/dashed2.png"
+        alt="dashed lines image"
         id="imgg2"
       />
-      <figcaption>This shows the S-types (stony).</figcaption>
-      </figure><figure>
-      <img
-        src="./Images/nickolite.png"
-        alt="footer image"
-        id="imgg2"
-      />
-      <figcaption>This shows the M-types(nickel-iron).</figcaption>
+      <figcaption>Dashed lines from Circular Bar plot.</figcaption>
       </figure>`,
       paraTwo:`id="Composition"`, 
-      headingThree: "",
-      paraThree: "Scientists continuously monitor Earth-crossing asteroids, whose paths intersect Earth's orbit, and near-Earth asteroids that approach Earth's orbital distance to within about 28 million miles (45 million kilometers) and may pose an impact danger. Radar is a valuable tool in detecting and monitoring potential impact hazards. By reflecting transmitted signals off objects, images and other information can be derived from the echoes. Scientists can learn a great deal about an asteroid's orbit, rotation, size, shape, and metal concentration.",
+      headingThree: "Bar plot ordered by Date ",
+      paraThree: "The bars are arranged by date, this emulates a clock of sorts since it displays data of asteroids through time(dates). This helps users answer questions such as: Has the frequency of asteroid encounters changed in any way, did some asteroids “survive” longer than others, were some asteroids “active” for shorter periods than others according to the data art? Ordering the data by date helps situate the user, as the user can identify a start and end point. ",
      
     },
     {
       id: 2,
       bigHeading:``,
-      headingOne: "Asteroid Classifications",
-      paraOne: "Main Asteroid Belt: The majority of known asteroids orbit within the asteroid belt between Mars and Jupiter, generally with not very elongated orbits. The belt is estimated to contain between 1.1 and 1.9 million asteroids larger than 1 kilometer (0.6 miles) in diameter, and millions of smaller ones. Early in the history of the solar system, the gravity of newly formed Jupiter brought an end to the formation of planetary bodies in this region and caused the small bodies to collide with one another, fragmenting them into the asteroids we observe today.",
-      image: ``,
+      headingOne: "Size Scale Opacity",
+      paraOne: "The addition of the size scale adds new meanings to this data set, by helping the user visualize the differences between asteroids. This deepens the understanding of the data art since the user can see if the size of an asteroid could affect its life span as well as the distance it covers, in terms of how many planets it comes into contact with.The adjustment of the opacity of the circles in the size scale was an active decision, as can be seen by the scale many asteroids are similar in magnitude. Thus, the only way to display all these asteroids on the size scale is to allow the asteroids below to be seen, otherwise, the scale looks incomplete and might confuse the user. ",
+      image: `<figure>
+      <img
+        src="./Images/dashed1.png"
+        alt="Size scale image"
+        id="imgg2"
+      />
+      <figcaption>Circles from the Size Scale.</figcaption>
+      </figure>`,
       paraTwo: `id="asteClassi"`,
-      headingThree: "",
-      paraThree: "Trojans: These asteroids share an orbit with a larger planet, but do not collide with it because they gather around two special places in the orbit (called the L4 and L5 Lagrangian points). There, the gravitational pull from the Sun and the planet are balanced by a trojan's tendency to otherwise fly out of orbit. The Jupiter trojans form the most significant population of trojan asteroids. It is thought that they are as numerous as the asteroids in the asteroid belt. There are Mars and Neptune trojans, and NASA announced the discovery of an Earth trojan in 2011.",
+      headingThree: "Bar Width",
+      paraThree: "The bars in the circular bar plot are very narrow, this design decision was made so that all the bars are visible. This was necessary so that the user could see data that was not obscured or crowded, if the bars overlapped due to their width, it would affect the emotion and meaning of the data. It would decrease the number of visible bars which would make it appear as though there are fewer asteroids than there are. The narrow bars allow the data to be spread out, which is clearer for the user, thus making the information displayed more readable. ",
      
     },
     {
       id: 3,
       bigHeading:``,
-      headingOne: "", 
-      paraOne: "Near-Earth Asteroids: These objects have orbits that pass close by that of Earth. Asteroids that actually cross Earth's orbital path are known as Earth-crossers.",
-      image: ``,
+      headingOne: "Design Decision: Bar Colour ", 
+      paraOne: "There are 20 asteroids and there are 10 colors used to distinguish between the asteroids. I chose to use 10 colours as opposed to giving all 20 asteroids their colour because it would have been too many colours to keep track of and too many closely related shades. The choice of 10 colours decreases the cognitive load of the user. This is in line with the goal for this data art as well as avoiding the unnecessary complication of the data. ",
+      image: `<figure>
+      <img
+        src="./Images/dashed1.png"
+        alt="Circular bar plot bars image"
+        id="imgg2"
+      />
+      <figcaption>Circular bar plots , bars with differnet colurs with the same width.</figcaption>
+      </figure><`,
       paraTwo: `id="asteName"`,
-      headingThree: "How Asteroids Get Their Names",
-      paraThree: "The International Astronomical Union's Committee on Small Body Nomenclature is not very strict when it comes to naming asteroids. As a result, out there orbiting the Sun we have a giant space rock named for Mr. Spock – a cat named for the character of Star Trek fame. There's also a space rock named for the late rock musician Frank Zappa. There are more somber tributes, too, such as the seven asteroids named for the crew of the Space Shuttle Columbia killed in 2003. ",
+      headingThree: "Inner circle (circular bar plot)",
+      paraThree: "The centre of the circular bar plot has a circle that is animated by zooming in and out as it changes colour. The centre of the plot represents the planets that these asteroids encounter, and these planets vary in colour and size. Thus, this animated colour-changing circle is used to emulate the different planets and help the user identify what the centre of the bar plot represents. Earth is blue, Venus is pale yellow, Mars is red, and Mercury is dark grey. The colours that were chosen are based on the information from the NASA website. ",
      
     },
     {
       id: 4,
       bigHeading:``,
-      headingOne: "",
-      paraOne: "Asteroids are also named for places and a variety of other things. (The IAU discourages naming asteroids for pets, so Mr. Spock stands alone).",
+      headingOne: "Design Decision: Toolitip ",
+      paraOne: "The tooltips are not styled, this was done intentionally to not obscure or take away attention from the data art. This tooltip is simple and effective as it displays all the relevant information to a user. This was also chosen since there are many bars on the circular bar plot, this not only means that there are lots of data to analyse but lots of colour and meanings to unpack, this simple tooltip decreases the cognitive load on the user. ",
       image: `<figure>
       <img
         src="./Images/spaceshuttle.png"
-        alt="spaceshuttle image"
+        alt="tooltip  image"
         id="imgg2"
       />
-      <figcaption>This shows the space shuttle from 2003.</figcaption>
+      <figcaption>Tooltip as user hovers over a bar,on Circular bar plot.</figcaption>
       </figure>`,
       paraTwo: "",
       headingThree: "",
