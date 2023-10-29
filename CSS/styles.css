@@ -258,6 +258,12 @@ padding-right: 80%;
    
     margin: 20px;
     text-align: center;
+  }  #imgg2{
+    width:40%;
+   
+
+    text-align: center !important;
+    padding-left: 30%;
   }
 
 #button{ float: right;
@@ -337,6 +343,7 @@ text-align: center;
 }
 .btns{
   text-align: center;
+  padding-bottom: 10%;
 }
 #startButton:hover{
   border-width: 6px;

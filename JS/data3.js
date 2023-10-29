@@ -3,27 +3,27 @@ let articles = [
       id: 1,
       bigHeading: ` <a href="blogs.html" class="texTwo">Blog Section</a>
       `,
-      headingOne: "Composition  ",
-      paraOne: "The three broad composition classes of asteroids are C-, S-, and M-types.The C-type (chondrite) asteroids are most common. They probably consist of clay and silicate rocks, and are dark in appearance. They are among the most ancient objects in the solar system.The S-types (stony) are made up of silicate materials and nickel-iron.The M-types are metallic (nickel-iron). The asteroids' compositional differences are related to how far from the Sun they formed. Some experienced high temperatures after they formed and partly melted, with iron sinking to the center and forcing basaltic (volcanic) lava to the surface.",
+      headingOne: "Design Decision :  Dashed Lines:",
+      paraOne: "There is consistent use of dashed lines to indicate the scales in this data art. This was used for the asteroid miss distance in the circular bar plot and for the scale of the magnitude of the asteroids. This has created a visual convention, the importance of this convention is that it affects the “look and feel”(Parker, 2012). This helps create flow in the design of this data art as the user can encrypt the data art quicker once they identify the scale conventions of dashed lines that are used. ",
       image:`<figure>
       <img
-        src="./Images/chondrite.png"
-        alt="chondrite image"
-        id="imgg"
+        src="./Images/dashed1.png"
+        alt="dashed lines image"
+        id="imgg2"
       />
-      <figcaption>This shows the C-type (chondrite).</figcaption>
+      <figcaption>Dashed lines from size scale.</figcaption>
       </figure><figure>
       <img
         src="./Images/stony.png"
         alt="stony image"
-        id="imgg"
+        id="imgg2"
       />
       <figcaption>This shows the S-types (stony).</figcaption>
       </figure><figure>
       <img
         src="./Images/nickolite.png"
         alt="footer image"
-        id="imgg"
+        id="imgg2"
       />
       <figcaption>This shows the M-types(nickel-iron).</figcaption>
       </figure>`,
@@ -63,7 +63,7 @@ let articles = [
       <img
         src="./Images/spaceshuttle.png"
         alt="spaceshuttle image"
-        id="imgg"
+        id="imgg2"
       />
       <figcaption>This shows the space shuttle from 2003.</figcaption>
       </figure>`,
