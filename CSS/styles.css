@@ -332,8 +332,11 @@ border-width: 3px;
   padding: 5px 10px;
   font-size: 16px;
   color: aliceblue;
+text-align: center;
 
-
+}
+.btns{
+  text-align: center;
 }
 #startButton:hover{
   border-width: 6px;
@@ -355,4 +358,30 @@ stroke: aliceblue !important;
 }
 .axisc path{
   stroke: aliceblue !important;
+}
+.inner-circle {
+  fill: rgb(133, 68, 158);
+  animation: pulse 3.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    r: 90;
+    fill: rgb(5, 0, 154);
+  }
+  50% {
+    r: 50;
+    fill: rgb(221, 221, 103);
+  }
+  100% {
+    r: 0;
+    fill: rgb(101, 97, 97);
+  }
+  100% {
+    r: 10;
+    fill: rgb(171, 23, 23);
+  }
+}
+#my_dataviz{
+ text-align: center;
 }
