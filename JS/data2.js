@@ -317,6 +317,46 @@ let articles = [
     headingThree: "",
     paraThree: `The buttons help make the interaction fun since the user doesn't just watch the data they can change it and "play" with it. Users are in charge of the interaction as the data only changes when they press a button. I created the different filters for the buttons based on the most valuable aspects of the information provided by the NASA API. `
 
+  },{
+    id: 8,
+    bigHeading:"",
+    headingOne: " Data Driven Artwork", 
+    paraOne: "My intention for this interactive visualisation was to give more meaning to the data and make it more readable for the user. I figured displaying the data in the form of bubbles is fun and interesting. I tend to get bored quite easily when looking at static visualizations, this is why I made the asteroids in the form of bubbles and gave them a force. This causes the bubbles to be constantly moving, giving the user something interesting took at. ",
+    image: `
+    <figure>
+    <img
+    src="./Images/Size.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation when the size button is pressed.</figcaption>
+    </figure> <figure>
+    <img
+      src="./Images/resett.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation .</figcaption><figure>
+    <img
+      src="./Images/date.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation when the date button is pressed.</figcaption>
+    </figure><figure>
+    <img
+      src="./Images/speed.png"
+      alt="Data visual 3 image"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe for the planning the interactive visualisation when the speed button is pressed.</figcaption>
+    </figure>
+    
+    `,
+    paraTwo: `id="dataVisinteractive"`,
+    headingThree: "",
+    paraThree: `The buttons help make the interaction fun since the user doesn't just watch the data they can change it and "play" with it. Users are in charge of the interaction as the data only changes when they press a button. I created the different filters for the buttons based on the most valuable aspects of the information provided by the NASA API. `
+
   }
   
   

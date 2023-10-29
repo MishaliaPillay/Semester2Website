@@ -1,9 +1,9 @@
 let url ="https://api.nasa.gov/neo/rest/v1/neo/browse?page=0&api_key=8Vtxr88AbUfI12VOV2uXnn06djnja0v4eLhGN1sA";
-
-async function fetchAstData2() {  
+let loadingMessageet = document.getElementById('loadingTextthree');
+async function fetchAstData2() {      loadingMessageet.style.display = 'block';
     try {
       let response = await fetch(url);
-
+      loadingMessageet.style.display = 'none';
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
