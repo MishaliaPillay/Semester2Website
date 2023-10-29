@@ -333,7 +333,7 @@ let articles = [
     </figure> 
     
     `,
-    paraTwo: `id="dataVisinteractive"`,
+    paraTwo: `id="dataArt"`,
     headingThree: "Extra Research",
     paraThree: `My main goal for my data art was to communicate this overwhelming amount of information in an easy-to-understand manner. One of the theories I learned in this course was the concept of using “conventions”, I decided to explore this further to better my data art and achieve my goal. Through my research, I came across “Innovative Experiences” which are created in two parts, one part is developing a deeper understanding of your target market, this helps me as the designer create a list of objectives. The second part is creating a list of potential methods/models that meet the criteria from the objectives. Innovative in this sense is choosing the best possible model, this improves the user experiences and leads to the creation of new conventions which help users engage better (Parker, 2012).  This helped me decide on a circular bar plot, to find out more visit the Data- Art page `
 
@@ -346,7 +346,7 @@ let articles = [
     image: `
     
     `,
-    paraTwo: `id="dataVisinteractive"`,
+    paraTwo: ``,
     headingThree: "",
     paraThree: `I also found another method to prevent my data art from being a case of information overload, this was to introduce information gradually (Cazaly, 2021). This is why the size scale is on the left of the screen as the user will be able to read it first, then the data art, then the names of the asteroids.  `
 
