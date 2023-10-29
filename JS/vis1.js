@@ -93,12 +93,12 @@ async function createScatterPlot() {
       .call((g)=> {
           g.append("text")
         
-          .attr("x", -100)
-          .attr("y", -65)
+          .attr("x", "-5%")
+          .attr("y", "-10%")
           .attr('transform', 'rotate(-90)')
           .style("fill", "white")
           .attr("padding", "40px")
-          .style("font-size", "20px")
+          .style("font-size",  "150%")
           .text("Miss Distance between the Asteroids and Earth");
       });
   
@@ -115,7 +115,7 @@ async function createScatterPlot() {
         .attr("x", widthh/2)
         .attr("y", +45)
         .style("fill", "white").style("fill", "white")
-        .style("font-size", "20px")
+        .style("font-size","150%")
         .text("The Dates for the recordings of Asteroid Data");})
   
    // let xAxis = d3.axisBottom(xScale));

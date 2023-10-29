@@ -202,17 +202,17 @@ svg.on('mouseout', function () {  verticalTooltipBox.style('visibility', 'hidden
       .attr("x", width / 2)
       .attr("y", 35)
       .style("fill", "white")
-      .style("font-size", "20px")
+      .style("font-size", "150%")
       .text("Years of Following the travel of an Asteroid");
 
     svg.append('g').style("color", "white")   .style("font-size", "10px")
       .call(d3.axisLeft(yScale))
       .append("text")
-      .attr("x", -30)
-      .attr("y", -65)
+      .attr("x", "-5%")
+      .attr("y", "-10%")
       .attr('transform', 'rotate(-90)')
       .style("fill", "white")
-      .style("font-size", "20px")
+      .style("font-size", "150%")
       .text("Miss Distance between the Asteroids and Earth");
 
 
