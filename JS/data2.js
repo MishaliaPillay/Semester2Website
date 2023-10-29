@@ -342,13 +342,13 @@ let articles = [
     id: 9,
     bigHeading:"",
     headingOne: " ", 
-    paraOne: "I investigated many ways of making data more inviting and readable, through research I found that one of the best ways to accomplish this was the utilization of colour. This is because colour can speed up the visual search (Understanding Graphics, 2015) since colour helps to convey and understand information at a much quicker rate. The use of colour also helps enhance the meaning since users can associate information in the data with colour, this is aided by the legend in the data art.",
+    paraOne: "I investigated many ways of making data more inviting and readable, through research I found that one of the best ways to accomplish this was the utilization of colour. This is because colour can speed up the visual search (Understanding Graphics, 2015) since colour helps to convey and understand information at a much quicker rate. The use of colour also helps enhance the meaning since users can associate information in the data with colour, this is aided by the legend in the data art.I also found another method to prevent my data art from being a case of information overload, this was to introduce information gradually (Cazaly, 2021). This is why the size scale is on the left of the screen as the user will be able to read it first, then the data art, then the names of the asteroids. ",
     image: `
     
     `,
     paraTwo: ``,
-    headingThree: "",
-    paraThree: `I also found another method to prevent my data art from being a case of information overload, this was to introduce information gradually (Cazaly, 2021). This is why the size scale is on the left of the screen as the user will be able to read it first, then the data art, then the names of the asteroids.  `
+    headingThree: "responsive",
+    paraThree: ` I am so proud that my webiste is fully responsive. My website for all my submissions were responsive except for the Data Visulaisations . For Assignment 4 I have made all my Data Visualisations Responsive (The two Static visualisations, the Interactive visualisation and the Data Drive Artwork). `
 
   }
   
