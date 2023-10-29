@@ -321,43 +321,35 @@ let articles = [
     id: 8,
     bigHeading:"",
     headingOne: " Data Driven Artwork", 
-    paraOne: "My intention for this interactive visualisation was to give more meaning to the data and make it more readable for the user. I figured displaying the data in the form of bubbles is fun and interesting. I tend to get bored quite easily when looking at static visualizations, this is why I made the asteroids in the form of bubbles and gave them a force. This causes the bubbles to be constantly moving, giving the user something interesting took at. ",
-    image: `
+    paraOne: "My Data-Driven artwork is a circular bar plot that represents the distance that an asteroid misses a planet by. Four planets are shown in this data set (Earth, Mercury, Mars & Venus). My goal was to take this overwhelming amount of information and communicate in a manner that is inviting and easy to understand. ",
+    image: ` <a  class="link"  href="art.html">Click here for more information</a>
     <figure>
     <img
-    src="./Images/Size.png"
-      alt="Data visual 3 image"
+    src="./Images/wireframedataart.png"
+      alt="Data Art Wireframeimage"
       id="imgg"
     />
-    <figcaption>This shows a wireframe for the planning the interactive visualisation when the size button is pressed.</figcaption>
-    </figure> <figure>
-    <img
-      src="./Images/resett.png"
-      alt="Data visual 3 image"
-      id="imgg"
-    />
-    <figcaption>This shows a wireframe for the planning the interactive visualisation .</figcaption><figure>
-    <img
-      src="./Images/date.png"
-      alt="Data visual 3 image"
-      id="imgg"
-    />
-    <figcaption>This shows a wireframe for the planning the interactive visualisation when the date button is pressed.</figcaption>
-    </figure><figure>
-    <img
-      src="./Images/speed.png"
-      alt="Data visual 3 image"
-      id="imgg"
-    />
-    <figcaption>This shows a wireframe for the planning the interactive visualisation when the speed button is pressed.</figcaption>
-    </figure>
+    <figcaption>This shows a wireframe of the Data-Driven Artwork.</figcaption>
+    </figure> 
+    
+    `,
+    paraTwo: `id="dataVisinteractive"`,
+    headingThree: "Extra Research",
+    paraThree: `My main goal for my data art was to communicate this overwhelming amount of information in an easy-to-understand manner. One of the theories I learned in this course was the concept of using “conventions”, I decided to explore this further to better my data art and achieve my goal. Through my research, I came across “Innovative Experiences” which are created in two parts, one part is developing a deeper understanding of your target market, this helps me as the designer create a list of objectives. The second part is creating a list of potential methods/models that meet the criteria from the objectives. Innovative in this sense is choosing the best possible model, this improves the user experiences and leads to the creation of new conventions which help users engage better (Parker, 2012).  This helped me decide on a circular bar plot, to find out more visit the Data- Art page `
+
+  }
+  ,{
+    id: 9,
+    bigHeading:"",
+    headingOne: " ", 
+    paraOne: "I investigated many ways of making data more inviting and readable, through research I found that one of the best ways to accomplish this was the utilization of colour. This is because colour can speed up the visual search (Understanding Graphics, 2015) since colour helps to convey and understand information at a much quicker rate. The use of colour also helps enhance the meaning since users can associate information in the data with colour, this is aided by the legend in the data art.",
+    image: `
     
     `,
     paraTwo: `id="dataVisinteractive"`,
     headingThree: "",
-    paraThree: `The buttons help make the interaction fun since the user doesn't just watch the data they can change it and "play" with it. Users are in charge of the interaction as the data only changes when they press a button. I created the different filters for the buttons based on the most valuable aspects of the information provided by the NASA API. `
+    paraThree: `I also found another method to prevent my data art from being a case of information overload, this was to introduce information gradually (Cazaly, 2021). This is why the size scale is on the left of the screen as the user will be able to read it first, then the data art, then the names of the asteroids.  `
 
   }
-  
   
 ];
