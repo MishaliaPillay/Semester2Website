@@ -94,7 +94,7 @@ async function createScatterPlot() {
           g.append("text")
         
           .attr("x", "-5%")
-          .attr("y", "-10%")
+          .attr("y", "-13%")
           .attr('transform', 'rotate(-90)')
           .style("fill", "white")
           .attr("padding", "40px")

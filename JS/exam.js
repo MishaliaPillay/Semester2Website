@@ -253,9 +253,10 @@ document.getElementById('play').addEventListener('click', playLines);
 // Add x-axis title
 svg.append("text")
     .style('fill', 'white')
+    .attr("y","1%")
     .attr("transform", `translate(${(svgWidth - padding.left - padding.right) / 2 + padding.left}, ${svgHeight - padding.bottom + 10})`)
     .style("text-anchor", "middle")
-    .text("Speed of the Asteroids");
+    .text("Simulation: Speed of the Asteroids");
 
 // Add white line above x-axis
 svg.append("line")

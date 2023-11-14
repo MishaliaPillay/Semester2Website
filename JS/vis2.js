@@ -200,7 +200,7 @@ svg.on('mouseout', function () {  verticalTooltipBox.style('visibility', 'hidden
       .call(d3.axisBottom(xScale))
       .append("text")
       .attr("x", width / 2)
-      .attr("y", 35)
+      .attr("y", 45)
       .style("fill", "white")
       .style("font-size", "150%")
       .text("Years of Following the travel of an Asteroid");
@@ -209,7 +209,7 @@ svg.on('mouseout', function () {  verticalTooltipBox.style('visibility', 'hidden
       .call(d3.axisLeft(yScale))
       .append("text")
       .attr("x", "-5%")
-      .attr("y", "-10%")
+      .attr("y", "-13%")
       .attr('transform', 'rotate(-90)')
       .style("fill", "white")
       .style("font-size", "150%")
