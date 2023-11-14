@@ -1,6 +1,6 @@
 function updateGraph(data) {
-    const svgWidth = 800; // Set your desired SVG width
-    const svgHeight = 500; // Set your desired SVG height
+    const svgWidth = window.innerWidth/1.5; // Set your desired SVG width
+    const svgHeight =  window.innerHeight/1.5; // Set your desired SVG height
     const padding = { top: 40, right: 20, bottom: 20, left: 50 }; // Set padding values
     let isPaused = false; // Variable to track whether the animation is paused
 
