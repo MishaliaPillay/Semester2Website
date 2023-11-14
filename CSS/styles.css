@@ -147,7 +147,10 @@ padding-right: 80%;
     justify-content: center;
     align-items: center;
   }
- 
+ .examart{
+  padding-top: 5%;
+  padding-bottom: 10%;
+ }
   .container{
     margin: 100px;
   }
