@@ -240,23 +240,22 @@ padding-right: 80%;
   }
   
   /* Styles for full-screen image */
-.full-screen {
-position:fixed;
-  top: 20%;
+.full-screen {padding:10px;
+  z-index: 9999;
+  z-index: 9999;
 
+position:fixed;
+  top: 10%;
+left:30%;
 margin: 0 auto;
-  background: rgba(0, 0, 0, 0.9);
+
  
 }
-  .full-screen img { margin: 0 auto;
-    object-fit: contain;
-    cursor: pointer;
-  }
-  
-  .full-screen img.centered { margin: 0 auto;
-object-fit: contain;
-  
-  }
+body.full-screen-mode {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1); /* Black background */
+}
+ 
   a{
     text-decoration: none;
     color: aliceblue;

@@ -127,7 +127,7 @@ color:#59DFD0;
 }
 
 @media screen and (max-width: 633px) {
-  .sidenav a {
+  .sidenav a { 
    display: none;
   }
   
