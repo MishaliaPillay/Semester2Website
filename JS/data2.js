@@ -344,12 +344,43 @@ let articles = [
     headingOne: " ", 
     paraOne: "I investigated many ways of making data more inviting and readable, through research I found that one of the best ways to accomplish this was the utilization of colour. This is because colour can speed up the visual search (Understanding Graphics, 2015) since colour helps to convey and understand information at a much quicker rate. The use of colour also helps enhance the meaning since users can associate information in the data with colour, this is aided by the legend in the data art.I also found another method to prevent my data art from being a case of information overload, this was to introduce information gradually (Cazaly, 2021). This is why the size scale is on the left of the screen as the user will be able to read it first, then the data art, then the names of the asteroids. ",
     image: `
-    
+   
     `,
     paraTwo: ``,
     headingThree: "responsive",
     paraThree: ` I am so proud that my webiste is fully responsive. My website for all my submissions were responsive except for the Data Visulaisations . For Assignment 4 I have made all my Data Visualisations Responsive (The two Static visualisations, the Interactive visualisation and the Data Drive Artwork). `
 
+  },{
+    id: 10,
+    bigHeading:"",
+    headingOne: "Exam ", 
+    paraOne: "My Data-Driven Artwork for my exam is a simulation of the velocities of asteroids in their approach towards planets. This is the only area from my data visualisations that I had not explored. This visual has buttons and sliders that the user can use to manipulate the visualisation. ",
+    image: `<a  class="link"  href="art.html">Click here for more information</a>
+    <figure>
+    <img
+    src="./Images/Exam.png"
+      alt="Data Art Wireframeimage"
+      id="imgg"
+    />
+    <figcaption>This shows a wireframe of the Data-Driven Artwork for my Exam.</figcaption>
+    </figure>
+    `,
+    paraTwo: `id="Exam"`,
+    headingThree: "Interaction in my Exam Data Art.",
+    paraThree: ` The user has to click the play button to start the simulation, while the simulation is playing the user can click the pause button. This pauses the replay of the visualisation and allows the user to hover over and explore the data in more depth. The user can change the animation speed and click the play button to watch faster or slower animations. There are buttons that filter the data to show the faster (>15kms) and slower (<15Kms asteroids). There is another slider which changes the dataset. The change in data can be seen when the user clicks the play button. To optimize the visualization there is a 5-second delay in obtaining the new API data, this prevents the browser from crashing.   `
+
+  },{
+    id: 11,
+    bigHeading:"",
+    headingOne: "Feedback Incorporation", 
+    paraOne: "The feedback from my last submission brought a new insight into responsibility. I should not always make the content smaller but adapt it to different devices. I have incorporated this into my website by the menu button. In previous iterations of my website, the menu section of each page was removed when the screen got smaller, which made it difficult to navigate the webpage. For this exam, I have turned it into a toggle, so when the user reloads the screen on different devices if the screen is smaller there will be a button that toggles the menu and if the screen is large enough the menu will be displayed without the toggle button. ",
+    image: `
+    `,
+    paraTwo: ``,
+    headingThree: "",
+    paraThree: `Lastly, I have made significant changes to the blog section. I have taken the feedback from my previous assignment and aligned the headings to the left and centred the images, I have also changed the font size of the headings to create a hierarchy in the website. The images in the blog section are vital in understanding the essays thus I have added a feature where the user can click on an image to make it larger and click on the image again to exit the zoomed-in view. I have made the decision to not include this feature throughout my website, this is because the text in the design section contains all the information in the visuals and there are many images in the designs section. The user may find it frustrating if they accidentally click these images.  `
+
   }
+  
   
 ];
