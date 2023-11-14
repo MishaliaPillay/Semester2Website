@@ -367,7 +367,7 @@ let articles = [
     `,
     paraTwo: `id="Exam"`,
     headingThree: "Interaction in my Exam Data Art.",
-    paraThree: ` The user has to click the play button to start the simulation, while the simulation is playing the user can click the pause button. This pauses the replay of the visualisation and allows the user to hover over and explore the data in more depth. The user can change the animation speed and click the play button to watch faster or slower animations. There are buttons that filter the data to show the faster (>15kms) and slower (<15Kms asteroids). There is another slider which changes the dataset. The change in data can be seen when the user clicks the play button. To optimize the visualization there is a 5-second delay in obtaining the new API data, this prevents the browser from crashing.   `
+    paraThree: ` The user has to click the play button to start the simulation, while the simulation is playing the user can click the pause button. This pauses the replay of the visualisation and allows the user to hover over and explore the data in more depth. The user can change the animation speed and click the play button to watch faster or slower animations. There are buttons that filter the data to show the faster (>15km/s) and slower (<15km/s asteroids). There is another slider which changes the dataset. The change in data can be seen when the user clicks the play button. To optimize the visualization there is a 5-second delay in obtaining the new API data, this prevents the browser from crashing.   `
 
   },{
     id: 11,

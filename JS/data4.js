@@ -4,11 +4,11 @@ let exam= [
       bigHeading: ` <a href="blogs.html" class="texTwo">Blog Section</a>
       `,
       headingOne: "What more can be extracted and explored?",
-      paraOne: "For my Exam Data Art, I decided to expand on the data from my previous Data Art. The Nasa Api link that I use allows us to browse through the Nasa database on asteroids. This link however only allows us to see the data for 20 asteroids at a time. I have created a slider that allows the user to choose different pages on the NASA website thus different sets of 20 asteroids are shown each time the slider is moved. ",
+      paraOne: "For my Exam Data Art, I decided to expand on the data from my previous Data Art. The NASA API link that I use allows us to browse through the Nasa database on asteroids. This link however only allows us to see the data for 20 asteroids at a time. I have created a slider that allows the user to choose different pages on the NASA website thus different sets of 20 asteroids are shown each time the slider is moved. ",
       image:``,
       paraTwo:`id="Exam"`, 
       headingThree: "What more can be said about your data? ",
-      paraThree: "The only information that was excluded from my previous data art was the velocities of the asteroids. For my Exam data art, I wanted to explore this visual and make more use of animations. The Asteroid data is arranged by date on the y-axis and that acts as a starting point, the lines move across the screen towards the planet on the right of the screen. This simulates the asteroids moving towards planets, as the rate at which the lines move is dependent on their velocities. ",
+      paraThree: "The only information that was excluded from my previous data art was the velocities of the asteroids. For my Exam data art, I wanted to explore this visual and make more use of animations. The asteroid data is arranged by date on the y-axis and that acts as a starting point, the lines move across the screen towards the planet on the right of the screen. This simulates the asteroids moving towards planets, as the rate at which the lines move is dependent on their velocities. ",
      
     },
     {
@@ -19,7 +19,7 @@ let exam= [
       image: ``,
       paraTwo: `id="asteClassi"`,
       headingThree: "Observation",
-      paraThree: "The data visualisation displays well over 900 data points at a time, and through analysis of the data I found that the velocities of the asteroids have an estimated range of 3 kms to 32 kms . I also found that the data is spread almost evenly and to convey this to the user I created two interactive elements in the form of buttons which show asteroids that are faster than 15 kms and asteroids that are slower than 15 kms. To stick to the convenience of my website I decided to change the opacity of the asteroids in the background when the buttons are clicked. ",
+      paraThree: "The data visualisation displays well over 900 data points at a time, and through analysis of the data I found that the velocities of the asteroids have an estimated range of 3 km/s to 32 km/s . I also found that the data is spread almost evenly and to convey this to the user I created two interactive elements in the form of buttons which show asteroids that are faster than 15 km/s and asteroids that are slower than 15 km/s. To stick to the convenience of my website I decided to change the opacity of the asteroids in the background when the buttons are clicked. ",
      
     },
     {
