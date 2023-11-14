@@ -125,16 +125,27 @@ text-align: center;
 color:#59DFD0;
   display: block;
 }
+
+@media screen and (max-width: 633px) {
+  .sidenav a {
+   display: none;
+  }
+  
+  /* Display toggle button */
+  .toggleBtn {
+    position: fixed;
+    margin-left: 30%;
+    padding-top: 20%;
+    display: block;
+  }
+}
+
 .bold{
   font-weight: bold;
   font-size: 10px;
 }
 .sidenav a:hover {
 text-decoration: underline 1px white;
-}
-@media screen and (max-width: 633px)  {
-  .sidenav {display: none;}
-  .sidenav a {display: none; }
 }
 
 body{

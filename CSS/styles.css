@@ -341,6 +341,20 @@ border-width: 3px;
 text-align: center;
 
 }
+.toggleBtn{  background: #0f172af0;
+  border-radius: 10px;
+  border: 3px solid;
+border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+transition:  0.1s ;
+border-image-slice: 1;
+border-width: 3px;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #59DFD0;
+text-align: center;
+
+
+}
 .btns{
   text-align: center;
   padding-bottom: 10%;
