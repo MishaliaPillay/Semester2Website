@@ -107,7 +107,7 @@ text-align: center;
   
   border-image-slice: 1;
   border-width: 3px;
- margin-top: 9%;
+ margin-top: 22%;
   width: 140px;
   position: fixed;
   z-index: 1;
@@ -134,8 +134,9 @@ color:#59DFD0;
   /* Display toggle button */
   .toggleBtn {
     position: fixed;
-    margin-left: 30%;
-    padding-top: 20%;
+    margin-left: 9%;
+    margin-top:20%;
+  z-index: 10;
     display: block;
   }
 }
