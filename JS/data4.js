@@ -3,8 +3,8 @@ let exam= [
       id: 1,
       bigHeading: ` <a href="blogs.html" class="texTwo">Blog Section</a>
       `,
-      headingOne: "Design Decision: Dashed Lines",
-      paraOne: "There is consistent use of dashed lines to indicate the scales in this data art. This was used for the asteroid miss distance in the circular bar plot and for the scale of the magnitude of the asteroids. This has created a visual convention, the importance of this convention is that it affects the “look and feel”(Parker, 2012). This helps create flow in the design of this data art as the user can encrypt the data art quicker once they identify the scale conventions of dashed lines that are used. ",
+      headingOne: "What more can be extracted and explored?",
+      paraOne: "For my Exam Data Art, I decided to expand on the data from my previous Data Art. The Nasa Api link that I use allows us to browse through the Nasa database on asteroids. This link however only allows us to see the data for 20 asteroids at a time. I have created a slider that allows the user to choose different pages on the NASA website thus different sets of 20 asteroids are shown each time the slider is moved. ",
       image:`<figure>
       <img
         src="./Images/dashed1.png"
@@ -21,15 +21,15 @@ let exam= [
       <figcaption>Dashed lines from Circular Bar plot.</figcaption>
       </figure>`,
       paraTwo:`id="Design"`, 
-      headingThree: "Bar plot ordered by Date ",
-      paraThree: "The bars are arranged by date, this emulates a clock of sorts since it displays data of asteroids through time(dates). This helps users answer questions such as: Has the frequency of asteroid encounters changed in any way, did some asteroids “survive” longer than others, were some asteroids “active” for shorter periods than others according to the data art? Ordering the data by date helps situate the user, as the user can identify a start and end point. ",
+      headingThree: "What more can be said about your data? ",
+      paraThree: "The only information that was excluded from my previous data art was the velocities of the asteroids. For my Exam data art, I wanted to explore this visual and make more use of animations. The Asteroid data is arranged by date on the y-axis and that acts as a starting point, the lines move across the screen towards the planet on the right of the screen. This simulates the asteroids moving towards planets, as the rate at which the lines move is dependent on their velocities. ",
      
     },
     {
       id: 2,
       bigHeading:``,
-      headingOne: "Size Scale Opacity",
-      paraOne: "The addition of the size scale adds new meanings to this data set, by helping the user visualize the differences between asteroids. This deepens the understanding of the data art since the user can see if the size of an asteroid could affect its life span as well as the distance it covers, in terms of how many planets it comes into contact with.The adjustment of the opacity of the circles in the size scale was an active decision, as can be seen by the scale many asteroids are similar in magnitude. Thus, the only way to display all these asteroids on the size scale is to allow the asteroids below to be seen, otherwise, the scale looks incomplete and might confuse the user. ",
+      headingOne: "Interactivity",
+      paraOne: "Each time the slider is moved new data is loaded and when the user clicks play they are able to visualise the speed of the asteroids in that data set. The range of the speed of movement of the lines changes with the data, I have added another interactive slider, which allows the user to speed up and slow down the movement of the lines while maintaining the integrity of the data. ",
       image: `<figure>
       <img
         src="./Images/dashed1.png"
@@ -39,15 +39,15 @@ let exam= [
       <figcaption>Circles from the Size Scale.</figcaption>
       </figure>`,
       paraTwo: `id="asteClassi"`,
-      headingThree: "Bar Width",
-      paraThree: "The bars in the circular bar plot are very narrow, this design decision was made so that all the bars are visible. This was necessary so that the user could see data that was not obscured or crowded, if the bars overlapped due to their width, it would affect the emotion and meaning of the data. It would decrease the number of visible bars which would make it appear as though there are fewer asteroids than there are. The narrow bars allow the data to be spread out, which is clearer for the user, thus making the information displayed more readable. ",
+      headingThree: "Observation",
+      paraThree: "The data visualisation displays well over 900 data points at a time, and through analysis of the data I found that the velocities of the asteroids have an estimated range of 3 kms to 32 kms . I also found that the data is spread almost evenly and to convey this to the user I created two interactive elements in the form of buttons which show asteroids that are faster than 15 kms and asteroids that are slower than 15 kms. To stick to the convenience of my website I decided to change the opacity of the asteroids in the background when the buttons are clicked. ",
      
     },
     {
       id: 3,
       bigHeading:``,
-      headingOne: "Design Decision: Bar Colour ", 
-      paraOne: "There are 20 asteroids and there are 10 colors used to distinguish between the asteroids. I chose to use 10 colours as opposed to giving all 20 asteroids their own colour because it would have been too many colours to keep track of and too many closely related shades. The choice of 10 colours decreases the cognitive load of the user. This is in line with the goal for this data art as well as avoiding the unnecessary complication of the data. ",
+      headingOne: "", 
+      paraOne: "When the user clicks the play button the simulation starts and replays a few times. This allows the user to fiddle with the speed slider and the filter buttons. I also found it useful to add a pause button which allows all the asteroid data lines to reach their end point on the right of the screen this makes it easier for the user to hover over the lines and find out more information that is displayed on the tooltip. ",
       image: `<figure>
       <img
         src="./Images/bars.png"
@@ -57,15 +57,15 @@ let exam= [
       <figcaption>Circular bar plots , bars with differnet colurs with the same width.</figcaption>
       </figure>`,
       paraTwo: `id="asteName"`,
-      headingThree: "Inner circle (circular bar plot)",
-      paraThree: "The centre of the circular bar plot has a circle that is animated by zooming in and out as it changes colour. The centre of the plot represents the planets that these asteroids encounter, and these planets vary in colour and size. Thus, this animated colour-changing circle is used to emulate the different planets and help the user identify what the centre of the bar plot represents. Earth is blue, Venus is pale yellow, Mars is red, and Mercury is dark grey. The colours that were chosen are based on the information from the NASA website. ",
+      headingThree: "How have communication strategies, user experience and interaction been used to enhance or subvert meaning in the artwork? ",
+      paraThree: "As a form of visual communication, I decided to highlight the line that the user hovers over with a white line that is slightly thicker than the lines of the data points. This is an act of clarity and it is very clear to the user that this is the data point that they are hovering over and that the tooltips show the corresponding information for that point. ",
      
     },
     {
       id: 4,
       bigHeading:``,
-      headingOne: "Design Decision: Toolitip ",
-      paraOne: "The tooltips are not styled, this was done intentionally to not obscure or take away attention from the data art. This tooltip is simple and effective as it displays all the relevant information to a user. This was also chosen since there are many bars on the circular bar plot, this not only means that there are lots of data to analyse but lots of colour and meanings to unpack, this simple tooltip decreases the cognitive load on the user. ",
+      headingOne: "Can artistic strategies be used to compare and contrast data and interpretation? ",
+      paraOne: "I made the lines of the data points dashed, this was done since the dashed lines acted as a loading visual. The dashed lines helped separate the data visually and made it look cleaner as there was more to be seen when the user could distinguish between the different lines. ",
       image: `<figure>
       <img
         src="./Images/tooltip.png"
@@ -82,14 +82,14 @@ let exam= [
       <figcaption>Image of the buttons.</figcaption>
       </figure>`,
       paraTwo: "",
-      headingThree: "Filters",
-      paraThree: "The buttons that for this data art were added to help distil the information for the user, it helps the user take control of their understanding. The user can visualize how many / few asteroids a planet has encountered. ",
+      headingThree: "",
+      paraThree: "I decided to add a gradient colour to the lines that go from teal to red. This is because the lines start from a safe distance away from the planets and as they reach closer it becomes more of a danger to the planet. The teal is a cool colour suggesting emotions of safety and red is a symbol of danger. ",
       
     },{
         id: 5,
         bigHeading:``,
-        headingOne: "Observations: Asteroid size differences",
-        paraOne: "The size scale helps visualize the influence that the magnitude of an asteroid has on its motion. An example of this from the data art is that the largest asteroids are 1915 Quetzalcoatl and 1221 Amor, the colour of these asteroids is dark blue, and these asteroids have the furthest miss distances. This is interesting because these asteroids only have encounters with Earth and they are not potentially hazardous. Thus, for this data set it can be said that the larger an asteroid is the further away it will be from a planet, thus has a decreased risk than smaller asteroids. ",
+        headingOne: "How does this art relate to your other visuals?",
+        paraOne: "The emotion for this data art is fascination, I wanted to entertain and excite the user by showing them an animated visual that shows actual data on asteroids. All of my other data visualisations show the complexity and vastness of space and asteroid entities that Earth encounters. This data art simulates the movement of these asteroids towards Earth and other planets.",
         image: `<figure>
         <img
           src="./Images/scale.png"
@@ -100,24 +100,7 @@ let exam= [
         </figure>`,
         paraTwo:`id="Observe"`,
         headingThree: "",
-        paraThree: " Another observation is that most asteroid sizes lie between 14 – and 17 in this data set, the decreased opacity of the circles in the scale helps us see this. These findings could help determine the average size of asteroids and follow along the circular bar plot to see if the size affects the frequency of close approach distances. ",
-        
-      },,{
-        id: 6,
-        bigHeading:``,
-        headingOne: "Observations: Asteroids Encounters with Earth vs other planets",
-        paraOne: "Since this circular bar plot displays the data of these asteroids in relation to four planets, we can compare the number of asteroids that approach a planet as well as the frequency over time. The interactive buttons below the data art help to filter the bars according to the different planets, a quick click through puts into perspective the mass amount of asteroids that Earth encounters compared to the other planets. This raises new questions such as: Is this because NASA focuses its research on Earth and all these asteroids are recorded near Earth then its trajectory is tracked? or does Earth’s position in the solar system lead it to have the greatest number of encounters with asteroids? Another example from the data set is that when a user clicks the button for mercury, it is seen that only one asteroid (1566 Icarus) has approached it however Earth has had encounters with all of the asteroids in this data set. ",
-        image: `<figure>
-        <img
-          src="./Images/Merc.png"
-          alt="Mercury image"
-          id="imgg2"
-        />
-        <figcaption>Mercury's asteroid 1566 Icarus.</figcaption>
-        </figure>`,
-        paraTwo: " ",
-        headingThree: "Conclusion",
-        paraThree: "Overall, this data helps make it clear that there is a need for NASA to track this data and the importance of the research that they do. It is really shocking and almost scary to observe how many asteroids encounter Earth and how many of them are potentially hazardous as seen on the data visualization page. The colour bars make the data more friendly and inviting which helps the data set look easier to understand at all levels (scientists and unfamiliar users) Another way this is accommodated is the full names of these asteroids are displayed which gives information to both types of users.",
+        paraThree: "  This data art is fascinating since it captures and holds the attention of the viewer by stimulating them mentally and visually as they take in this data and all the possible meanings that it could suggest.",
         
       },
   ];
