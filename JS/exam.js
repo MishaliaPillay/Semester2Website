@@ -7,7 +7,8 @@ function updateGraph(data) {
    
     const svg = d3.select("#visualization")
         .attr("width", svgWidth)
-        .attr("height", svgHeight);
+        .attr("height", svgHeight)
+        .style("background-color", '#000');
  
     // Extract all closest approach dates, miss distances, and relative velocities
     const approachData = data.near_earth_objects.flatMap((asteroid, page) => {
@@ -32,12 +33,14 @@ function updateGraph(data) {
     // Append y-axis to the SVG
     svg.selectAll(".y-axis").remove();
     svg.append("g")
+    .style("color", "white")
         .attr("class", "y-axis")
         .attr("transform", `translate(${padding.left}, 0)`)
         .call(yAxis);
 
     // Add y-axis title
     svg.append("text")
+    .style('fill', 'white')
         .attr("transform", "rotate(-90)")
         .attr("y", 0)
         .attr("x", 0 - (svgHeight / 2))
@@ -179,7 +182,7 @@ function moveLines() {
     }
 
     lines.transition()
-    .delay(500)
+   
         .duration((d) => 10000 / d.relativeVelocity * animationSpeed)
         .attrTween("x2", function (d) {
             return function (t) {
@@ -247,10 +250,21 @@ document.getElementById('play').addEventListener('click', playLines);
         .attr("r", circleRadius)
         .attr("fill", "darkblue");
 // Add x-axis title
+// Add x-axis title
 svg.append("text")
+    .style('fill', 'white')
     .attr("transform", `translate(${(svgWidth - padding.left - padding.right) / 2 + padding.left}, ${svgHeight - padding.bottom + 10})`)
     .style("text-anchor", "middle")
     .text("Speed of the Asteroids");
+
+// Add white line above x-axis
+svg.append("line")
+    .attr("x1", padding.left)
+    .attr("y1", svgHeight - padding.bottom)
+    .attr("x2", svgWidth - padding.right)
+    .attr("y2", svgHeight - padding.bottom)
+    .style("stroke", "white")
+    .style("stroke-width", 1); // Adjust the stroke width as needed
 
 }
 
