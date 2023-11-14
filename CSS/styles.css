@@ -161,6 +161,11 @@ padding-right: 80%;
     text-align: center;
     text-transform: uppercase;
 
+  }.textTwoData{ color: aliceblue;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+padding-top: 15%;
   }
   .textThree{  
     font-weight: lighter;
