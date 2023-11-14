@@ -1,6 +1,6 @@
 let pageNumberSlider = document.getElementById('pageNumberSlider');
 let pageNumberText = document.getElementById('pageNumber');
-let loadingMessage = document.getElementById('loadingTextthree');
+let loadingMessage = document.getElementById('loadingTextthrees');
 let currentPageNumber = 0; // Variable to store the current page number
 let debounceTimeout;
 let sliderTimeout;
