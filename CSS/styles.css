@@ -180,17 +180,22 @@ padding-right: 80%;
     
  font-size: 20px;
   }
-  #blog1{
+  #blog1{ font-size: 20px;
     text-align: left;
   }
-  #blog2{
+  #blog2{ font-size: 20px;
     text-align: left;
   }
-  #blog3{
+  #blog3{ font-size: 20px;
     text-align: left;
   }
-  #blog4{
+  #blog4{ font-size: 20px;
     text-align: left;
+  }
+  .smallHeading{
+    text-decoration: underline;
+    font-weight: normal;
+    font-size: 20px;
   }
   .load{
     font-weight: bold;
